@@ -8,20 +8,22 @@ window.SUPPORTO_DATA = {
   telegram: "https://t.me/+SA8wPHU0MPXbtz4x",
   paths: {
     "Primi 7 giorni": [
-      {n:1,title:"Obiettivo personale",text:"Definisci obiettivo, tempo disponibile e aspettative.",status:"preparazione"},
-      {n:2,title:"Book Colazione",text:"Parti dall'esperienza personale e dal Book Colazione.",status:"disponibile",resource:"book-pdf"},
-      {n:3,title:"Lista nomi",text:"Costruisci la prima lista senza selezionare a priori.",status:"preparazione"},
-      {n:4,title:"Primi inviti",text:"Apri le prime conversazioni con il supporto del team.",status:"preparazione"}
+      {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
+      {n:2,title:"Lista nomi",text:"Costruisci il tuo capitale aziendale partendo dalle persone che conosci.",status:"preparazione",resource:"lista"},
+      {n:3,title:"Gestire e ampliare la lista nomi",text:"Amplia la lista attraverso quotidianità, relazioni e social.",status:"preparazione",resource:"contatti"},
+      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"}
     ],
     "Primi 30 giorni": [
-      {n:5,title:"Trova clienti",text:"Applica uno dei metodi HGO, Skin o Usa-Indossa-Parla.",status:"preparazione"},
-      {n:6,title:"Organizza la settimana",text:"Imposta agenda, DMO e priorità.",status:"preparazione"},
-      {n:7,title:"Gestisci i clienti",text:"Follow-up, riordino e referenze.",status:"preparazione"}
+      {n:5,title:"Organizzare la settimana",text:"Agenda, DMO e priorità in base al tempo disponibile.",status:"preparazione",resource:"settimana"},
+      {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"preparazione",resource:"inaugurazione"},
+      {n:7,title:"Conoscenza prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
+      {n:8,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
+      {n:9,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
+      {n:10,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
+      {n:11,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"}
     ],
     "Primi 90 giorni": [
-      {n:8,title:"Presenta l'opportunità",text:"Impara il colloquio individuale e l'HOM.",status:"preparazione"},
-      {n:9,title:"Primo membro",text:"Porta il primo membro nel sistema.",status:"preparazione"},
-      {n:10,title:"Duplica",text:"Ripeti il percorso con il nuovo membro.",status:"preparazione"}
+      {n:12,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
     ]
   },
   resources: [
@@ -42,7 +44,7 @@ window.SUPPORTO_DATA = {
       description:"Raccolta di foto prima e dopo del team.",
       learn:"Accedere rapidamente alla raccolta di foto prima e dopo.",
       action:"Apri la cartella e consulta le immagini disponibili.",
-      next:"Gestione clienti",
+      next:"Assistenza clienti",
       cta:"Apri foto prima e dopo",
       link:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link"
     },
@@ -56,16 +58,16 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/file/d/1JhcuVgNTVJdGfnOCzijdBG19SykVL_5K/view?usp=drivesdk"
     },
     {id:"obiettivo",order:10,area:"Avviamento",title:"Obiettivo personale",type:"Video tutorial",status:"preparazione",description:"Obiettivo economico, impegno, aspettative realistiche e supporto.",learn:"Definire il proprio punto di partenza.",action:"Materiale in preparazione.",next:"Book Colazione"},
-    {id:"lista",order:20,area:"Creare il tuo mercato",title:"Lista nomi",type:"Video tutorial",status:"preparazione",description:"Come creare la prima lista nomi.",learn:"Costruire una lista ampia senza pregiudizi.",action:"Materiale in preparazione.",next:"Gestire e ampliare i contatti"},
-    {id:"contatti",order:30,area:"Creare il tuo mercato",title:"Gestire e ampliare i contatti",type:"Video tutorial",status:"preparazione",description:"Lista, ampliamento, social e contatti personali.",learn:"Tenere viva e ampliare la lista.",action:"Materiale in preparazione.",next:"Come invitare"},
-    {id:"invitare",order:40,area:"Creare il tuo mercato",title:"Come invitare",type:"Video tutorial",status:"preparazione",description:"Conversazioni, inviti, appuntamenti, HOM e risposte.",learn:"Aprire conversazioni e proporre un appuntamento.",action:"Materiale in preparazione.",next:"Inaugurazione"},
-    {id:"inaugurazione",order:50,area:"Creare il tuo mercato",title:"Inaugurazione",type:"Video tutorial",status:"preparazione",description:"Preparazione, inviti, svolgimento e follow-up.",learn:"Organizzare un'inaugurazione semplice ed efficace.",action:"Materiale in preparazione.",next:"Organizzare la settimana"},
+    {id:"lista",order:20,area:"Creare il tuo mercato",title:"Lista nomi",type:"Video tutorial",status:"preparazione",description:"Come creare la prima lista nomi.",learn:"Costruire una lista ampia senza pregiudizi.",action:"Materiale in preparazione.",next:"Gestire e ampliare la lista nomi"},
+    {id:"contatti",order:30,area:"Creare il tuo mercato",title:"Gestire e ampliare la lista nomi",type:"Video tutorial",status:"preparazione",description:"Lista, ampliamento, social e contatti personali.",learn:"Tenere viva e ampliare la lista.",action:"Materiale in preparazione.",next:"Come invitare"},
+    {id:"invitare",order:40,area:"Creare il tuo mercato",title:"Come invitare",type:"Video tutorial",status:"preparazione",description:"Conversazioni, inviti, appuntamenti, HOM e risposte.",learn:"Aprire conversazioni e proporre un appuntamento.",action:"Materiale in preparazione.",next:"Inaugurazione attività"},
+    {id:"inaugurazione",order:50,area:"Creare il tuo mercato",title:"Inaugurazione attività",type:"Video tutorial",status:"preparazione",description:"Preparazione, inviti, svolgimento e follow-up.",learn:"Organizzare un'inaugurazione semplice ed efficace.",action:"Materiale in preparazione.",next:"Organizzare la settimana"},
     {id:"settimana",order:60,area:"Organizzare l'attività",title:"Organizzare la settimana",type:"Video tutorial",status:"preparazione",description:"Agenda, DMO e priorità in base al tempo disponibile.",learn:"Trasformare gli obiettivi in agenda.",action:"Materiale in preparazione.",next:"Trova clienti"},
-    {id:"prodotti",order:70,area:"Prodotti e clienti",title:"Conoscenza prodotti",type:"Video tutorial",status:"preparazione",description:"Conoscenze essenziali sui prodotti e sul loro utilizzo.",learn:"Conoscere i prodotti in modo semplice e operativo.",action:"Materiale in preparazione.",next:"Metodo DMO"},
-    {id:"skin",order:80,area:"DMO / HGO / Skin",title:"Metodo trattamento viso",type:"Video tutorial",status:"preparazione",description:"Presentazione e utilizzo operativo del metodo Skin.",learn:"Usare il trattamento viso come metodo di acquisizione clienti.",action:"Materiale in preparazione.",next:"Gestione clienti"},
-    {id:"hgo",order:90,area:"DMO / HGO / Skin",title:"Metodo Tanita / HGO",type:"Video tutorial",status:"preparazione",description:"HGO, schede e applicazione pratica.",learn:"Usare HGO/Tanita in modo operativo.",action:"Materiale in preparazione.",next:"Gestione clienti"},
-    {id:"usa-parla",order:100,area:"DMO / HGO / Skin",title:"Usa, indossa, parla",type:"Video tutorial",status:"preparazione",description:"Applicazione dal vivo e sui social.",learn:"Trasformare l'esperienza personale in conversazioni naturali.",action:"Materiale in preparazione.",next:"Gestione clienti"},
-    {id:"clienti",order:110,area:"Prodotti e clienti",title:"Gestione clienti",type:"Video tutorial",status:"preparazione",description:"Assistenza, follow-up, riordino e referenze.",learn:"Seguire il cliente dopo l'acquisto.",action:"Materiale in preparazione.",next:"Presentare l'opportunità"},
+    {id:"prodotti",order:70,area:"Prodotti e clienti",title:"Conoscenza prodotti",type:"Video tutorial",status:"preparazione",description:"Conoscenze essenziali sui prodotti e sul loro utilizzo.",learn:"Conoscere i prodotti in modo semplice e operativo.",action:"Materiale in preparazione.",next:"DMO Trattamento viso"},
+    {id:"skin",order:80,area:"DMO / HGO / Skin",title:"DMO Trattamento viso",type:"Video tutorial",status:"preparazione",description:"Presentazione e utilizzo operativo del metodo Skin.",learn:"Usare il trattamento viso come metodo di acquisizione clienti.",action:"Materiale in preparazione.",next:"Assistenza clienti"},
+    {id:"hgo",order:90,area:"DMO / HGO / Skin",title:"DMO Valutazione corporea",type:"Video tutorial",status:"preparazione",description:"HGO, schede e applicazione pratica.",learn:"Usare HGO/Tanita in modo operativo.",action:"Materiale in preparazione.",next:"Assistenza clienti"},
+    {id:"usa-parla",order:100,area:"DMO / HGO / Skin",title:"DMO Usa Indossa Parla",type:"Video tutorial",status:"preparazione",description:"Applicazione dal vivo e sui social.",learn:"Trasformare l'esperienza personale in conversazioni naturali.",action:"Materiale in preparazione.",next:"Assistenza clienti"},
+    {id:"clienti",order:110,area:"Prodotti e clienti",title:"Assistenza clienti",type:"Video tutorial",status:"preparazione",description:"Assistenza, follow-up, riordino e referenze.",learn:"Seguire il cliente dopo l'acquisto.",action:"Materiale in preparazione.",next:"Presentare l'opportunità"},
     {id:"opportunita",order:120,area:"Opportunità",title:"Presentare l'opportunità",type:"Video tutorial",status:"preparazione",description:"Colloquio individuale e HOM con esempi pratici.",learn:"Presentare l'opportunità in modo semplice e professionale.",action:"Materiale in preparazione.",next:"Primo membro"},
     {id:"testimonianze",order:130,area:"Duplicazione",title:"Videotestimonianze",type:"Banca dati",status:"preparazione",description:"Testimonianze attività e prodotto, brevi e credibili.",learn:"Usare testimonianze come supporto, senza esagerazioni.",action:"Materiale in preparazione.",next:"Duplica"}
   ]
