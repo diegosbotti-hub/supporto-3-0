@@ -7,22 +7,18 @@ window.SUPPORTO_DATA = {
   },
   telegram: "https://t.me/+SA8wPHU0MPXbtz4x",
   paths: {
-    "Primi 7 giorni": [
+    "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
       {n:2,title:"Lista nomi",text:"Costruisci il tuo capitale aziendale partendo dalle persone che conosci.",status:"preparazione",resource:"lista"},
       {n:3,title:"Gestire e ampliare la lista nomi",text:"Amplia la lista attraverso quotidianità, relazioni e social.",status:"preparazione",resource:"contatti"},
-      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"}
-    ],
-    "Primi 30 giorni": [
+      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, DMO e priorità in base al tempo disponibile.",status:"preparazione",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"preparazione",resource:"inaugurazione"},
       {n:7,title:"Conoscenza prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
       {n:8,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
       {n:9,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
       {n:10,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
-      {n:11,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"}
-    ],
-    "Primi 90 giorni": [
+      {n:11,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
       {n:12,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
     ]
   },
