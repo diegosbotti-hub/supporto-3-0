@@ -9,7 +9,7 @@ window.SUPPORTO_DATA = {
   paths: {
     "Primi 7 giorni": [
       {n:1,title:"Obiettivo personale",text:"Definisci obiettivo, tempo disponibile e aspettative.",status:"preparazione"},
-      {n:2,title:"Conosci e usa",text:"Parti dall'esperienza personale e dal Book Colazione.",status:"disponibile",resource:"book-pdf"},
+      {n:2,title:"Book Colazione",text:"Parti dall'esperienza personale e dal Book Colazione.",status:"disponibile",resource:"book-pdf"},
       {n:3,title:"Lista nomi",text:"Costruisci la prima lista senza selezionare a priori.",status:"preparazione"},
       {n:4,title:"Primi inviti",text:"Apri le prime conversazioni con il supporto del team.",status:"preparazione"}
     ],
@@ -52,7 +52,7 @@ window.SUPPORTO_DATA = {
       cta:"Apri infografica",
       link:"https://drive.google.com/file/d/1JhcuVgNTVJdGfnOCzijdBG19SykVL_5K/view?usp=drivesdk"
     },
-    {id:"obiettivo",order:10,area:"Avviamento",title:"Obiettivo personale",type:"Video tutorial",status:"preparazione",description:"Obiettivo economico, impegno, aspettative realistiche e supporto.",learn:"Definire il proprio punto di partenza.",action:"Materiale in preparazione.",next:"Conosci e usa"},
+    {id:"obiettivo",order:10,area:"Avviamento",title:"Obiettivo personale",type:"Video tutorial",status:"preparazione",description:"Obiettivo economico, impegno, aspettative realistiche e supporto.",learn:"Definire il proprio punto di partenza.",action:"Materiale in preparazione.",next:"Book Colazione"},
     {id:"lista",order:20,area:"Creare il tuo mercato",title:"Lista nomi",type:"Video tutorial",status:"preparazione",description:"Come creare la prima lista nomi.",learn:"Costruire una lista ampia senza pregiudizi.",action:"Materiale in preparazione.",next:"Gestire e ampliare i contatti"},
     {id:"contatti",order:30,area:"Creare il tuo mercato",title:"Gestire e ampliare i contatti",type:"Video tutorial",status:"preparazione",description:"Lista, ampliamento, social e contatti personali.",learn:"Tenere viva e ampliare la lista.",action:"Materiale in preparazione.",next:"Come invitare"},
     {id:"invitare",order:40,area:"Creare il tuo mercato",title:"Come invitare",type:"Video tutorial",status:"preparazione",description:"Conversazioni, inviti, appuntamenti, HOM e risposte.",learn:"Aprire conversazioni e proporre un appuntamento.",action:"Materiale in preparazione.",next:"Inaugurazione"},
