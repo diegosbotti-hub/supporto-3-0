@@ -53,17 +53,16 @@ window.SUPPORTO_DATA = {
   paths: {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
-      {n:2,title:"Lista nomi",text:"Costruisci il tuo capitale aziendale partendo dalle persone che conosci.",status:"preparazione",resource:"lista"},
-      {n:3,title:"Gestire e ampliare la lista nomi",text:"Amplia la lista attraverso quotidianità, relazioni e social.",status:"preparazione",resource:"contatti"},
-      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
-      {n:5,title:"Organizzare la settimana",text:"Agenda, DMO e priorità in base al tempo disponibile.",status:"preparazione",resource:"settimana"},
-      {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"preparazione",resource:"inaugurazione"},
-      {n:7,title:"Conoscenza prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
-      {n:8,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
-      {n:9,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
-      {n:10,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
-      {n:11,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
-      {n:12,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
+      {n:2,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"preparazione",resource:"lista"},
+      {n:3,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
+      {n:4,title:"Organizzare la settimana",text:"Agenda, DMO e priorità in base al tempo disponibile.",status:"preparazione",resource:"settimana"},
+      {n:5,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"preparazione",resource:"inaugurazione"},
+      {n:6,title:"Conoscenza prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
+      {n:7,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
+      {n:8,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
+      {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
+      {n:10,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
+      {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
     ]
   },
   resources: [
@@ -109,7 +108,7 @@ const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
 function render(){const library=D.resources.filter(r=>r.library!==false),available=library.filter(r=>r.status==="disponibile").length,areas=["Tutti",...new Set(library.map(r=>r.area))];
 app.innerHTML=`
-<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle)}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><p style="margin-top:14px;font-weight:800;letter-spacing:.04em;">VIETATO CONDIVIDERE FUORI LINEA.</p><div class="actions"><button class="btn primary" id="start">Inizia il percorso</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>12 step</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
+<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle)}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><p style="margin-top:14px;font-weight:800;letter-spacing:.04em;">VIETATO CONDIVIDERE FUORI LINEA.</p><div class="actions"><button class="btn primary" id="start">Inizia il percorso</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>11 step</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
 <section class="section" id="percorso"><div class="head"><div><div class="eyebrow">Percorso guidato</div><h2>Cosa fare adesso</h2></div><small>segui l'ordine</small></div><div class="steps" id="steps"></div></section>
 <section class="section" id="materiali"><div class="head"><div><div class="eyebrow">Libreria</div><h2>Materiali del team</h2></div><small>disponibili + in preparazione</small></div><input id="search" class="search" placeholder="Cerca un materiale…"><div class="chips">${areas.map(a=>`<button class="chip ${S.filter===a?"on":""}" data-a="${esc(a)}">${esc(a)}</button>`).join("")}</div><div class="grid" id="grid"></div></section>
 <section class="section" id="team"><div class="head"><div><div class="eyebrow">Community</div><h2>Resta collegato al team</h2></div></div><div class="community"><div class="plane">✈</div><div><b>Telegram Team</b><p>Avvisi, aggiornamenti e collegamenti rapidi ai materiali.</p></div><button id="tgGo">Apri Telegram</button></div></section>
