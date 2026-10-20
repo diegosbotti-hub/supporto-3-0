@@ -51,22 +51,18 @@ window.SUPPORTO_DATA = {
   },
   telegram: "https://t.me/+SA8wPHU0MPXbtz4x",
   paths: {
-    "Primi 7 giorni": [
+    "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
       {n:2,title:"Lista nomi",text:"Costruisci il tuo capitale aziendale partendo dalle persone che conosci.",status:"preparazione",resource:"lista"},
       {n:3,title:"Gestire e ampliare la lista nomi",text:"Amplia la lista attraverso quotidianità, relazioni e social.",status:"preparazione",resource:"contatti"},
-      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"}
-    ],
-    "Primi 30 giorni": [
+      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, DMO e priorità in base al tempo disponibile.",status:"preparazione",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"preparazione",resource:"inaugurazione"},
       {n:7,title:"Conoscenza prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
       {n:8,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
       {n:9,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
       {n:10,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
-      {n:11,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"}
-    ],
-    "Primi 90 giorni": [
+      {n:11,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
       {n:12,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
     ]
   },
@@ -107,18 +103,18 @@ window.SUPPORTO_DATA = {
 </script>
 <script>
 (()=>{
-const D=window.SUPPORTO_DATA,S={journey:"Primi 7 giorni",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
+const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
 function render(){const library=D.resources.filter(r=>r.library!==false),available=library.filter(r=>r.status==="disponibile").length,areas=["Tutti",...new Set(library.map(r=>r.area))];
 app.innerHTML=`
-<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle)}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><div class="actions"><button class="btn primary" id="start">Inizia dai primi 7 giorni</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>7 · 30 · 90</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
-<section class="section" id="percorso"><div class="head"><div><div class="eyebrow">Percorso guidato</div><h2>Cosa fare adesso</h2></div><small>segui l'ordine</small></div><div class="tabs">${Object.keys(D.paths).map(x=>`<button class="tab ${S.journey===x?"on":""}" data-j="${esc(x)}">${esc(x)}</button>`).join("")}</div><div class="steps" id="steps"></div></section>
+<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle)}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><div class="actions"><button class="btn primary" id="start">Inizia il percorso</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>12 step</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
+<section class="section" id="percorso"><div class="head"><div><div class="eyebrow">Percorso guidato</div><h2>Cosa fare adesso</h2></div><small>segui l'ordine</small></div><div class="steps" id="steps"></div></section>
 <section class="section" id="materiali"><div class="head"><div><div class="eyebrow">Libreria</div><h2>Materiali del team</h2></div><small>disponibili + in preparazione</small></div><input id="search" class="search" placeholder="Cerca un materiale…"><div class="chips">${areas.map(a=>`<button class="chip ${S.filter===a?"on":""}" data-a="${esc(a)}">${esc(a)}</button>`).join("")}</div><div class="grid" id="grid"></div></section>
 <section class="section" id="team"><div class="head"><div><div class="eyebrow">Community</div><h2>Resta collegato al team</h2></div></div><div class="community"><div class="plane">✈</div><div><b>Telegram Team</b><p>Avvisi, aggiornamenti e collegamenti rapidi ai materiali.</p></div><button id="tgGo">Apri Telegram</button></div></section>
 <div class="footer">BE ONE TEAM · SUPPORTO 3.0</div>`;
 $("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$("tgGo").onclick=()=>ext(D.telegram);$("search").oninput=e=>{S.q=e.target.value;cards()};
-document.querySelectorAll("[data-j]").forEach(b=>b.onclick=()=>{S.journey=b.dataset.j;document.querySelectorAll("[data-j]").forEach(x=>x.classList.toggle("on",x.dataset.j===S.journey));steps()});
+
 document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.a;document.querySelectorAll("[data-a]").forEach(x=>x.classList.toggle("on",x.dataset.a===S.filter));cards()});steps();cards()}
 function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(e.dataset.resource)e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.resource))})}
 function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.id)))}
