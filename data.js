@@ -31,20 +31,14 @@ window.SUPPORTO_DATA = {
       learn:"Come usare il Book Colazione per spiegare in modo semplice il percorso al cliente.",
       action:"Apri il PDF, familiarizza con il flusso e individua i passaggi principali.",
       next:"Lista nomi",
-      cta:"Apri PDF",
-      link:"https://drive.google.com/file/d/1_iqOAf6J3l_trS8cLevgN05mIPfgHayr/view?usp=drivesdk"
+      cta:"Apri Book Colazione",
+      links:[
+        {label:"Scarica PDF",url:"https://drive.google.com/uc?export=download&id=1_iqOAf6J3l_trS8cLevgN05mIPfgHayr"},
+        {label:"Scarica PowerPoint",url:"https://docs.google.com/presentation/d/1xRYAcrh_DrdaCvv8hMBuXv8jiYN3Sy6t/export/pptx"}
+      ]
     },
     {
-      id:"book-ppt", order:2, area:"Avviamento", title:"Book Colazione 3.0 - Presentazione", type:"Presentazione", status:"disponibile",
-      description:"Versione modificabile del Book Colazione.",
-      learn:"Come presentare il Book Colazione durante una consulenza o un incontro.",
-      action:"Usala come supporto quando devi presentare o adattare il materiale.",
-      next:"Lista nomi",
-      cta:"Apri presentazione",
-      link:"https://docs.google.com/presentation/d/1xRYAcrh_DrdaCvv8hMBuXv8jiYN3Sy6t/edit?usp=drivesdk"
-    },
-    {
-      id:"uso-vendita", order:3, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",
+      id:"uso-vendita", order:2, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",
       description:"Confronto visivo tra uso personale e vendita nel modello operativo.",
       learn:"Capire con un colpo d'occhio la differenza tra uso personale e vendita.",
       action:"Apri l'infografica e usala come supporto visivo quando serve.",
