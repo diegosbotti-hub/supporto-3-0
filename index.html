@@ -38,7 +38,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 <button data-go="team">◉<br>Team</button>
 </nav>
 <div class="drawer" id="drawer"><div class="sheet"><div class="sheethead"><div><div class="type" id="dType"></div><h2 id="dTitle"></h2></div><button class="x" id="close">×</button></div><div class="block"><label>Cosa impari</label><p id="dLearn"></p></div><div class="block"><label>Cosa fare ora</label><p id="dAction"></p></div><div class="block"><label>Passo successivo</label><p id="dNext"></p></div><div class="sheetactions"><a id="dOpen" class="btn primary" target="_blank" rel="noopener">Apri materiale</a><button class="btn secondary" id="close2">Chiudi</button></div></div></div>
-<script src="data.js"></script>
+<script>document.write('<script src="data.js?v='+Date.now()+'"><\\/script>')</script>
 <script>
 (()=>{
 const D=window.SUPPORTO_DATA,S={journey:"Primi 7 giorni",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
