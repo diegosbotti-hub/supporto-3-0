@@ -38,6 +38,15 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
+      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",
+      description:"Raccolta di foto prima e dopo del team.",
+      learn:"Accedere rapidamente alla raccolta di foto prima e dopo.",
+      action:"Apri la cartella e consulta le immagini disponibili.",
+      next:"Gestione clienti",
+      cta:"Apri foto prima e dopo",
+      link:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link"
+    },
+    {
       id:"uso-vendita", order:2, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",
       description:"Confronto visivo tra uso personale e vendita nel modello operativo.",
       learn:"Capire con un colpo d'occhio la differenza tra uso personale e vendita.",
