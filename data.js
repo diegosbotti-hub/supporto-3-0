@@ -33,8 +33,8 @@ window.SUPPORTO_DATA = {
       next:"Lista nomi",
       cta:"Apri Book Colazione",
       links:[
-        {label:"Scarica PDF",url:"https://drive.google.com/uc?export=download&id=1_iqOAf6J3l_trS8cLevgN05mIPfgHayr"},
-        {label:"Scarica PowerPoint",url:"https://docs.google.com/presentation/d/1xRYAcrh_DrdaCvv8hMBuXv8jiYN3Sy6t/export/pptx"}
+        {label:"Scarica PDF",url:"https://drive.google.com/uc?export=download&id=1wEREjGOcLptQTsDY2GSQhUfy95S3OiZi"},
+        {label:"Scarica PowerPoint",url:"https://drive.google.com/uc?export=download&id=1BHasmRINPsKFtF3kdsodesURQlXVeIy9"}
       ]
     },
     {
