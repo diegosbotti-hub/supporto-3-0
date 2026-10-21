@@ -9,11 +9,11 @@ window.SUPPORTO_DATA = {
   paths: {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
-      {n:2,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"preparazione",resource:"lista"},
-      {n:3,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
-      {n:4,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"preparazione",resource:"settimana"},
-      {n:5,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"preparazione",resource:"inaugurazione"},
-      {n:6,title:"Conoscenza prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
+      {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
+      {n:3,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"preparazione",resource:"lista"},
+      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
+      {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"preparazione",resource:"settimana"},
+      {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"preparazione",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
       {n:8,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
