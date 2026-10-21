@@ -65,6 +65,6 @@ window.SUPPORTO_DATA = {
       ]
     },
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Testimonianze attività sport",type:"Video",status:"disponibile",description:"Raccolta video testimonianze sport.",learn:"Accedere rapidamente alle testimonianze sportive disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri video testimonianze sport",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link"},
-    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze prodotto",type:"Video",status:"disponibile",description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
+    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
   ]
 };
