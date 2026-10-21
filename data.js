@@ -53,27 +53,15 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/file/d/1JhcuVgNTVJdGfnOCzijdBG19SykVL_5K/view?usp=drivesdk"
     },
     {
-      id:"listino-pubblico-prodotti-creme", order:4, area:"Listini", title:"Listino al Pubblico prodotti e creme", type:"PDF", status:"disponibile",
-      description:"Listino prezzi al pubblico per prodotti e creme.",
-      learn:"Consultare rapidamente i prezzi al pubblico di prodotti e creme.",
-      action:"Apri il listino per consultarlo oppure scaricalo sul dispositivo.",
+      id:"listini-pubblico", order:4, area:"Listini", title:"Listini prezzi al pubblico", type:"PDF", status:"disponibile",
+      description:"Listini prezzi al pubblico per prodotti, creme e Bionic.",
+      learn:"Consultare rapidamente i listini prezzi al pubblico.",
+      action:"Scegli il listino che ti serve e apri il relativo PDF.",
       next:"Conoscere i prodotti",
-      cta:"Apri listino",
+      cta:"Apri listini",
       links:[
-        {label:"Consulta listino",url:"https://drive.google.com/file/d/1qgaFEZSF2XsFhhRJlbm_4JzqJy8ET2NP/view?usp=drivesdk"},
-        {label:"Scarica PDF",url:"https://drive.google.com/uc?export=download&id=1qgaFEZSF2XsFhhRJlbm_4JzqJy8ET2NP"}
-      ]
-    },
-    {
-      id:"listino-bionic", order:5, area:"Listini", title:"Listino Bionic al Pubblico", type:"PDF", status:"disponibile",
-      description:"Listino prezzi al pubblico Bionic.",
-      learn:"Consultare rapidamente i prezzi al pubblico Bionic.",
-      action:"Apri il listino per consultarlo oppure scaricalo sul dispositivo.",
-      next:"Conoscere i prodotti",
-      cta:"Apri listino",
-      links:[
-        {label:"Consulta listino",url:"https://drive.google.com/file/d/1_OEmlnh1gdsU-C6Y_IrJldhpuDvdKc0e/view?usp=drivesdk"},
-        {label:"Scarica PDF",url:"https://drive.google.com/uc?export=download&id=1_OEmlnh1gdsU-C6Y_IrJldhpuDvdKc0e"}
+        {label:"Prodotti e creme · PDF",url:"https://drive.google.com/file/d/1qgaFEZSF2XsFhhRJlbm_4JzqJy8ET2NP/view?usp=drivesdk"},
+        {label:"Bionic · PDF",url:"https://drive.google.com/file/d/1_OEmlnh1gdsU-C6Y_IrJldhpuDvdKc0e/view?usp=drivesdk"}
       ]
     },
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video testimonianze sport",type:"Video",status:"disponibile",description:"Raccolta video testimonianze sport.",learn:"Accedere rapidamente alle testimonianze sportive disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri video testimonianze sport",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link"},
