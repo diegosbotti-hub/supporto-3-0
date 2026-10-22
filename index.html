@@ -129,6 +129,7 @@ window.SUPPORTO_DATA = {
 <script>
 (()=>{
 const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
+    {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video testimonianza Benessere",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze Benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianza Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"},
 const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
 function render(){const library=D.resources.filter(r=>r.library!==false),available=library.filter(r=>r.status==="disponibile").length,areas=["Tutti",...new Set(library.map(r=>r.area))];
