@@ -67,7 +67,7 @@ window.SUPPORTO_DATA = {
   },
   resources: [
     {
-      id:"book-pdf", order:1, area:"Avviamento", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",
+      id:"book-pdf", order:1, area:"Avviamento", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,
       description:"Versione aggiornata del Book Colazione.",
       learn:"Come usare il Book Colazione per spiegare in modo semplice il percorso al cliente.",
       action:"Apri il PDF, familiarizza con il flusso e individua i passaggi principali.",
@@ -79,7 +79,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",
+      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",shareSection:true,
       description:"Raccolta di foto prima e dopo del team.",
       learn:"Accedere rapidamente alla raccolta di foto prima e dopo.",
       action:"Apri la cartella e consulta le immagini disponibili.",
@@ -88,7 +88,7 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link"
     },
     {
-      id:"uso-vendita", order:2, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",
+      id:"uso-vendita", order:2, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",shareSection:true,
       description:"Confronto visivo tra uso personale e vendita nel modello operativo.",
       learn:"Capire con un colpo d'occhio la differenza tra uso personale e vendita.",
       action:"Apri l'infografica e usala come supporto visivo quando serve.",
@@ -97,7 +97,7 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/file/d/1JhcuVgNTVJdGfnOCzijdBG19SykVL_5K/view?usp=drivesdk"
     },
     {
-      id:"listini-pubblico", order:4, area:"Listini", title:"Listini prezzi al pubblico", type:"PDF", status:"disponibile",
+      id:"listini-pubblico", order:4, area:"Listini", title:"Listini prezzi al pubblico", type:"PDF", status:"disponibile",shareSection:true,
       description:"Listini prezzi al pubblico per prodotti, creme e Bionic.",
       learn:"Consultare rapidamente i listini prezzi al pubblico.",
       action:"Scegli il listino che ti serve e apri il relativo PDF.",
@@ -109,7 +109,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video testimonianze sport attività",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze sport.",learn:"Accedere rapidamente alle testimonianze sportive disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri video testimonianze sport",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link"},
-    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
+    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
   ]
 };
 </script>
@@ -128,11 +128,11 @@ app.innerHTML=`
 $("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$("tgGo").onclick=()=>ext(D.telegram);$("search").oninput=e=>{S.q=e.target.value;cards()};
 
 document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.a;document.querySelectorAll("[data-a]").forEach(x=>x.classList.toggle("on",x.dataset.a===S.filter));cards()});steps();cards()}
-function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(e.dataset.resource)e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.resource))})}
+function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(!e.dataset.resource)return;e.onclick=()=>{const row=rows.find(x=>x.resource===e.dataset.resource);const material=D.resources.find(x=>x.id===e.dataset.resource);if(material){detail(material);return}if(row)detail({id:row.resource,title:row.title,type:"Percorso",area:"Percorso guidato",description:row.text,learn:row.text,action:"Segui questo punto del percorso.",next:"Continua con il punto successivo.",shareSection:true})}})}
 function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.id)))}
 function detail(r){if(!r)return;$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll("a.extra").forEach(x=>x.remove());const o=$("dOpen");if(Array.isArray(r.links)&&r.links.length){o.style.display="none";r.links.forEach((x,i)=>{const el=document.createElement("a");el.className="btn "+(i===0?"primary":"secondary")+" extra";el.target="_blank";el.rel="noopener";el.href=x.url;el.textContent=x.label;a.insertBefore(el,$("dShare"))})}else{o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none"}const share=$("dShare");share.style.display=r.shareSection?"block":"none";share.onclick=async()=>{if(!r.shareSection)return;const url=location.origin+location.pathname+"?sezione="+encodeURIComponent(r.id);try{if(navigator.share){await navigator.share({title:r.title,text:"Guarda "+r.title,url})}else if(navigator.clipboard){await navigator.clipboard.writeText(url);const t=share.textContent;share.textContent="Link copiato";setTimeout(()=>share.textContent=t,1600)}else{window.prompt("Copia questo link",url)}}catch(e){if(e&&e.name!=="AbortError"){window.prompt("Copia questo link",url)}}};drawer.classList.add("on")}
 function close(){drawer.classList.remove("on")}document.getElementById("tgTop").onclick=()=>ext(D.telegram);$("close").onclick=close;$("close2").onclick=close;drawer.onclick=e=>{if(e.target===drawer)close()};
-document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");go(b.dataset.go)});render();const openShared=()=>{const q=new URLSearchParams(location.search).get("sezione");const m=location.hash.match(/^#materiale=(.+)$/);const id=q||(m?decodeURIComponent(m[1]):null);if(!id)return;const card=[...document.querySelectorAll(".card[data-id]")].find(x=>x.dataset.id===id);if(card){card.scrollIntoView({block:"center"});card.click();return}const r=D.resources.find(x=>x.id===id);if(r)detail(r)};setTimeout(openShared,250);window.addEventListener("hashchange",()=>setTimeout(openShared,50));
+document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");go(b.dataset.go)});render();const openShared=()=>{const q=new URLSearchParams(location.search).get("sezione");const m=location.hash.match(/^#materiale=(.+)$/);const id=q||(m?decodeURIComponent(m[1]):null);if(!id)return;const card=[...document.querySelectorAll(".card[data-id]")].find(x=>x.dataset.id===id);if(card){card.scrollIntoView({block:"center"});card.click();return}const step=[...document.querySelectorAll(".step[data-resource]")].find(x=>x.dataset.resource===id);if(step){step.scrollIntoView({block:"center"});step.click();return}const r=D.resources.find(x=>x.id===id);if(r)detail(r)};setTimeout(openShared,250);window.addEventListener("hashchange",()=>setTimeout(openShared,50));
 })();
 </script>
 </body></html>
