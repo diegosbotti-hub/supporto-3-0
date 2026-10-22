@@ -1,4 +1,5 @@
 window.SUPPORTO_DATA = {
+    {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video testimonianza Benessere",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze Benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianza Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"},
   meta: {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
