@@ -44,7 +44,7 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link"
     },
     {
-      id:"uso-vendita", order:2, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",shareSection:true,
+      id:"uso-vendita", order:2, area:"Listini", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",shareSection:true,
       description:"Confronto visivo tra uso personale e vendita nel modello operativo.",
       learn:"Capire con un colpo d'occhio la differenza tra uso personale e vendita.",
       action:"Apri l'infografica e usala come supporto visivo quando serve.",
