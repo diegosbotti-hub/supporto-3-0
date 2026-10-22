@@ -64,6 +64,19 @@ window.SUPPORTO_DATA = {
         {label:"Bionic · PDF",url:"https://drive.google.com/file/d/1_OEmlnh1gdsU-C6Y_IrJldhpuDvdKc0e/view?usp=drivesdk"}
       ]
     },
+    {
+      id:"biblioteca", order:5, area:"Biblioteca", title:"Biblioteca", type:"Libri", status:"disponibile", shareSection:true,
+      description:"Tre libri fondamentali per la formazione personale e professionale.",
+      learn:"Accedere rapidamente ai libri consigliati per sviluppare competenze pratiche nel network marketing.",
+      action:"Apri il libro che vuoi leggere seguendo l'ordine di priorità indicato.",
+      next:"Continua il percorso di formazione.",
+      cta:"Apri Biblioteca",
+      links:[
+        {label:"1 · Go Pro",url:"https://drive.google.com/file/d/1r0WODFAqM08ZY5c-m-WowOpx2znTIeTa/view?usp=drivesdk"},
+        {label:"2 · La presentazione 45 secondi",url:"https://drive.google.com/file/d/1x_ES0KM5YqymdRzB7sXNxASeIBjQbM_5/view?usp=drivesdk"},
+        {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"}
+      ]
+    },
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video testimonianze sport attività",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze sport.",learn:"Accedere rapidamente alle testimonianze sportive disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri video testimonianze sport",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link"},
     {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
   ]
