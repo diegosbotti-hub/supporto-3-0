@@ -1,5 +1,4 @@
 window.SUPPORTO_DATA = {
-    {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video testimonianza Benessere",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze Benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianza Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"},
   meta: {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
@@ -79,6 +78,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video testimonianze sport attività",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze sport.",learn:"Accedere rapidamente alle testimonianze sportive disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri video testimonianze sport",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link"},
-    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
+    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"},
+    {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video testimonianza Benessere",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze Benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianza Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"}
   ]
 };
