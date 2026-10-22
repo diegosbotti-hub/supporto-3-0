@@ -23,7 +23,7 @@ window.SUPPORTO_DATA = {
   },
   resources: [
     {
-      id:"book-pdf", order:1, area:"Avviamento", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",
+      id:"book-pdf", order:1, area:"Avviamento", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,
       description:"Versione aggiornata del Book Colazione.",
       learn:"Come usare il Book Colazione per spiegare in modo semplice il percorso al cliente.",
       action:"Apri il PDF, familiarizza con il flusso e individua i passaggi principali.",
@@ -35,7 +35,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",
+      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",shareSection:true,
       description:"Raccolta di foto prima e dopo del team.",
       learn:"Accedere rapidamente alla raccolta di foto prima e dopo.",
       action:"Apri la cartella e consulta le immagini disponibili.",
@@ -44,7 +44,7 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link"
     },
     {
-      id:"uso-vendita", order:2, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",
+      id:"uso-vendita", order:2, area:"Strumenti", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",shareSection:true,
       description:"Confronto visivo tra uso personale e vendita nel modello operativo.",
       learn:"Capire con un colpo d'occhio la differenza tra uso personale e vendita.",
       action:"Apri l'infografica e usala come supporto visivo quando serve.",
@@ -53,7 +53,7 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/file/d/1JhcuVgNTVJdGfnOCzijdBG19SykVL_5K/view?usp=drivesdk"
     },
     {
-      id:"listini-pubblico", order:4, area:"Listini", title:"Listini prezzi al pubblico", type:"PDF", status:"disponibile",
+      id:"listini-pubblico", order:4, area:"Listini", title:"Listini prezzi al pubblico", type:"PDF", status:"disponibile",shareSection:true,
       description:"Listini prezzi al pubblico per prodotti, creme e Bionic.",
       learn:"Consultare rapidamente i listini prezzi al pubblico.",
       action:"Scegli il listino che ti serve e apri il relativo PDF.",
@@ -65,6 +65,6 @@ window.SUPPORTO_DATA = {
       ]
     },
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video testimonianze sport attività",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze sport.",learn:"Accedere rapidamente alle testimonianze sportive disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri video testimonianze sport",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link"},
-    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
+    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video testimonianze sport prodotto",type:"Video",status:"disponibile",shareSection:true,description:"Raccolta video testimonianze prodotto.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri video testimonianze prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"}
   ]
 };
