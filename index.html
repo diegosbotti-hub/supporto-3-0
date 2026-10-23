@@ -18,6 +18,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .wrap{max-width:960px;margin:auto;padding:0 16px 28px}.hero{margin:18px 0 0;padding:26px;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 90% 0,#f1e7c8 0,transparent 31%),linear-gradient(135deg,#fff,#edf8f1 70%);box-shadow:0 15px 38px rgba(20,34,26,.07);overflow:hidden}
 .eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--g);font-weight:950}.hero h1{font-size:clamp(32px,8vw,54px);line-height:.98;letter-spacing:-.045em;margin:9px 0 12px}.hero p{max-width:650px;margin:0 0 19px;color:var(--mut);font-size:15px;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:9px}
 .btn{border:0;border-radius:13px;padding:11px 14px;font-weight:850;cursor:pointer}.primary{background:var(--g);color:#fff}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.hero-notice{margin:14px 0 17px!important;font-size:12px!important;line-height:1.45!important;font-weight:850!important;letter-spacing:.025em!important;color:#58635c!important}
 .stats{margin-top:17px;display:flex;gap:8px;flex-wrap:wrap}.stat{font-size:11px;color:var(--mut);background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:999px;padding:7px 10px}.stat b{color:var(--ink)}
 .section{margin-top:30px}.head{display:flex;justify-content:space-between;gap:12px;align-items:end;margin-bottom:12px}.head h2{margin:3px 0 0;font-size:23px;letter-spacing:-.025em}.head small{color:var(--mut)}
 .tabs,.chips{display:flex;gap:7px;overflow:auto;padding-bottom:3px;scrollbar-width:none}.tab,.chip{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:850;cursor:pointer}.tab.on{background:var(--dark);color:#fff;border-color:var(--dark)}.chip.on{background:var(--g2);color:var(--g);border-color:#bfe2ca}
@@ -40,7 +41,33 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.listini-mode .sheetactions a.extra:first-of-type{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .sheet.listini-mode #dShare,.sheet.listini-mode #close2{width:100%;flex:none}
 .empty{background:#fff;border:1px dashed #cbd5cd;border-radius:17px;padding:22px;text-align:center;color:var(--mut)}
-@media(max-width:760px){.nav{display:grid}.wrap{padding-bottom:92px}.grid{grid-template-columns:1fr}.step{grid-template-columns:38px 1fr}.step .badge{grid-column:2;width:max-content}.hero{padding:22px}.brand span{display:none}.community{align-items:flex-start}.community button{margin-left:0}.community{flex-wrap:wrap}}
+@media(max-width:760px){
+.nav{display:grid}
+.wrap{padding:0 14px 92px}
+.topin{padding:9px 14px;gap:10px}
+.logo{width:48px;height:48px;border-radius:13px}
+.brand b{font-size:16px}
+.telegram{padding:10px 12px}
+.hero{margin-top:13px;padding:20px 18px 18px;border-radius:23px}
+.hero h1{font-size:32px;line-height:1.02;letter-spacing:-.035em;margin:8px 0 13px}
+.hero p{font-size:14px;line-height:1.5;margin-bottom:15px}
+.hero-notice{font-size:10.5px!important;line-height:1.42!important;margin:12px 0 15px!important;letter-spacing:.018em!important}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.actions .btn{width:100%;padding:11px 8px;font-size:13px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:14px}
+.stat{font-size:10px;padding:7px 8px;text-align:center}
+.stat:last-child{grid-column:1/-1}
+.section{margin-top:24px}
+.head{align-items:end;margin-bottom:10px}
+.head h2{font-size:22px}
+.head small{font-size:11px}
+.grid{grid-template-columns:1fr}
+.step{grid-template-columns:38px 1fr}
+.step .badge{grid-column:2;width:max-content}
+.brand span{display:none}
+.community{align-items:flex-start;flex-wrap:wrap}
+.community button{margin-left:0}
+}
 </style>
 </head>
 <body>
@@ -160,7 +187,7 @@ const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
 function render(){const library=D.resources.filter(r=>r.library!==false),available=library.filter(r=>r.status==="disponibile").length,areas=["Tutti",...new Set(library.map(r=>r.area))];
 app.innerHTML=`
-<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle)}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><p style="margin-top:14px;font-weight:800;letter-spacing:.04em;">VIETATO CONDIVIDERE FUORI LINEA · TAB SILVIA MARCHESI - DIEGOS BOTTI - SIMONA FORMICA</p><div class="actions"><button class="btn primary" id="start">Inizia il percorso</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>11 step</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
+<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle).replace(". Nel",".<br>Nel")}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><p class="hero-notice">VIETATO CONDIVIDERE FUORI LINEA · TAB SILVIA MARCHESI - DIEGOS BOTTI - SIMONA FORMICA</p><div class="actions"><button class="btn primary" id="start">Inizia il percorso</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>11 step</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
 <section class="section" id="percorso"><div class="head"><div><div class="eyebrow">Percorso guidato</div><h2>Cosa fare adesso</h2></div><small>segui l'ordine</small></div><div class="steps" id="steps"></div></section>
 <section class="section" id="materiali"><div class="head"><div><div class="eyebrow">Libreria</div><h2>Materiali del team</h2></div><small>disponibili + in preparazione</small></div><input id="search" class="search" placeholder="Cerca un materiale…"><div class="chips">${areas.map(a=>`<button class="chip ${S.filter===a?"on":""}" data-a="${esc(a)}">${esc(a)}</button>`).join("")}</div><div class="grid" id="grid"></div></section>
 <section class="section" id="team"><div class="head"><div><div class="eyebrow">Community</div><h2>Resta collegato al team</h2></div></div><div class="community"><div class="plane">✈</div><div><b>Telegram Team</b><p>Avvisi, aggiornamenti e collegamenti rapidi ai materiali.</p></div><button id="tgGo">Apri Telegram</button></div></section>
