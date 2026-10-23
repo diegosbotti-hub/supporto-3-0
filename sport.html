@@ -130,10 +130,17 @@ function closeVideo(){
   modal.setAttribute("aria-hidden","true");
   document.body.style.overflow="";
 }
+const isMobile=()=>window.matchMedia("(max-width: 768px)").matches || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 document.querySelectorAll(".js-video").forEach(el=>{
   el.addEventListener("click",e=>{
+    const id=el.dataset.video;
+    if(isMobile()){
+      e.preventDefault();
+      window.location.href="https://drive.google.com/file/d/"+id+"/view?usp=drivesdk";
+      return;
+    }
     e.preventDefault();
-    openVideo(el.dataset.video);
+    openVideo(id);
   });
 });
 document.getElementById("closeVideo").addEventListener("click",closeVideo);
