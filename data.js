@@ -86,7 +86,8 @@ window.SUPPORTO_DATA = {
       links:[
         {label:"1 · Go Pro",url:"https://drive.google.com/file/d/1r0WODFAqM08ZY5c-m-WowOpx2znTIeTa/view?usp=drivesdk"},
         {label:"2 · La presentazione 45 secondi",url:"https://drive.google.com/file/d/1x_ES0KM5YqymdRzB7sXNxASeIBjQbM_5/view?usp=drivesdk"},
-        {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"}
+        {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"},
+        {label:"Perché il Network Marketing è un attivo",url:"https://drive.google.com/file/d/1pwCZAm_UVveVoqSOOu7uVkB1vRfUju0k/view?usp=drivesdk"}
       ]
     },
     {id:"testimonianze-attivita",order:120,area:"Video testimonianze",title:"Video · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di persone con esperienze e professioni diverse, dallo studente all’imprenditore, che hanno scelto il nostro progetto.",shareUrl:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link",description:"Testimonianze di persone comuni, dallo studente all’imprenditore, che raccontano la loro esperienza con l’attività.",learn:"Conoscere esperienze diverse e trovare la testimonianza più adatta alla persona con cui stai parlando.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video · Attività",link:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link"},
