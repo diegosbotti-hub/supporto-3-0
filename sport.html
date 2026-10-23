@@ -31,7 +31,10 @@ h1{font-size:clamp(32px,7vw,56px);line-height:1.02;margin:10px 0 14px}
 .cta h3{font-size:24px;margin:0 0 8px}.cta p{color:var(--muted);margin:0 0 16px}
 .cta .btn{background:var(--dark)}
 .foot{text-align:center;color:#7b857e;font-size:13px;margin-top:22px}
-@media(max-width:640px){.wrap{padding:14px 12px 36px}.hero{padding:26px 20px;border-radius:22px}.grid{grid-template-columns:1fr;gap:14px}.body h2{font-size:21px}}
+.modal{position:fixed;inset:0;background:rgba(5,15,10,.88);display:none;align-items:center;justify-content:center;padding:18px;z-index:1000}
+.modal.on{display:flex}.playerbox{width:min(960px,100%);position:relative}.playerbox iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:18px;background:#000;display:block}
+.close{position:absolute;right:8px;top:-48px;border:0;background:#fff;color:#102219;font-weight:800;border-radius:999px;padding:10px 14px;font-size:15px;cursor:pointer}
+@media(max-width:640px){.wrap{padding:14px 12px 36px}.hero{padding:26px 20px;border-radius:22px}.grid{grid-template-columns:1fr;gap:14px}.body h2{font-size:21px}.modal{padding:10px}.close{top:-44px}}
 </style>
 </head>
 <body>
@@ -43,68 +46,99 @@ h1{font-size:clamp(32px,7vw,56px);line-height:1.02;margin:10px 0 14px}
 </section>
 <section class="grid">
 <article class="card">
-<a class="thumb" href="https://drive.google.com/file/d/18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg/view?usp=drivesdk" target="_blank" rel="noopener">
+<a class="thumb js-video" data-video="18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg" href="#">
 <img src="https://drive.google.com/thumbnail?id=18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg&sz=w1000" alt="Anteprima video di Ciccio">
 <div class="play"><span>▶</span></div>
 </a>
 <div class="body">
 <h2>Ciccio</h2>
 <p>La sua esperienza con il progetto nel mondo dello sport.</p>
-<a class="btn" href="https://drive.google.com/file/d/18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg/view?usp=drivesdk" target="_blank" rel="noopener">Guarda il video</a>
+<a class="btn" href="https://drive.google.com/file/d/18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg" href="#">Guarda il video</a>
 </div>
 </article><article class="card">
-<a class="thumb" href="https://drive.google.com/file/d/1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k/view?usp=drivesdk" target="_blank" rel="noopener">
+<a class="thumb js-video" data-video="1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k" href="#">
 <img src="https://drive.google.com/thumbnail?id=1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k&sz=w1000" alt="Anteprima video di Carol">
 <div class="play"><span>▶</span></div>
 </a>
 <div class="body">
 <h2>Carol</h2>
 <p>La sua esperienza con il progetto nel mondo dello sport.</p>
-<a class="btn" href="https://drive.google.com/file/d/1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k/view?usp=drivesdk" target="_blank" rel="noopener">Guarda il video</a>
+<a class="btn" href="https://drive.google.com/file/d/1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k" href="#">Guarda il video</a>
 </div>
 </article><article class="card">
-<a class="thumb" href="https://drive.google.com/file/d/1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc/view?usp=drivesdk" target="_blank" rel="noopener">
+<a class="thumb js-video" data-video="1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc" href="#">
 <img src="https://drive.google.com/thumbnail?id=1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc&sz=w1000" alt="Anteprima video di Lorenzo">
 <div class="play"><span>▶</span></div>
 </a>
 <div class="body">
 <h2>Lorenzo</h2>
 <p>La sua esperienza con il progetto nel mondo dello sport.</p>
-<a class="btn" href="https://drive.google.com/file/d/1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc/view?usp=drivesdk" target="_blank" rel="noopener">Guarda il video</a>
+<a class="btn" href="https://drive.google.com/file/d/1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc" href="#">Guarda il video</a>
 </div>
 </article><article class="card">
-<a class="thumb" href="https://drive.google.com/file/d/1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb/view?usp=drivesdk" target="_blank" rel="noopener">
+<a class="thumb js-video" data-video="1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb" href="#">
 <img src="https://drive.google.com/thumbnail?id=1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb&sz=w1000" alt="Anteprima video di Emanuel Di Paolo">
 <div class="play"><span>▶</span></div>
 </a>
 <div class="body">
 <h2>Emanuel Di Paolo</h2>
 <p>La sua esperienza con il progetto nel mondo dello sport.</p>
-<a class="btn" href="https://drive.google.com/file/d/1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb/view?usp=drivesdk" target="_blank" rel="noopener">Guarda il video</a>
+<a class="btn" href="https://drive.google.com/file/d/1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb" href="#">Guarda il video</a>
 </div>
 </article><article class="card">
-<a class="thumb" href="https://drive.google.com/file/d/1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp/view?usp=drivesdk" target="_blank" rel="noopener">
+<a class="thumb js-video" data-video="1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp" href="#">
 <img src="https://drive.google.com/thumbnail?id=1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp&sz=w1000" alt="Anteprima video di Barbara">
 <div class="play"><span>▶</span></div>
 </a>
 <div class="body">
 <h2>Barbara</h2>
 <p>La sua esperienza con il progetto nel mondo dello sport.</p>
-<a class="btn" href="https://drive.google.com/file/d/1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp/view?usp=drivesdk" target="_blank" rel="noopener">Guarda il video</a>
+<a class="btn" href="https://drive.google.com/file/d/1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp" href="#">Guarda il video</a>
 </div>
 </article><article class="card">
-<a class="thumb" href="https://drive.google.com/file/d/1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON/view?usp=drivesdk" target="_blank" rel="noopener">
+<a class="thumb js-video" data-video="1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON" href="#">
 <img src="https://drive.google.com/thumbnail?id=1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON&sz=w1000" alt="Anteprima video di Saiu">
 <div class="play"><span>▶</span></div>
 </a>
 <div class="body">
 <h2>Saiu</h2>
 <p>La sua esperienza con il progetto nel mondo dello sport.</p>
-<a class="btn" href="https://drive.google.com/file/d/1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON/view?usp=drivesdk" target="_blank" rel="noopener">Guarda il video</a>
+<a class="btn" href="https://drive.google.com/file/d/1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON" href="#">Guarda il video</a>
 </div>
 </article>
 </section>
 
 </main>
+<div class="modal" id="videoModal" aria-hidden="true">
+  <div class="playerbox">
+    <button class="close" id="closeVideo" type="button">Chiudi ✕</button>
+    <iframe id="videoFrame" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+<script>
+const modal=document.getElementById("videoModal");
+const frame=document.getElementById("videoFrame");
+function openVideo(id){
+  frame.src="https://drive.google.com/file/d/"+id+"/preview?autoplay=1";
+  modal.classList.add("on");
+  modal.setAttribute("aria-hidden","false");
+  document.body.style.overflow="hidden";
+}
+function closeVideo(){
+  frame.src="";
+  modal.classList.remove("on");
+  modal.setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+}
+document.querySelectorAll(".js-video").forEach(el=>{
+  el.addEventListener("click",e=>{
+    e.preventDefault();
+    openVideo(el.dataset.video);
+  });
+});
+document.getElementById("closeVideo").addEventListener("click",closeVideo);
+modal.addEventListener("click",e=>{if(e.target===modal)closeVideo()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeVideo()});
+</script>
 </body>
 </html>
