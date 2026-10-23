@@ -53,7 +53,7 @@ window.SUPPORTO_DATA = {
   paths: {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
-      {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"preparazione",resource:"prodotti"},
+      {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
       {n:3,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"preparazione",resource:"lista"},
       {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"preparazione",resource:"settimana"},
@@ -66,6 +66,18 @@ window.SUPPORTO_DATA = {
     ]
   },
   resources: [
+    {
+      id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video", status:"disponibile", library:false, shareSection:true,
+      description:"Fondamenti di nutrizione in 3 video, da seguire in sequenza.",
+      learn:"Acquisire le basi della nutrizione prima di approfondire i prodotti.",
+      action:"Guarda i tre video nell’ordine indicato: 1 → 2 → 3.",
+      next:"Prosegui con il punto successivo del percorso.",
+      links:[
+        {label:"1 · Concetti base della nutrizione",url:"https://youtu.be/FYj9-lr-jeY"},
+        {label:"2 · Nutrienti e bisogni del nostro corpo",url:"https://youtu.be/TcrYqJm84NI"},
+        {label:"3 · Proteine e costruzione del corpo",url:"https://youtu.be/I7BZrzPXSus"}
+      ]
+    },
     {
       id:"book-pdf", order:1, area:"Avviamento", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,
       description:"Versione aggiornata del Book Colazione.",
