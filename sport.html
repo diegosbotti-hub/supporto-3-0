@@ -136,7 +136,7 @@ document.querySelectorAll(".js-video").forEach(el=>{
     const id=el.dataset.video;
     if(isMobile()){
       e.preventDefault();
-      window.location.href="https://drive.google.com/file/d/"+id+"/view?usp=drivesdk";
+      window.location.href="https://drive.google.com/uc?export=view&id="+encodeURIComponent(id);
       return;
     }
     e.preventDefault();
