@@ -35,7 +35,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"book-pdf", order:1, area:"Avviamento", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",
+      id:"book-pdf", order:1, area:"Avviamento", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",shareUrl:"https://drive.google.com/drive/folders/1P37QA_0GqQEDRye74TSwxWe1-Gst7OTS?usp=drive_link",
       description:"Versione aggiornata del Book Colazione.",
       learn:"Come usare il Book Colazione per spiegare in modo semplice il percorso al cliente.",
       action:"Apri il PDF, familiarizza con il flusso e individua i passaggi principali.",
@@ -47,7 +47,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",shareSection:true,shareText:"Scopri il prima e il dopo di alcuni nostri clienti.",
+      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",shareSection:true,shareText:"Scopri il prima e il dopo di alcuni nostri clienti.",shareUrl:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link",
       description:"Raccolta di foto prima e dopo del team.",
       learn:"Accedere rapidamente alla raccolta di foto prima e dopo.",
       action:"Apri la cartella e consulta le immagini disponibili.",
@@ -56,7 +56,7 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link"
     },
     {
-      id:"uso-vendita", order:2, area:"Listini", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",shareSection:true,shareText:"Scopri la differenza tra uso personale e vendita.",
+      id:"uso-vendita", order:2, area:"Listini", title:"Uso personale vs vendita", type:"Infografica", status:"disponibile",shareSection:true,shareText:"Scopri la differenza tra uso personale e vendita.",shareUrl:"https://drive.google.com/drive/folders/1Pu1Eyheu27p_12tvTrEGz88PtEvsnXIB?usp=drive_link",
       description:"Confronto visivo tra uso personale e vendita nel modello operativo.",
       learn:"Capire con un colpo d'occhio la differenza tra uso personale e vendita.",
       action:"Apri l'infografica e usala come supporto visivo quando serve.",
@@ -65,7 +65,7 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/file/d/1JhcuVgNTVJdGfnOCzijdBG19SykVL_5K/view?usp=drivesdk"
     },
     {
-      id:"listini-pubblico", order:4, area:"Listini", title:"Listini prezzi al pubblico", type:"PDF", status:"disponibile",shareSection:true,shareText:"Consulta i listini aggiornati e trova rapidamente il prezzo che ti serve.",
+      id:"listini-pubblico", order:4, area:"Listini", title:"Listini prezzi al pubblico", type:"PDF", status:"disponibile",shareSection:true,shareText:"Consulta i listini aggiornati e trova rapidamente il prezzo che ti serve.",shareUrl:"https://drive.google.com/drive/folders/1JmHTS1lSoD-eyJL72MLt_flXIZUs7aoN?usp=drive_link",
       description:"Listini prezzi al pubblico per prodotti, creme e Bionic.",
       learn:"Consultare rapidamente i listini prezzi al pubblico.",
       action:"Scegli il listino che ti serve e apri il relativo PDF.",
@@ -77,7 +77,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"biblioteca", order:5, area:"Biblioteca", title:"Biblioteca", type:"Libri", status:"disponibile", shareSection:true,shareText:"Scopri tre libri consigliati per sviluppare competenze pratiche.",
+      id:"biblioteca", order:5, area:"Biblioteca", title:"Biblioteca", type:"Libri", status:"disponibile", shareSection:true,shareText:"Scopri tre libri consigliati per sviluppare competenze pratiche.",shareUrl:"https://drive.google.com/drive/folders/1_xVa-WYXv5CZVglL8nbU2OPf8MRXFPmw?usp=drive_link",
       description:"Tre libri fondamentali per la formazione personale e professionale.",
       learn:"Accedere rapidamente ai libri consigliati per sviluppare competenze pratiche nel network marketing.",
       action:"Apri il libro che vuoi leggere seguendo l'ordine di priorità indicato.",
@@ -89,9 +89,9 @@ window.SUPPORTO_DATA = {
         {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"}
       ]
     },
-    {id:"testimonianze-attivita",order:120,area:"Video testimonianze",title:"Video · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di persone con esperienze e professioni diverse, dallo studente all’imprenditore, che hanno scelto il nostro progetto.",description:"Testimonianze di persone comuni, dallo studente all’imprenditore, che raccontano la loro esperienza con l’attività.",learn:"Conoscere esperienze diverse e trovare la testimonianza più adatta alla persona con cui stai parlando.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video · Attività",link:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link"},
+    {id:"testimonianze-attivita",order:120,area:"Video testimonianze",title:"Video · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di persone con esperienze e professioni diverse, dallo studente all’imprenditore, che hanno scelto il nostro progetto.",shareUrl:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link",description:"Testimonianze di persone comuni, dallo studente all’imprenditore, che raccontano la loro esperienza con l’attività.",learn:"Conoscere esperienze diverse e trovare la testimonianza più adatta alla persona con cui stai parlando.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video · Attività",link:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link"},
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video Sport · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che lavorano con il nostro progetto.",shareUrl:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",description:"Testimonianze di sportivi che raccontano la loro esperienza con l’attività.",learn:"Accedere rapidamente alle testimonianze sportive disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video Sport · Attività",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link"},
-    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video Sport · Prodotto",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che utilizzano i nostri prodotti nella loro quotidianità e attività sportiva.",description:"Sportivi che raccontano come utilizzano i prodotti e i risultati fisici ottenuti.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video Sport · Prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"},
-    {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video · Benessere",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri alcune testimonianze di persone che raccontano la loro esperienza con il nostro percorso benessere.",description:"Testimonianze di clienti che raccontano la loro esperienza con il percorso benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video · Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"}
+    {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video Sport · Prodotto",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che utilizzano i nostri prodotti nella loro quotidianità e attività sportiva.",shareUrl:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link",description:"Sportivi che raccontano come utilizzano i prodotti e i risultati fisici ottenuti.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video Sport · Prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"},
+    {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video · Benessere",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri alcune testimonianze di persone che raccontano la loro esperienza con il nostro percorso benessere.",shareUrl:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link",description:"Testimonianze di clienti che raccontano la loro esperienza con il percorso benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video · Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"}
   ]
 };
