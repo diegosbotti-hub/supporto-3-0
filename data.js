@@ -5,7 +5,7 @@ window.SUPPORTO_DATA = {
     subtitle: "Il materiale giusto. Nel momento giusto.",
     updated: "20/10/2026"
   },
-  telegram: "https://t.me/+SA8wPHU0MPXbtz4x",
+  telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   paths: {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
