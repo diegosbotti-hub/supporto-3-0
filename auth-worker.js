@@ -48,6 +48,31 @@ export default {
         const secret=request.headers.get("X-Telegram-Bot-Api-Secret-Token");
         if(secret!==env.WEBHOOK_SECRET)return new Response("Forbidden",{status:403});
         const update=await request.json();
+        if(update.chat_join_request){
+          const jr=update.chat_join_request;
+          const u=jr.from;
+          await env.ACCESS.put("join:"+String(u.id),JSON.stringify({
+            chat_id:String(jr.chat.id),
+            user_id:String(u.id),
+            first_name:u.first_name||"",
+            last_name:u.last_name||"",
+            username:u.username||"",
+            requested_at:new Date().toISOString()
+          }),{expirationTtl:86400});
+          await tg(env,"sendMessage",{
+            chat_id:env.ADMIN_TELEGRAM_ID,
+            text:"Nuova richiesta GRUPPO TELEGRAM\n\n"+
+              (u.first_name||"")+" "+(u.last_name||"")+"\n"+
+              (u.username?"@"+u.username+"\n":"")+"Telegram ID: "+u.id+
+              "\n\nSe approvi, la persona verrà autorizzata anche a SUPPORTO 3.0.",
+            reply_markup:{inline_keyboard:[[
+              {text:"✅ Approva",callback_data:"gapprove:"+u.id},
+              {text:"❌ Rifiuta",callback_data:"greject:"+u.id}
+            ]]}
+          });
+          return new Response("ok");
+        }
+
         const q=update.callback_query;
         if(!q)return new Response("ok");
         if(String(q.from.id)!==String(env.ADMIN_TELEGRAM_ID)) {
@@ -55,14 +80,45 @@ export default {
           return new Response("ok");
         }
         const [action,id]=String(q.data||"").split(":");
+
+        if(["gapprove","greject"].includes(action)&&id){
+          const req=JSON.parse(await env.ACCESS.get("join:"+id)||"null");
+          if(!req)return new Response("ok");
+          const method=action==="gapprove"?"approveChatJoinRequest":"declineChatJoinRequest";
+          await tg(env,method,{chat_id:req.chat_id,user_id:Number(id)});
+          if(action==="gapprove"){
+            const key="user:"+id;
+            const existing=JSON.parse(await env.ACCESS.get(key)||"null")||{};
+            await env.ACCESS.put(key,JSON.stringify({
+              ...existing,id,
+              first_name:req.first_name||existing.first_name||"",
+              last_name:req.last_name||existing.last_name||"",
+              username:req.username||existing.username||"",
+              status:"approved",
+              source:"telegram_group",
+              updated_at:new Date().toISOString()
+            }));
+          }
+          await env.ACCESS.delete("join:"+id);
+          const label=action==="gapprove"?"GRUPPO + SUPPORTO APPROVATI":"INGRESSO GRUPPO RIFIUTATO";
+          await tg(env,"answerCallbackQuery",{callback_query_id:q.id,text:label});
+          await tg(env,"editMessageText",{
+            chat_id:q.message.chat.id,message_id:q.message.message_id,
+            text:(req.first_name||"")+" "+(req.last_name||"")+"\n"+
+              (req.username?"@"+req.username+"\n":"")+"Telegram ID: "+id+"\n\nEsito: "+label
+          });
+          return new Response("ok");
+        }
+
         if(!["approve","reject"].includes(action)||!id)return new Response("ok");
         const key="user:"+id;
         const u=JSON.parse(await env.ACCESS.get(key)||"null");
         if(!u)return new Response("ok");
         u.status=action==="approve"?"approved":"rejected";
+        u.source=u.source||"web_app";
         u.updated_at=new Date().toISOString();
         await env.ACCESS.put(key,JSON.stringify(u));
-        const label=u.status==="approved"?"APPROVATO":"RIFIUTATO";
+        const label=u.status==="approved"?"SUPPORTO APPROVATO":"SUPPORTO RIFIUTATO";
         await tg(env,"answerCallbackQuery",{callback_query_id:q.id,text:label});
         await tg(env,"editMessageText",{
           chat_id:q.message.chat.id,message_id:q.message.message_id,
