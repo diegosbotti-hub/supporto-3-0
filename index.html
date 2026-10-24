@@ -241,9 +241,7 @@ function showTelegramLogin(){
     s.src="https://telegram.org/js/telegram-widget.js?22";
     s.setAttribute("data-telegram-login","BeOneAccessBot");
     s.setAttribute("data-size","large");
-    s.setAttribute("data-userpic","false");
-    s.setAttribute("data-request-access","write");
-    s.setAttribute("data-onauth","onTelegramAuth(user)");
+    s.setAttribute("data-userpic","false");    s.setAttribute("data-onauth","onTelegramAuth(user)");
     telegramLogin.appendChild(s);
     telegramLogin.dataset.loaded="1";
   }
