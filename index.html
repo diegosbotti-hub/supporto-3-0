@@ -221,7 +221,7 @@ window.onTelegramAuth = async function(user){
       headers:{"Content-Type":"text/plain;charset=utf-8"},
       body:JSON.stringify({nome,upline,telegram:user})
     });
-    sessionStorage.setItem("supporto3_access_ok","1");
+    localStorage.setItem("supporto3_access_ok","1");
     gate.style.display="none";
   }catch(e){
     gateMsg.textContent="Errore di connessione. Riprova.";
@@ -247,7 +247,7 @@ function showTelegramLogin(){
   }
 }
 
-const saved = sessionStorage.getItem("supporto3_access_ok");
+const saved = localStorage.getItem("supporto3_access_ok");
 if(saved==="1") gate.style.display="none";
 gateEnter.onclick=showTelegramLogin;
 const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
