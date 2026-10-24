@@ -221,7 +221,8 @@ window.onTelegramAuth = async function(user){
       headers:{"Content-Type":"text/plain;charset=utf-8"},
       body:JSON.stringify({nome,upline,telegram:user})
     });
-    localStorage.setItem("supporto3_access_ok","1");
+    try{localStorage.setItem("supporto3_access_ok","1")}catch(e){}
+    document.cookie="supporto3_access_ok=1; Max-Age=31536000; Path=/supporto-3-0/; SameSite=Lax; Secure";
     gate.style.display="none";
   }catch(e){
     gateMsg.textContent="Errore di connessione. Riprova.";
@@ -247,8 +248,10 @@ function showTelegramLogin(){
   }
 }
 
-const saved = localStorage.getItem("supporto3_access_ok");
-if(saved==="1") gate.style.display="none";
+let saved="";
+try{saved=localStorage.getItem("supporto3_access_ok")||""}catch(e){}
+const cookieSaved=document.cookie.split(";").some(v=>v.trim()==="supporto3_access_ok=1");
+if(saved==="1"||cookieSaved) gate.style.display="none";
 gateEnter.onclick=showTelegramLogin;
 const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
