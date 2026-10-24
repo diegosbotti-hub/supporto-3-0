@@ -202,6 +202,7 @@ window.SUPPORTO_DATA = {
 </script>
 <script>
 (()=>{
+const ACCESS_GATE_ENABLED = false;
 const gate=document.getElementById("accessGate");
 const gateName=document.getElementById("gateName");
 const gateUpline=document.getElementById("gateUpline");
@@ -251,7 +252,7 @@ function showTelegramLogin(){
 let saved="";
 try{saved=localStorage.getItem("supporto3_access_ok")||""}catch(e){}
 const cookieSaved=document.cookie.split(";").some(v=>v.trim()==="supporto3_access_ok=1");
-if(saved==="1"||cookieSaved) gate.style.display="none";
+if(!ACCESS_GATE_ENABLED || saved==="1" || cookieSaved) gate.style.display="none";
 gateEnter.onclick=showTelegramLogin;
 const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
