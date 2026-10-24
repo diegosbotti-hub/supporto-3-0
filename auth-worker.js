@@ -48,6 +48,25 @@ export default {
         const secret=request.headers.get("X-Telegram-Bot-Api-Secret-Token");
         if(secret!==env.WEBHOOK_SECRET)return new Response("Forbidden",{status:403});
         const update=await request.json();
+        if(update.message && update.message.text){
+          const txt=String(update.message.text).trim();
+          if(txt.startsWith("/claim ")){
+            const existingAdmin=await env.ACCESS.get("config:admin_id");
+            const code=txt.slice(7).trim();
+            if(existingAdmin){
+              await tg(env,"sendMessage",{chat_id:update.message.chat.id,text:"Amministratore già configurato."});
+              return new Response("ok");
+            }
+            if(!env.ADMIN_CLAIM_CODE || code!==String(env.ADMIN_CLAIM_CODE)){
+              await tg(env,"sendMessage",{chat_id:update.message.chat.id,text:"Codice non valido."});
+              return new Response("ok");
+            }
+            await env.ACCESS.put("config:admin_id",String(update.message.from.id));
+            await tg(env,"sendMessage",{chat_id:update.message.chat.id,text:"✅ Amministratore BE ONE configurato. Ora puoi approvare gli accessi a SUPPORTO 3.0."});
+            return new Response("ok");
+          }
+        }
+
         if(update.chat_join_request){
           const jr=update.chat_join_request;
           const u=jr.from;
@@ -59,8 +78,9 @@ export default {
             username:u.username||"",
             requested_at:new Date().toISOString()
           }),{expirationTtl:86400});
-          await tg(env,"sendMessage",{
-            chat_id:env.ADMIN_TELEGRAM_ID,
+          const adminId=await getAdminId(env);
+          if(adminId) await tg(env,"sendMessage",{
+            chat_id:adminId,
             text:"Nuova richiesta GRUPPO TELEGRAM\n\n"+
               (u.first_name||"")+" "+(u.last_name||"")+"\n"+
               (u.username?"@"+u.username+"\n":"")+"Telegram ID: "+u.id+
@@ -75,7 +95,8 @@ export default {
 
         const q=update.callback_query;
         if(!q)return new Response("ok");
-        if(String(q.from.id)!==String(env.ADMIN_TELEGRAM_ID)) {
+        const adminId=await getAdminId(env);
+        if(!adminId || String(q.from.id)!==String(adminId)) {
           await tg(env,"answerCallbackQuery",{callback_query_id:q.id,text:"Non autorizzato",show_alert:true});
           return new Response("ok");
         }
@@ -144,14 +165,19 @@ function approvalText(u){
 }
 async function sendApprovalRequest(env,user){
   const u={id:String(user.id),first_name:user.first_name||"",last_name:user.last_name||"",username:user.username||""};
+  const adminId=await getAdminId(env);
+  if(!adminId)return;
   await tg(env,"sendMessage",{
-    chat_id:env.ADMIN_TELEGRAM_ID,
+    chat_id:adminId,
     text:approvalText(u),
     reply_markup:{inline_keyboard:[[
       {text:"✅ Approva",callback_data:"approve:"+u.id},
       {text:"❌ Rifiuta",callback_data:"reject:"+u.id}
     ]]}
   });
+}
+async function getAdminId(env){
+  return (await env.ACCESS.get("config:admin_id")) || env.ADMIN_TELEGRAM_ID || "";
 }
 async function tg(env,method,payload){
   return fetch("https://api.telegram.org/bot"+env.BOT_TOKEN+"/"+method,{
