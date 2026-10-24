@@ -77,6 +77,20 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 </style>
 </head>
 <body>
+<script>
+const ACCESSI_SUPPORTO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxYrjFwlZx_wCaS8PJOXBKXpeysoPNNiuFOiOxqnl4d__mBopLIyBjSe76Y2_cFHKhO/exec";
+</script>
+<div id="accessGate" style="position:fixed;inset:0;z-index:9999;background:#f5f8f5;display:flex;align-items:center;justify-content:center;padding:20px">
+  <div style="width:min(92vw,420px);background:#fff;border:1px solid #e1e8e3;border-radius:24px;padding:24px;box-shadow:0 18px 50px rgba(20,34,26,.12)">
+    <div style="font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#16884a;font-weight:900;margin-bottom:8px">BE ONE TEAM · SUPPORTO 3.0</div>
+    <h2 style="margin:0 0 8px;font-size:26px;color:#14221a">Accesso membri</h2>
+    <p style="margin:0 0 18px;color:#68726b;font-size:14px;line-height:1.45">Inserisci i tuoi dati per accedere all’app.</p>
+    <input id="gateName" placeholder="Nome e cognome" style="width:100%;padding:13px 14px;border:1px solid #dfe7e1;border-radius:12px;margin-bottom:10px;font-size:16px">
+    <input id="gateUpline" placeholder="TAB / Upline" style="width:100%;padding:13px 14px;border:1px solid #dfe7e1;border-radius:12px;margin-bottom:12px;font-size:16px">
+    <button id="gateEnter" style="width:100%;border:0;border-radius:12px;padding:13px 14px;background:#16884a;color:#fff;font-weight:900;font-size:15px;cursor:pointer">Entra</button>
+    <div id="gateMsg" style="margin-top:10px;font-size:12px;color:#b42318;display:none"></div>
+  </div>
+</div>
 <header class="top"><div class="topin"><div class="logo"><img src="data:image/jpeg;base64,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" alt="BE ONE TEAM"></div><div class="brand"><b>SUPPORTO 3.0</b><span>Formazione e duplicazione</span></div><button class="telegram" id="tgTop">Telegram</button></div></header>
 <main class="wrap" id="app"><div class="empty" style="margin-top:25px">Caricamento…</div></main>
 <nav class="nav">
@@ -188,6 +202,33 @@ window.SUPPORTO_DATA = {
 </script>
 <script>
 (()=>{
+const gate=document.getElementById("accessGate");
+const gateName=document.getElementById("gateName");
+const gateUpline=document.getElementById("gateUpline");
+const gateEnter=document.getElementById("gateEnter");
+const gateMsg=document.getElementById("gateMsg");
+const sharedPublic = new URLSearchParams(location.search).has("public");
+if(sharedPublic){ gate.style.display="none"; }
+else{
+  const saved = sessionStorage.getItem("supporto3_access_ok");
+  if(saved==="1") gate.style.display="none";
+  gateEnter.onclick=async()=>{
+    const nome=gateName.value.trim(),upline=gateUpline.value.trim();
+    if(!nome||!upline){gateMsg.textContent="Inserisci nome e TAB / Upline.";gateMsg.style.display="block";return}
+    gateEnter.disabled=true;gateEnter.textContent="Accesso...";
+    try{
+      await fetch(ACCESSI_SUPPORTO_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({nome,upline})});
+      sessionStorage.setItem("supporto3_access_ok","1");
+      gate.style.display="none";
+    }catch(e){
+      gateMsg.textContent="Errore di connessione. Riprova.";
+      gateMsg.style.display="block";
+    }finally{
+      gateEnter.disabled=false;gateEnter.textContent="Entra";
+    }
+  };
+}
+
 const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
