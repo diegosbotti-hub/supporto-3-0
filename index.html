@@ -208,7 +208,7 @@ const gateUpline=document.getElementById("gateUpline");
 const gateEnter=document.getElementById("gateEnter");
 const gateMsg=document.getElementById("gateMsg");
 const telegramLogin=document.getElementById("telegramLogin");
-const sharedPublic = new URLSearchParams(location.search).has("public");
+
 
 window.onTelegramAuth = async function(user){
   const nome=gateName.value.trim(),upline=gateUpline.value.trim();
@@ -247,12 +247,9 @@ function showTelegramLogin(){
   }
 }
 
-if(sharedPublic){ gate.style.display="none"; }
-else{
-  const saved = sessionStorage.getItem("supporto3_access_ok");
-  if(saved==="1") gate.style.display="none";
-  gateEnter.onclick=showTelegramLogin;
-}
+const saved = sessionStorage.getItem("supporto3_access_ok");
+if(saved==="1") gate.style.display="none";
+gateEnter.onclick=showTelegramLogin;
 const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
