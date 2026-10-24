@@ -78,7 +78,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 </head>
 <body>
 <script>
-const ACCESSI_SUPPORTO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxYrjFwlZx_wCaS8PJOXBKXpeysoPNNiuFOiOxqnl4d__mBopLIyBjSe76Y2_cFHKhO/exec";
+const ACCESSI_SUPPORTO_ENDPOINT = "https://script.google.com/macros/s/AKfycbycjAG-gAKiCwhao0ieE0GtomhgcodVYnfTMp63rwPgC1UwtFGhU484x5HVaIkjaS4H/exec";
 </script>
 <div id="accessGate" style="position:fixed;inset:0;z-index:9999;background:#f5f8f5;display:flex;align-items:center;justify-content:center;padding:20px">
   <div style="width:min(92vw,420px);background:#fff;border:1px solid #e1e8e3;border-radius:24px;padding:24px;box-shadow:0 18px 50px rgba(20,34,26,.12)">
@@ -87,7 +87,7 @@ const ACCESSI_SUPPORTO_ENDPOINT = "https://script.google.com/macros/s/AKfycbxYrj
     <p style="margin:0 0 18px;color:#68726b;font-size:14px;line-height:1.45">Inserisci i tuoi dati per accedere all’app.</p>
     <input id="gateName" placeholder="Nome e cognome" style="width:100%;padding:13px 14px;border:1px solid #dfe7e1;border-radius:12px;margin-bottom:10px;font-size:16px">
     <input id="gateUpline" placeholder="TAB / Upline" style="width:100%;padding:13px 14px;border:1px solid #dfe7e1;border-radius:12px;margin-bottom:12px;font-size:16px">
-    <button id="gateEnter" style="width:100%;border:0;border-radius:12px;padding:13px 14px;background:#16884a;color:#fff;font-weight:900;font-size:15px;cursor:pointer">Entra</button>
+    <div id="telegramLogin" style="display:none;text-align:center;margin-top:4px"></div><button id="gateEnter" style="width:100%;border:0;border-radius:12px;padding:13px 14px;background:#16884a;color:#fff;font-weight:900;font-size:15px;cursor:pointer">Continua con Telegram</button>
     <div id="gateMsg" style="margin-top:10px;font-size:12px;color:#b42318;display:none"></div>
   </div>
 </div>
@@ -207,28 +207,54 @@ const gateName=document.getElementById("gateName");
 const gateUpline=document.getElementById("gateUpline");
 const gateEnter=document.getElementById("gateEnter");
 const gateMsg=document.getElementById("gateMsg");
+const telegramLogin=document.getElementById("telegramLogin");
 const sharedPublic = new URLSearchParams(location.search).has("public");
+
+window.onTelegramAuth = async function(user){
+  const nome=gateName.value.trim(),upline=gateUpline.value.trim();
+  if(!nome||!upline){gateMsg.textContent="Inserisci nome e TAB / Upline.";gateMsg.style.display="block";return}
+  gateMsg.style.display="none";
+  try{
+    await fetch(ACCESSI_SUPPORTO_ENDPOINT,{
+      method:"POST",
+      mode:"no-cors",
+      headers:{"Content-Type":"text/plain;charset=utf-8"},
+      body:JSON.stringify({nome,upline,telegram:user})
+    });
+    sessionStorage.setItem("supporto3_access_ok","1");
+    gate.style.display="none";
+  }catch(e){
+    gateMsg.textContent="Errore di connessione. Riprova.";
+    gateMsg.style.display="block";
+  }
+};
+
+function showTelegramLogin(){
+  const nome=gateName.value.trim(),upline=gateUpline.value.trim();
+  if(!nome||!upline){gateMsg.textContent="Inserisci nome e TAB / Upline.";gateMsg.style.display="block";return}
+  gateMsg.style.display="none";
+  gateEnter.style.display="none";
+  telegramLogin.style.display="block";
+  if(!telegramLogin.dataset.loaded){
+    const s=document.createElement("script");
+    s.async=true;
+    s.src="https://telegram.org/js/telegram-widget.js?22";
+    s.setAttribute("data-telegram-login","BeOneAccessBot");
+    s.setAttribute("data-size","large");
+    s.setAttribute("data-userpic","false");
+    s.setAttribute("data-request-access","write");
+    s.setAttribute("data-onauth","onTelegramAuth(user)");
+    telegramLogin.appendChild(s);
+    telegramLogin.dataset.loaded="1";
+  }
+}
+
 if(sharedPublic){ gate.style.display="none"; }
 else{
   const saved = sessionStorage.getItem("supporto3_access_ok");
   if(saved==="1") gate.style.display="none";
-  gateEnter.onclick=async()=>{
-    const nome=gateName.value.trim(),upline=gateUpline.value.trim();
-    if(!nome||!upline){gateMsg.textContent="Inserisci nome e TAB / Upline.";gateMsg.style.display="block";return}
-    gateEnter.disabled=true;gateEnter.textContent="Accesso...";
-    try{
-      await fetch(ACCESSI_SUPPORTO_ENDPOINT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({nome,upline})});
-      sessionStorage.setItem("supporto3_access_ok","1");
-      gate.style.display="none";
-    }catch(e){
-      gateMsg.textContent="Errore di connessione. Riprova.";
-      gateMsg.style.display="block";
-    }finally{
-      gateEnter.disabled=false;gateEnter.textContent="Entra";
-    }
-  };
+  gateEnter.onclick=showTelegramLogin;
 }
-
 const D=window.SUPPORTO_DATA,S={journey:"Percorso completo",filter:"Tutti",q:""},app=document.getElementById("app"),drawer=document.getElementById("drawer"),$=id=>document.getElementById(id);
 const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
