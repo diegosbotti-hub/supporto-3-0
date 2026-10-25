@@ -12,7 +12,7 @@ window.SUPPORTO_DATA = {
       {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
       {n:3,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"disponibile",resource:"lista"},
       {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
-      {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"preparazione",resource:"settimana"},
+      {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
       {n:8,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
@@ -22,6 +22,22 @@ window.SUPPORTO_DATA = {
     ]
   },
   resources: [
+    {
+      id:"network-attivo", order:5.1, area:"Biblioteca", title:"Perché il Network Marketing è un attivo", type:"Video", status:"disponibile", library:false, shareSection:false,
+      description:"Video formativo sul Network Marketing come attivo.",
+      learn:"Approfondire il concetto di attivo applicato al Network Marketing.",
+      action:"Guarda il video e confronta i concetti con il tuo sponsor.",
+      next:"Continua la formazione nella Biblioteca.",
+      embed:"https://www.youtube-nocookie.com/embed/yJCH7OVRptM"
+    },
+    {
+      id:"settimana", order:-0.5, area:"Percorso guidato", title:"Organizzare la settimana", type:"Video", status:"disponibile", library:false, shareSection:false,
+      description:"Come organizzare la settimana e pianificare le attività.",
+      learn:"Organizzare agenda, priorità e gestione dei contatti seguendo il metodo del team.",
+      action:"Guarda il video e organizza la tua settimana seguendo il metodo spiegato.",
+      next:"Inaugurazione attività",
+      embed:"https://www.youtube-nocookie.com/embed/OByvvIVJc-E"
+    },
     {
       id:"lista", order:-0.7, area:"Percorso guidato", title:"Lista nomi", type:"Video", status:"disponibile", library:false, shareSection:false,
       description:"Come costruire, gestire e aggiornare la lista contatti.",
@@ -101,17 +117,17 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"biblioteca", order:5, area:"Biblioteca", title:"Biblioteca", type:"Libri", status:"disponibile", shareSection:true,shareText:"Scopri tre libri consigliati per sviluppare competenze pratiche.",shareUrl:"https://drive.google.com/drive/folders/1_xVa-WYXv5CZVglL8nbU2OPf8MRXFPmw?usp=drive_link",
-      description:"Tre libri fondamentali per la formazione personale e professionale.",
-      learn:"Accedere rapidamente ai libri consigliati per sviluppare competenze pratiche nel network marketing.",
-      action:"Apri il libro che vuoi leggere seguendo l'ordine di priorità indicato.",
+      id:"biblioteca", order:5, area:"Biblioteca", title:"Biblioteca", type:"Libri", status:"disponibile", shareSection:true,shareText:"Scopri i libri e il video consigliati per sviluppare competenze pratiche.",shareUrl:"https://drive.google.com/drive/folders/1_xVa-WYXv5CZVglL8nbU2OPf8MRXFPmw?usp=drive_link",
+      description:"Tre libri e un video per la formazione personale e professionale.",
+      learn:"Accedere ai libri e al video per sviluppare competenze pratiche nel network marketing.",
+      action:"Leggi i libri nell’ordine indicato e guarda il video.",
       next:"Continua il percorso di formazione.",
       cta:"Apri Biblioteca",
       links:[
         {label:"1 · Go Pro",url:"https://drive.google.com/file/d/1r0WODFAqM08ZY5c-m-WowOpx2znTIeTa/view?usp=drivesdk"},
         {label:"2 · La presentazione 45 secondi",url:"https://drive.google.com/file/d/1x_ES0KM5YqymdRzB7sXNxASeIBjQbM_5/view?usp=drivesdk"},
         {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"},
-        {label:"Perché il Network Marketing è un attivo",url:"https://drive.google.com/file/d/1pwCZAm_UVveVoqSOOu7uVkB1vRfUju0k/view?usp=drivesdk"}
+        {label:"Perché il Network Marketing è un attivo",url:"https://youtu.be/yJCH7OVRptM",resource:"network-attivo"}
       ]
     },
     {id:"testimonianze-attivita",order:120,area:"Video testimonianze",title:"Video · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di persone con esperienze e professioni diverse, dallo studente all’imprenditore, che hanno scelto il nostro progetto.",shareUrl:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link",description:"Testimonianze di persone comuni, dallo studente all’imprenditore, che raccontano la loro esperienza con l’attività.",learn:"Conoscere esperienze diverse e trovare la testimonianza più adatta alla persona con cui stai parlando.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video · Attività",link:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link"},
