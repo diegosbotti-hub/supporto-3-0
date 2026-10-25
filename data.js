@@ -10,7 +10,7 @@ window.SUPPORTO_DATA = {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"disponibile",resource:"obiettivo"},
       {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
-      {n:3,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"preparazione",resource:"lista"},
+      {n:3,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"disponibile",resource:"lista"},
       {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"preparazione",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
@@ -22,6 +22,14 @@ window.SUPPORTO_DATA = {
     ]
   },
   resources: [
+    {
+      id:"lista", order:-0.7, area:"Percorso guidato", title:"Lista nomi", type:"Video", status:"disponibile", library:false, shareSection:false,
+      description:"Come costruire, gestire e aggiornare la lista contatti.",
+      learn:"Organizzare la lista nomi e gestire i contatti seguendo il metodo del team.",
+      action:"Guarda il video e prepara la tua lista contatti seguendo il metodo spiegato.",
+      next:"Come invitare",
+      embed:"https://www.youtube-nocookie.com/embed/yWJRBHaDspk"
+    },
     {
       id:"obiettivo", order:-1, area:"Percorso guidato", title:"Obiettivo personale", type:"Video", status:"disponibile", library:false, shareSection:false,
       description:"Definisci il tuo obiettivo personale per costruire un piano di attività coerente.",
