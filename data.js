@@ -3,12 +3,12 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "20/10/2026"
+    updated: "25/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   paths: {
     "Percorso completo": [
-      {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"preparazione",resource:"obiettivo"},
+      {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"disponibile",resource:"obiettivo"},
       {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
       {n:3,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"preparazione",resource:"lista"},
       {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
@@ -22,6 +22,14 @@ window.SUPPORTO_DATA = {
     ]
   },
   resources: [
+    {
+      id:"obiettivo", order:-1, area:"Percorso guidato", title:"Obiettivo personale", type:"Video", status:"disponibile", library:false, shareSection:false,
+      description:"Definisci il tuo obiettivo personale per costruire un piano di attività coerente.",
+      learn:"Chiarire cosa vuoi ottenere e trasformare l'obiettivo in una direzione concreta.",
+      action:"Guarda il video e definisci il tuo obiettivo personale.",
+      next:"Conoscere i prodotti",
+      embed:"https://www.youtube-nocookie.com/embed/kmqtj1HBpoM"
+    },
     {
       id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video", status:"disponibile", library:false, shareSection:true,shareText:"Scopri i concetti base di nutrizione utili per conoscere e spiegare meglio i nostri prodotti.",
       description:"Fondamenti di nutrizione in 3 video, da seguire in sequenza.",
