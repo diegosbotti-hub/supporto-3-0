@@ -28,10 +28,18 @@ window.SUPPORTO_DATA = {
       {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
-      {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
+      {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"},
+      {n:12,title:"Obiezioni",text:"Come gestire le obiezioni più comuni.",status:"preparazione",resource:"obiezioni"}
     ]
   },
   resources: [
+    {
+      id:"obiezioni", order:0.9, area:"Percorso guidato", title:"Obiezioni", type:"Formazione", status:"preparazione", library:false, shareSection:false,
+      description:"Come gestire le obiezioni più comuni.",
+      learn:"Gestire le obiezioni seguendo il metodo del team.",
+      action:"Il materiale formativo è in preparazione.",
+      next:"Ripassa il percorso e applica le indicazioni del team."
+    },
     {
       id:"network-attivo", order:5.1, area:"Biblioteca", title:"Perché il Network Marketing è un attivo", type:"Video", status:"disponibile", library:false, shareSection:false,
       description:"Video formativo sul Network Marketing come attivo.",
