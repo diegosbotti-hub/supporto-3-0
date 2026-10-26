@@ -21,7 +21,7 @@ window.SUPPORTO_DATA = {
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
-      {n:8,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
+      {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
       {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
@@ -67,6 +67,31 @@ window.SUPPORTO_DATA = {
       action:"Guarda il video e prepara la tua inaugurazione seguendo il metodo spiegato.",
       next:"DMO Trattamento viso",
       embed:"https://www.youtube-nocookie.com/embed/kmkivMyksYQ"
+    },
+    {
+      "id": "hgo",
+      "order": 0.8,
+      "area": "Percorso guidato",
+      "title": "DMO Valutazione corporea",
+      "type": "Video e materiali",
+      "status": "preparazione",
+      "library": false,
+      "shareSection": false,
+      "description": "Video e materiali operativi per svolgere la valutazione corporea.",
+      "learn": "Svolgere la valutazione corporea e usare il Book Colazione e la scheda di valutazione.",
+      "action": "Apri il Book Colazione 3.0. Il video formativo e la scheda di valutazione in PDF sono in preparazione.",
+      "next": "DMO Usa Indossa Parla",
+      "pendingVideo": true,
+      "links": [
+        {
+          "label": "Apri Book Colazione 3.0",
+          "resource": "book-pdf"
+        },
+        {
+          "label": "Scheda valutazione corporea · PDF",
+          "pending": true
+        }
+      ]
     },
     {
       id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video", status:"disponibile", library:false, shareSection:true,shareText:"Scopri le basi della nutrizione e il training medico sul Collagen Skin.",

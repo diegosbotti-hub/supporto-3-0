@@ -48,6 +48,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.prodotti-mode .sheetactions a.extra:first-of-type{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .sheet.prodotti-mode #dShare,.sheet.prodotti-mode #close2{width:100%;flex:none}
 .sheet.hom-mode .sheetactions{flex-direction:column}.sheet.hom-mode .sheetactions>*{flex:none;width:100%;min-height:44px}
+.sheet.stacked-actions .sheetactions{flex-direction:column}.sheet.stacked-actions .sheetactions>*{flex:none;width:100%;min-height:44px}.sheetactions .btn:disabled{cursor:default;background:#f3f5f3;color:#68726b;border:1px solid var(--line)}.embedbox.placeholder{padding:20px;display:grid;gap:6px}.embedbox.placeholder b{font-size:15px}.embedbox.placeholder span{font-size:13px;color:var(--mut)}
 .empty{background:#fff;border:1px dashed #cbd5cd;border-radius:17px;padding:22px;text-align:center;color:var(--mut)}.embedbox{margin:14px 0 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f7faf8}.embedbox iframe{display:block;width:100%;height:460px;border:0;background:#fff}.embedbox.youtube{aspect-ratio:16/9;background:#000}.embedbox.youtube iframe{width:100%;height:100%}.embedvideo{min-width:0;margin:18px 0}.embedvideo h3{font-size:15px;line-height:1.35;margin:0 0 8px}.embedvideo .embedbox{margin:0}@media(max-width:760px){.embedbox iframe{height:420px}.embedbox.youtube iframe{height:100%}}
 @media(max-width:760px){
 .nav{display:grid}
@@ -126,7 +127,7 @@ window.SUPPORTO_DATA = {
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
-      {n:8,title:"DMO Valutazione corporea",text:"Usare la valutazione corporea come metodo operativo.",status:"preparazione",resource:"hgo"},
+      {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
       {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"}
@@ -172,6 +173,31 @@ window.SUPPORTO_DATA = {
       action:"Guarda il video e prepara la tua inaugurazione seguendo il metodo spiegato.",
       next:"DMO Trattamento viso",
       embed:"https://www.youtube-nocookie.com/embed/kmkivMyksYQ"
+    },
+    {
+      "id": "hgo",
+      "order": 0.8,
+      "area": "Percorso guidato",
+      "title": "DMO Valutazione corporea",
+      "type": "Video e materiali",
+      "status": "preparazione",
+      "library": false,
+      "shareSection": false,
+      "description": "Video e materiali operativi per svolgere la valutazione corporea.",
+      "learn": "Svolgere la valutazione corporea e usare il Book Colazione e la scheda di valutazione.",
+      "action": "Apri il Book Colazione 3.0. Il video formativo e la scheda di valutazione in PDF sono in preparazione.",
+      "next": "DMO Usa Indossa Parla",
+      "pendingVideo": true,
+      "links": [
+        {
+          "label": "Apri Book Colazione 3.0",
+          "resource": "book-pdf"
+        },
+        {
+          "label": "Scheda valutazione corporea · PDF",
+          "pending": true
+        }
+      ]
     },
     {
       id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video", status:"disponibile", library:false, shareSection:true,shareText:"Scopri le basi della nutrizione e il training medico sul Collagen Skin.",
@@ -355,9 +381,15 @@ $("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$
 document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.a;document.querySelectorAll("[data-a]").forEach(x=>x.classList.toggle("on",x.dataset.a===S.filter));cards()});steps();cards()}
 function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(!e.dataset.resource)return;e.onclick=()=>{const row=rows.find(x=>x.resource===e.dataset.resource);const material=D.resources.find(x=>x.id===e.dataset.resource);if(material){detail(material);return}if(row)detail({id:row.resource,title:row.title,type:"Percorso",area:"Percorso guidato",description:row.text,learn:row.text,action:"Segui questo punto del percorso.",next:"Continua con il punto successivo.",shareSection:true})}})}
 function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.id)))}
-function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll("a.extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox").forEach(x=>x.remove());
+function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox").forEach(x=>x.remove());
 const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
 const embeds=hasVideos?r.videos:(r.embed?[{title:r.title,embed:r.embed}]:[]);
+if(r.pendingVideo&&!embeds.length){
+  const box=document.createElement("div");box.className="embedbox placeholder";
+  const title=document.createElement("b");title.textContent="Video formativo";
+  const status=document.createElement("span");status.textContent="In preparazione";
+  box.appendChild(title);box.appendChild(status);a.parentNode.insertBefore(box,a);
+}
 embeds.forEach(v=>{
   const box=document.createElement("div");
   const isYoutube=/youtube(?:-nocookie)?\.com\/embed\//.test(v.embed);
@@ -372,7 +404,28 @@ embeds.forEach(v=>{
     const title=document.createElement("h3");title.textContent=v.title||r.title;
     group.appendChild(title);group.appendChild(box);a.parentNode.insertBefore(group,a);
   }else{a.parentNode.insertBefore(box,a)}
-});const o=$("dOpen");if(Array.isArray(r.links)&&r.links.length){o.style.display="none";r.links.forEach((x,i)=>{const el=document.createElement("a");el.className="btn "+(i===0?"primary":"secondary")+" extra";el.target="_blank";el.rel="noopener";el.href=x.url;if(x.resource){el.onclick=e=>{const target=D.resources.find(y=>y.id===x.resource);if(target){e.preventDefault();detail(target)}}}el.textContent=x.label;a.insertBefore(el,$("dShare"))})}else{o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none"}const share=$("dShare");
+});const o=$("dOpen");
+if(Array.isArray(r.links)&&r.links.length){
+  o.style.display="none";
+  r.links.forEach((x,i)=>{
+    const target=x.resource?D.resources.find(y=>y.id===x.resource):null;
+    const pending=x.pending||(!x.url&&!target);
+    const el=document.createElement(pending?"button":"a");
+    el.className="btn "+(i===0&&!pending?"primary":"secondary")+" extra";
+    if(pending){
+      el.disabled=true;el.textContent=x.label+" · In preparazione";
+    }else{
+      el.target="_blank";el.rel="noopener";
+      el.href=x.url||(target&&(target.link||target.shareUrl))||"#";
+      el.textContent=x.label;
+      if(target){el.onclick=e=>{e.preventDefault();detail(target)}}
+    }
+    a.insertBefore(el,$("dShare"));
+  });
+}else{
+  o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none";
+}
+const share=$("dShare");
 share.style.display=r.shareSection?"block":"none";
 share.textContent=r.shareLabel||"Condividi questa sezione";
 share.onclick=async()=>{
