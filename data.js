@@ -6,6 +6,10 @@ window.SUPPORTO_DATA = {
     updated: "26/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
+  materialsMenu: {
+    title: "Menu dei materiali",
+    description: "Scegli una categoria per vedere i materiali."
+  },
   feedback: {
     title: "Testimonianze e suggerimenti",
     description: "Invia a Diegos le tue testimonianze o segnala miglioramenti per SUPPORTO 3.0.",
