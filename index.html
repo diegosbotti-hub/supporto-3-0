@@ -260,11 +260,11 @@ window.SUPPORTO_DATA = {
       action:"Leggi i libri nell’ordine indicato e guarda il video.",
       next:"Continua il percorso di formazione.",
       cta:"Apri Biblioteca",
+      embedResource:"network-attivo",
       links:[
         {label:"1 · Go Pro",url:"https://drive.google.com/file/d/1r0WODFAqM08ZY5c-m-WowOpx2znTIeTa/view?usp=drivesdk"},
         {label:"2 · La presentazione 45 secondi",url:"https://drive.google.com/file/d/1x_ES0KM5YqymdRzB7sXNxASeIBjQbM_5/view?usp=drivesdk"},
-        {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"},
-        {label:"Perché il Network Marketing è un attivo",url:"https://youtu.be/yJCH7OVRptM",resource:"network-attivo"}
+        {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"}
       ]
     },
     {
@@ -385,7 +385,8 @@ function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map
 function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.id)))}
 function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox").forEach(x=>x.remove());
 const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
-const embeds=hasVideos?r.videos:(r.embed?[{title:r.title,embed:r.embed}]:[]);
+const embedSource=r.embedResource?D.resources.find(x=>x.id===r.embedResource):r;
+const embeds=hasVideos?r.videos:(embedSource&&embedSource.embed?[{title:embedSource.title,embed:embedSource.embed}]:[]);
 if(r.pendingVideo&&!embeds.length){
   const box=document.createElement("div");box.className="embedbox placeholder";
   const title=document.createElement("b");title.textContent="Video formativo";
@@ -401,7 +402,7 @@ embeds.forEach(v=>{
   fr.allow=isYoutube?"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share":"fullscreen";
   fr.allowFullscreen=true;fr.referrerPolicy="strict-origin-when-cross-origin";
   box.appendChild(fr);
-  if(hasVideos){
+  if(hasVideos||r.embedResource){
     const group=document.createElement("section");group.className="embedvideo";
     const title=document.createElement("h3");title.textContent=v.title||r.title;
     group.appendChild(title);group.appendChild(box);a.parentNode.insertBefore(group,a);

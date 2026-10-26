@@ -154,11 +154,11 @@ window.SUPPORTO_DATA = {
       action:"Leggi i libri nell’ordine indicato e guarda il video.",
       next:"Continua il percorso di formazione.",
       cta:"Apri Biblioteca",
+      embedResource:"network-attivo",
       links:[
         {label:"1 · Go Pro",url:"https://drive.google.com/file/d/1r0WODFAqM08ZY5c-m-WowOpx2znTIeTa/view?usp=drivesdk"},
         {label:"2 · La presentazione 45 secondi",url:"https://drive.google.com/file/d/1x_ES0KM5YqymdRzB7sXNxASeIBjQbM_5/view?usp=drivesdk"},
-        {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"},
-        {label:"Perché il Network Marketing è un attivo",url:"https://youtu.be/yJCH7OVRptM",resource:"network-attivo"}
+        {label:"3 · Come invitare",url:"https://drive.google.com/file/d/1CgODXDfS-Yz2Siu2ZWbx3EYDXnghyMSc/view?usp=drivesdk"}
       ]
     },
     {
