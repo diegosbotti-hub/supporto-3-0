@@ -6,6 +6,12 @@ window.SUPPORTO_DATA = {
     updated: "26/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
+  feedback: {
+    title: "Testimonianze e suggerimenti",
+    description: "Invia a Diegos le tue testimonianze o segnala miglioramenti per SUPPORTO 3.0.",
+    label: "Invia testimonianze o suggerimenti",
+    url: "https://wa.me/message/TDXECLB6RL7WP1"
+  },
   paths: {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"disponibile",resource:"obiettivo"},
