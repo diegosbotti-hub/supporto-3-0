@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "25/10/2026"
+    updated: "26/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   paths: {
@@ -68,10 +68,10 @@ window.SUPPORTO_DATA = {
       learn:"Acquisire le basi della nutrizione prima di approfondire i prodotti.",
       action:"Guarda i tre video nell’ordine indicato: 1 → 2 → 3.",
       next:"Prosegui con il punto successivo del percorso.",
-      links:[
-        {label:"1 · Concetti base della nutrizione",url:"https://youtu.be/FYj9-lr-jeY"},
-        {label:"2 · Nutrienti e bisogni del nostro corpo",url:"https://youtu.be/TcrYqJm84NI"},
-        {label:"3 · Proteine e costruzione del corpo",url:"https://youtu.be/I7BZrzPXSus"}
+      videos:[
+        {title:"1 · Concetti base della nutrizione",embed:"https://www.youtube-nocookie.com/embed/FYj9-lr-jeY"},
+        {title:"2 · Nutrienti e bisogni del nostro corpo",embed:"https://www.youtube-nocookie.com/embed/TcrYqJm84NI"},
+        {title:"3 · Proteine e costruzione del corpo",embed:"https://www.youtube-nocookie.com/embed/I7BZrzPXSus"}
       ]
     },
     {

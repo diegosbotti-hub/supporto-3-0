@@ -46,7 +46,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.prodotti-mode .sheetactions a.extra::after{content:"→";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--g);font-weight:950}
 .sheet.prodotti-mode .sheetactions a.extra:first-of-type{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .sheet.prodotti-mode #dShare,.sheet.prodotti-mode #close2{width:100%;flex:none}
-.empty{background:#fff;border:1px dashed #cbd5cd;border-radius:17px;padding:22px;text-align:center;color:var(--mut)}.embedbox{margin:14px 0 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f7faf8}.embedbox iframe{display:block;width:100%;height:460px;border:0;background:#fff}.embedbox.youtube{aspect-ratio:16/9;background:#000}.embedbox.youtube iframe{width:100%;height:100%}@media(max-width:760px){.embedbox iframe{height:420px}.embedbox.youtube iframe{height:100%}}
+.empty{background:#fff;border:1px dashed #cbd5cd;border-radius:17px;padding:22px;text-align:center;color:var(--mut)}.embedbox{margin:14px 0 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f7faf8}.embedbox iframe{display:block;width:100%;height:460px;border:0;background:#fff}.embedbox.youtube{aspect-ratio:16/9;background:#000}.embedbox.youtube iframe{width:100%;height:100%}.embedvideo{min-width:0;margin:18px 0}.embedvideo h3{font-size:15px;line-height:1.35;margin:0 0 8px}.embedvideo .embedbox{margin:0}@media(max-width:760px){.embedbox iframe{height:420px}.embedbox.youtube iframe{height:100%}}
 @media(max-width:760px){
 .nav{display:grid}
 .wrap{padding:0 14px 92px}
@@ -106,7 +106,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "25/10/2026"
+    updated: "26/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   paths: {
@@ -171,10 +171,10 @@ window.SUPPORTO_DATA = {
       learn:"Acquisire le basi della nutrizione prima di approfondire i prodotti.",
       action:"Guarda i tre video nell’ordine indicato: 1 → 2 → 3.",
       next:"Prosegui con il punto successivo del percorso.",
-      links:[
-        {label:"1 · Concetti base della nutrizione",url:"https://youtu.be/FYj9-lr-jeY"},
-        {label:"2 · Nutrienti e bisogni del nostro corpo",url:"https://youtu.be/TcrYqJm84NI"},
-        {label:"3 · Proteine e costruzione del corpo",url:"https://youtu.be/I7BZrzPXSus"}
+      videos:[
+        {title:"1 · Concetti base della nutrizione",embed:"https://www.youtube-nocookie.com/embed/FYj9-lr-jeY"},
+        {title:"2 · Nutrienti e bisogni del nostro corpo",embed:"https://www.youtube-nocookie.com/embed/TcrYqJm84NI"},
+        {title:"3 · Proteine e costruzione del corpo",embed:"https://www.youtube-nocookie.com/embed/I7BZrzPXSus"}
       ]
     },
     {
@@ -309,7 +309,24 @@ $("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$
 document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.a;document.querySelectorAll("[data-a]").forEach(x=>x.classList.toggle("on",x.dataset.a===S.filter));cards()});steps();cards()}
 function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(!e.dataset.resource)return;e.onclick=()=>{const row=rows.find(x=>x.resource===e.dataset.resource);const material=D.resources.find(x=>x.id===e.dataset.resource);if(material){detail(material);return}if(row)detail({id:row.resource,title:row.title,type:"Percorso",area:"Percorso guidato",description:row.text,learn:row.text,action:"Segui questo punto del percorso.",next:"Continua con il punto successivo.",shareSection:true})}})}
 function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.id)))}
-function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll("a.extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedbox").forEach(x=>x.remove());if(r.embed){const box=document.createElement("div");const isYoutube=/youtube(?:-nocookie)?\.com\/embed\//.test(r.embed);box.className="embedbox"+(isYoutube?" youtube":"");const fr=document.createElement("iframe");fr.src=r.embed;fr.loading="lazy";fr.allow=isYoutube?"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share":"fullscreen";fr.allowFullscreen=true;fr.referrerPolicy="strict-origin-when-cross-origin";box.appendChild(fr);a.parentNode.insertBefore(box,a)}const o=$("dOpen");if(Array.isArray(r.links)&&r.links.length){o.style.display="none";r.links.forEach((x,i)=>{const el=document.createElement("a");el.className="btn "+(i===0?"primary":"secondary")+" extra";el.target="_blank";el.rel="noopener";el.href=x.url;if(x.resource){el.onclick=e=>{const target=D.resources.find(y=>y.id===x.resource);if(target){e.preventDefault();detail(target)}}}if(r.id==="prodotti"&&i===2){el.innerHTML="<span style=\"display:block\">3 ·</span><span>Proteine e costruzione del corpo</span>"}else{el.textContent=x.label}a.insertBefore(el,$("dShare"))})}else{o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none"}const share=$("dShare");share.style.display=r.shareSection?"block":"none";share.onclick=async()=>{if(!r.shareSection)return;const url=r.shareUrl||(location.origin+location.pathname+"?sezione="+encodeURIComponent(r.id));try{if(navigator.share){await navigator.share({title:r.title,text:r.shareText||("Guarda "+r.title),url})}else if(navigator.clipboard){await navigator.clipboard.writeText(url);const t=share.textContent;share.textContent="Link copiato";setTimeout(()=>share.textContent=t,1600)}else{window.prompt("Copia questo link",url)}}catch(e){if(e&&e.name!=="AbortError"){window.prompt("Copia questo link",url)}}};drawer.classList.add("on")}
+function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll("a.extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox").forEach(x=>x.remove());
+const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
+const embeds=hasVideos?r.videos:(r.embed?[{title:r.title,embed:r.embed}]:[]);
+embeds.forEach(v=>{
+  const box=document.createElement("div");
+  const isYoutube=/youtube(?:-nocookie)?\.com\/embed\//.test(v.embed);
+  box.className="embedbox"+(isYoutube?" youtube":"");
+  const fr=document.createElement("iframe");
+  fr.src=v.embed;fr.title=v.title||r.title;fr.loading="lazy";
+  fr.allow=isYoutube?"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share":"fullscreen";
+  fr.allowFullscreen=true;fr.referrerPolicy="strict-origin-when-cross-origin";
+  box.appendChild(fr);
+  if(hasVideos){
+    const group=document.createElement("section");group.className="embedvideo";
+    const title=document.createElement("h3");title.textContent=v.title||r.title;
+    group.appendChild(title);group.appendChild(box);a.parentNode.insertBefore(group,a);
+  }else{a.parentNode.insertBefore(box,a)}
+});const o=$("dOpen");if(Array.isArray(r.links)&&r.links.length){o.style.display="none";r.links.forEach((x,i)=>{const el=document.createElement("a");el.className="btn "+(i===0?"primary":"secondary")+" extra";el.target="_blank";el.rel="noopener";el.href=x.url;if(x.resource){el.onclick=e=>{const target=D.resources.find(y=>y.id===x.resource);if(target){e.preventDefault();detail(target)}}}if(r.id==="prodotti"&&i===2){el.innerHTML="<span style=\"display:block\">3 ·</span><span>Proteine e costruzione del corpo</span>"}else{el.textContent=x.label}a.insertBefore(el,$("dShare"))})}else{o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none"}const share=$("dShare");share.style.display=r.shareSection?"block":"none";share.onclick=async()=>{if(!r.shareSection)return;const url=r.shareUrl||(location.origin+location.pathname+"?sezione="+encodeURIComponent(r.id));try{if(navigator.share){await navigator.share({title:r.title,text:r.shareText||("Guarda "+r.title),url})}else if(navigator.clipboard){await navigator.clipboard.writeText(url);const t=share.textContent;share.textContent="Link copiato";setTimeout(()=>share.textContent=t,1600)}else{window.prompt("Copia questo link",url)}}catch(e){if(e&&e.name!=="AbortError"){window.prompt("Copia questo link",url)}}};drawer.classList.add("on")}
 function close(){drawer.classList.remove("on")}document.getElementById("tgTop").onclick=()=>ext(D.telegram);$("close").onclick=close;$("close2").onclick=close;drawer.onclick=e=>{if(e.target===drawer)close()};
 document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");go(b.dataset.go)});render();const openShared=()=>{const q=new URLSearchParams(location.search).get("sezione");const m=location.hash.match(/^#materiale=(.+)$/);const id=q||(m?decodeURIComponent(m[1]):null);if(!id)return;const card=[...document.querySelectorAll(".card[data-id]")].find(x=>x.dataset.id===id);if(card){card.scrollIntoView({block:"center"});card.click();return}const step=[...document.querySelectorAll(".step[data-resource]")].find(x=>x.dataset.resource===id);if(step){step.scrollIntoView({block:"center"});step.click();return}const r=D.resources.find(x=>x.id===id);if(r)detail(r)};setTimeout(openShared,250);window.addEventListener("hashchange",()=>setTimeout(openShared,50));
 })();
