@@ -139,7 +139,7 @@ window.SUPPORTO_DATA = {
     {
       "id": "hom-francesco-secciani",
       "order": 110,
-      "area": "HOM REGISTRATI",
+      "area": "HOM registrati",
       "title": "HOM · Francesco Secciani",
       "type": "Video",
       "status": "disponibile",
@@ -159,7 +159,7 @@ window.SUPPORTO_DATA = {
     {
       "id": "hom-giovanna-giardullo",
       "order": 111,
-      "area": "HOM REGISTRATI",
+      "area": "HOM registrati",
       "title": "HOM · Giovanna Giardullo",
       "type": "Video",
       "status": "preparazione",
