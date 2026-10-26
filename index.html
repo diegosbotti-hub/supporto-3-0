@@ -16,7 +16,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .topin{max-width:960px;margin:auto;padding:10px 16px;display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:14px;background:#fff;display:grid;place-items:center;overflow:hidden;box-shadow:0 5px 16px rgba(20,34,26,.10)}.logo img{width:100%;height:100%;object-fit:contain;display:block;padding:2px}
 .brand{flex:1}.brand b{display:block;font-size:17px;letter-spacing:-.01em}.brand span{font-size:11px;color:var(--mut)}.telegram{border:0;border-radius:12px;background:var(--dark);color:#fff;padding:10px 13px;font-weight:850;cursor:pointer}
 .wrap{max-width:960px;margin:auto;padding:0 16px 28px}.hero{margin:18px 0 0;padding:26px;border:1px solid var(--line);border-radius:28px;background:radial-gradient(circle at 90% 0,#f1e7c8 0,transparent 31%),linear-gradient(135deg,#fff,#edf8f1 70%);box-shadow:0 15px 38px rgba(20,34,26,.07);overflow:hidden}
-.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--g);font-weight:950}.hero h1{font-size:clamp(32px,8vw,54px);line-height:.98;letter-spacing:-.045em;margin:9px 0 12px}.hero p{max-width:650px;margin:0 0 19px;color:var(--mut);font-size:15px;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:9px}.actions .tutorial-btn{grid-column:1/-1;min-height:44px}
+.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:var(--g);font-weight:950}.hero h1{font-size:clamp(32px,8vw,54px);line-height:.98;letter-spacing:-.045em;margin:9px 0 12px}.hero p{max-width:650px;margin:0 0 19px;color:var(--mut);font-size:15px;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:9px}
 .btn{border:0;border-radius:13px;padding:11px 14px;font-weight:850;cursor:pointer}.primary{background:var(--g);color:#fff}.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .hero-notice{margin:14px 0 17px!important;font-size:12px!important;line-height:1.45!important;font-weight:850!important;letter-spacing:.025em!important;color:#58635c!important}
 .stats{margin-top:17px;display:flex;gap:8px;flex-wrap:wrap}.stat{font-size:11px;color:var(--mut);background:rgba(255,255,255,.72);border:1px solid var(--line);border-radius:999px;padding:7px 10px}.stat b{color:var(--ink)}
@@ -111,19 +111,6 @@ window.SUPPORTO_DATA = {
     updated: "26/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
-  tutorial: {
-    id: "tutorial",
-    title: "Come usare SUPPORTO 3.0",
-    buttonLabel: "Guarda il tutorial",
-    type: "Video",
-    area: "Guida all’app",
-    description: "Guida rapida ai contenuti e alle funzioni di SUPPORTO 3.0.",
-    learn: "Come trovare il percorso guidato, i materiali e le testimonianze del team.",
-    action: "Guarda il tutorial, poi inizia dal primo step del percorso.",
-    next: "Obiettivo personale",
-    shareSection: false,
-    embed: "https://www.youtube-nocookie.com/embed/2bAgvA5yP34"
-  },
   feedback: {
     title: "Testimonianze e suggerimenti",
     description: "Invia a Diegos le tue testimonianze o segnala miglioramenti per SUPPORTO 3.0.",
@@ -358,12 +345,12 @@ const esc=v=>String(v??"").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const go=id=>document.getElementById(id)?.scrollIntoView({behavior:"smooth"}); const ext=u=>u&&window.open(u,"_blank","noopener");
 function render(){const library=D.resources.filter(r=>r.library!==false),available=library.filter(r=>r.status==="disponibile").length,areas=["Tutti",...new Set(library.map(r=>r.area))];
 app.innerHTML=`
-<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle).replace(". Nel",".<br>Nel")}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><p class="hero-notice">VIETATO CONDIVIDERE FUORI LINEA · TAB SILVIA MARCHESI - DIEGOS BOTTI - SIMONA FORMICA</p><div class="actions"><button class="btn secondary tutorial-btn" id="tutorial">${esc(D.tutorial.buttonLabel)}</button><button class="btn primary" id="start">Inizia il percorso</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>11 step</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
+<section class="hero" id="home"><div class="eyebrow">BE ONE TEAM · SUPPORTO 3.0</div><h1>${esc(D.meta.subtitle).replace(". Nel",".<br>Nel")}</h1><p>Un unico punto per trovare formazione, strumenti e prossimi passi. Segui il percorso oppure cerca direttamente ciò che ti serve.</p><p class="hero-notice">VIETATO CONDIVIDERE FUORI LINEA · TAB SILVIA MARCHESI - DIEGOS BOTTI - SIMONA FORMICA</p><div class="actions"><button class="btn primary" id="start">Inizia il percorso</button><button class="btn secondary" id="library">Vai ai materiali</button></div><div class="stats"><span class="stat"><b>${available}</b> materiali disponibili</span><span class="stat"><b>11 step</b> percorso guidato</span><span class="stat">Aggiornato ${esc(D.meta.updated)}</span></div></section>
 <section class="section" id="percorso"><div class="head"><div><div class="eyebrow">Percorso guidato</div><h2>Cosa fare adesso</h2></div><small>segui l'ordine</small></div><div class="steps" id="steps"></div></section>
 <section class="section" id="materiali"><div class="head"><div><div class="eyebrow">Libreria</div><h2>Materiali del team</h2></div><small>disponibili + in preparazione</small></div><input id="search" class="search" placeholder="Cerca un materiale…"><div class="chips">${areas.map(a=>`<button class="chip ${S.filter===a?"on":""}" data-a="${esc(a)}">${esc(a)}</button>`).join("")}</div><div class="grid" id="grid"></div></section>
 <section class="section" id="team"><div class="head"><div><div class="eyebrow">Community</div><h2>Resta collegato al team</h2></div></div><div class="community"><div class="plane">✈</div><div><b>Telegram Team</b><p>Avvisi, aggiornamenti e collegamenti rapidi ai materiali.</p></div><button id="tgGo">Apri Telegram</button></div><div class="feedback"><b>${esc(D.feedback.title)}</b><p>${esc(D.feedback.description)}</p><a id="feedbackLink" class="btn primary feedback-link" href="${esc(D.feedback.url)}" target="_blank" rel="noopener noreferrer">${esc(D.feedback.label)}</a></div></section>
 <div class="footer">BE ONE TEAM · SUPPORTO 3.0</div>`;
-$("tutorial").onclick=()=>detail(D.tutorial);$("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$("tgGo").onclick=()=>ext(D.telegram);$("search").oninput=e=>{S.q=e.target.value;cards()};
+$("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$("tgGo").onclick=()=>ext(D.telegram);$("search").oninput=e=>{S.q=e.target.value;cards()};
 
 document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.a;document.querySelectorAll("[data-a]").forEach(x=>x.classList.toggle("on",x.dataset.a===S.filter));cards()});steps();cards()}
 function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(!e.dataset.resource)return;e.onclick=()=>{const row=rows.find(x=>x.resource===e.dataset.resource);const material=D.resources.find(x=>x.id===e.dataset.resource);if(material){detail(material);return}if(row)detail({id:row.resource,title:row.title,type:"Percorso",area:"Percorso guidato",description:row.text,learn:row.text,action:"Segui questo punto del percorso.",next:"Continua con il punto successivo.",shareSection:true})}})}
