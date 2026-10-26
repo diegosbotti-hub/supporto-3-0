@@ -82,15 +82,15 @@ window.SUPPORTO_DATA = {
       embed:"https://www.youtube-nocookie.com/embed/kmkivMyksYQ"
     },
     {
-      id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video", status:"disponibile", library:false, shareSection:true,shareText:"Scopri i concetti base di nutrizione utili per conoscere e spiegare meglio i nostri prodotti.",
-      description:"Fondamenti di nutrizione in 3 video, da seguire in sequenza.",
-      learn:"Acquisire le basi della nutrizione prima di approfondire i prodotti.",
-      action:"Guarda i tre video nell’ordine indicato: 1 → 2 → 3.",
+      id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video", status:"disponibile", library:false, shareSection:true,shareText:"Scopri le basi della nutrizione e il training medico sul Collagen Skin.",
+      description:"Due video sulle basi della nutrizione e un training medico sul Collagen Skin.",
+      learn:"Acquisire le basi della nutrizione e approfondire il Collagen Skin.",
+      action:"Guarda prima le due parti sulle basi della nutrizione, poi il training sul Collagen Skin.",
       next:"Prosegui con il punto successivo del percorso.",
       videos:[
-        {title:"1 · Concetti base della nutrizione",embed:"https://www.youtube-nocookie.com/embed/FYj9-lr-jeY"},
-        {title:"2 · Nutrienti e bisogni del nostro corpo",embed:"https://www.youtube-nocookie.com/embed/TcrYqJm84NI"},
-        {title:"3 · Proteine e costruzione del corpo",embed:"https://www.youtube-nocookie.com/embed/I7BZrzPXSus"}
+        {title:"1 · Basi della nutrizione — prima parte",embed:"https://www.youtube-nocookie.com/embed/FYj9-lr-jeY"},
+        {title:"2 · Basi della nutrizione — seconda parte",embed:"https://www.youtube-nocookie.com/embed/TcrYqJm84NI"},
+        {title:"3 · Training medico sul Collagen Skin",embed:"https://www.youtube-nocookie.com/embed/oJrzqwQAsN0"}
       ]
     },
     {
