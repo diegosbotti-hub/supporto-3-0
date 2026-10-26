@@ -6,6 +6,19 @@ window.SUPPORTO_DATA = {
     updated: "26/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
+  tutorial: {
+    id: "tutorial",
+    title: "Come usare SUPPORTO 3.0",
+    buttonLabel: "Guarda il tutorial",
+    type: "Video",
+    area: "Guida all’app",
+    description: "Guida rapida ai contenuti e alle funzioni di SUPPORTO 3.0.",
+    learn: "Come trovare il percorso guidato, i materiali e le testimonianze del team.",
+    action: "Guarda il tutorial, poi inizia dal primo step del percorso.",
+    next: "Obiettivo personale",
+    shareSection: false,
+    embed: "https://www.youtube-nocookie.com/embed/2bAgvA5yP34"
+  },
   feedback: {
     title: "Testimonianze e suggerimenti",
     description: "Invia a Diegos le tue testimonianze o segnala miglioramenti per SUPPORTO 3.0.",
