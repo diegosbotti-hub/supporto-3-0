@@ -39,6 +39,34 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .footer{text-align:center;color:var(--mut);font-size:10px;padding:25px 0 7px}
 .nav{display:none;position:fixed;z-index:40;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);width:min(94%,680px);background:rgba(20,34,26,.96);border-radius:20px;padding:6px;grid-template-columns:repeat(4,1fr);box-shadow:0 12px 35px rgba(0,0,0,.22)}.nav button{border:0;background:transparent;color:#b9c6bd;border-radius:13px;padding:8px 4px;min-height:44px;font-size:10px;font-weight:850;cursor:pointer}.nav button.on{background:rgba(255,255,255,.1);color:#fff}
 .drawer{position:fixed;inset:0;z-index:60;background:rgba(5,10,7,.58);display:none;align-items:flex-end;padding:10px}.drawer.on{display:flex}.sheet{background:#fff;width:min(100%,700px);max-height:88vh;overflow:auto;margin:auto;border-radius:26px 26px 18px 18px;padding:21px}.sheethead{display:flex;justify-content:space-between;gap:12px}.sheet h2{margin:5px 0 0;font-size:25px}.x{width:39px;height:39px;border:0;border-radius:12px;background:#eff2ef;font-size:22px;cursor:pointer}.block{padding:14px 0;border-bottom:1px solid var(--line)}.block label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--g);font-weight:950;margin-bottom:6px}.block p{margin:0;font-size:14px;line-height:1.5;color:#3f4942}.sheetactions{display:flex;gap:9px;margin-top:14px}.sheetactions a{text-decoration:none;flex:1;text-align:center}.sheetactions button{flex:1}
+.sheet.gallery-mode{overscroll-behavior:contain;overflow-x:hidden}
+.sheet.gallery-mode .block{display:none}
+.sheet.gallery-mode .sheethead{position:sticky;top:0;z-index:3;background:#fff;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.sheet.gallery-mode .sheetactions{flex-direction:column}
+.sheet.gallery-mode .sheetactions>*{flex:none;width:100%;min-height:44px}
+.sheet.gallery-mode.gallery-playing .sheetactions{display:none}
+.video-gallery{margin-top:16px;min-width:0}
+.video-gallery [hidden]{display:none!important}
+.video-gallery-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.video-gallery-heading p{margin:0;color:var(--mut);font-size:13px;line-height:1.45}
+.video-gallery-count{flex:none;border-radius:999px;padding:7px 10px;background:var(--g2);color:var(--g);font-size:11px;font-weight:850;white-space:nowrap}
+.video-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.video-gallery-card{min-width:0;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.video-gallery-preview{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;background:linear-gradient(135deg,#e6f2e9,#c3d5c8);cursor:pointer;overflow:hidden}
+.video-gallery-preview img{display:block;width:100%;height:100%;object-fit:cover}
+.video-gallery-play{position:absolute;inset:0;display:grid;place-items:center}
+.video-gallery-play svg{width:48px;height:48px;padding:12px;border-radius:50%;color:#fff;background:rgba(20,34,26,.88);box-shadow:0 3px 14px rgba(0,0,0,.18)}
+.video-gallery-card-body{padding:14px}
+.video-gallery-card h3{margin:0 0 12px;font-size:17px;line-height:1.3;overflow-wrap:anywhere}
+.video-gallery-actions,.video-gallery-player-actions{display:flex;gap:8px}
+.video-gallery-actions .btn,.video-gallery-player-actions .btn{display:flex;align-items:center;justify-content:center;flex:1;min-width:0;min-height:44px;padding:10px 8px;font-size:13px;line-height:1.3;text-align:center;text-decoration:none}
+.video-gallery-preview:focus-visible,.video-gallery .btn:focus-visible{outline:3px solid #9fceb0;outline-offset:-3px}
+.video-gallery-back{min-height:44px;font-size:13px}
+.video-gallery-player h3{margin:16px 0 12px;font-size:20px;line-height:1.3;outline:none}
+.video-gallery-player-frame{aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000}
+.video-gallery-player-frame iframe{display:block;width:100%;height:100%;border:0}
+.video-gallery-player-actions{margin-top:12px}
+@media(max-width:560px){.video-gallery-grid{grid-template-columns:1fr}.video-gallery-heading{align-items:flex-start}.video-gallery-player-actions{flex-direction:column}.video-gallery-player-actions .btn{flex:none;width:100%}}
 .sheet.biblioteca-mode .block{display:none}
 .sheet.biblioteca-mode .sheetactions{display:flex;flex-direction:column;gap:8px;margin-top:18px}
 .sheet.biblioteca-mode .sheetactions a.extra{width:100%;flex:none;text-align:left;padding:13px 15px;border-radius:12px;background:#fff;color:var(--ink);border:1px solid var(--line);font-size:14px;line-height:1.25;position:relative;padding-right:40px}
@@ -381,7 +409,52 @@ window.SUPPORTO_DATA = {
       "link": "https://drive.google.com/file/d/1_qQiJKj7ujJ_5AQTCo2nwsv2vRwl5GlX/view?usp=drivesdk"
     },
     {id:"testimonianze-attivita",order:120,area:"Video testimonianze",title:"Video · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di persone con esperienze e professioni diverse, dallo studente all’imprenditore, che hanno scelto il nostro progetto.",shareUrl:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link",description:"Testimonianze di persone comuni, dallo studente all’imprenditore, che raccontano la loro esperienza con l’attività.",learn:"Conoscere esperienze diverse e trovare la testimonianza più adatta alla persona con cui stai parlando.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video · Attività",link:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link"},
-    {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video Sport · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che lavorano con il nostro progetto.",shareUrl:"https://drive.google.com/drive/mobile/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",description:"Testimonianze di sportivi che raccontano la loro esperienza con l’attività.",learn:"Guarda direttamente le anteprime e scegli la testimonianza più adatta alla persona con cui stai parlando.",action:"Seleziona il video dalla griglia qui sotto oppure apri la cartella completa.",next:"Presentare l’opportunità",cta:"Apri cartella completa",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",embed:"https://drive.google.com/embeddedfolderview?id=1wUv2e5ydNasveudjonUnt-xzP2bfMwGy#grid"},
+    {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video Sport · Attività",type:"Video",status:"disponibile",shareSection:true,shareLabel:"Condividi raccolta",shareText:"Scopri le testimonianze di alcuni sportivi che lavorano con il nostro progetto.",shareUrl:"https://drive.google.com/drive/mobile/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",description:"Testimonianze di sportivi che raccontano la loro esperienza con l’attività.",learn:"Guarda direttamente le anteprime e scegli la testimonianza più adatta alla persona con cui stai parlando.",action:"Scegli «Guarda» per vedere il video oppure «Condividi video» per inviarlo.",next:"Presentare l’opportunità",cta:"Apri cartella completa",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",embed:"https://drive.google.com/embeddedfolderview?id=1wUv2e5ydNasveudjonUnt-xzP2bfMwGy#grid",gallery:{
+  "hint": "Scegli una testimonianza da guardare o condividere.",
+  "watchLabel": "Guarda",
+  "shareLabel": "Condividi video",
+  "copiedLabel": "Messaggio copiato",
+  "backLabel": "← Torna alla galleria",
+  "openLabel": "Apri video su Drive",
+  "shareText": "Ti condivido la testimonianza di uno sportivo che racconta la sua esperienza con il nostro progetto. Guardala con calma e, se vuoi saperne di più, scrivimi!",
+  "items": [
+    {
+      "id": "18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg",
+      "title": "Ciccio",
+      "url": "https://drive.google.com/file/d/18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg/view?usp=drivesdk"
+    },
+    {
+      "id": "1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k",
+      "title": "Carol",
+      "url": "https://drive.google.com/file/d/1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k/view?usp=drivesdk"
+    },
+    {
+      "id": "1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc",
+      "title": "Lorenzo",
+      "url": "https://drive.google.com/file/d/1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc/view?usp=drivesdk"
+    },
+    {
+      "id": "1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb",
+      "title": "Emanuel Di Paolo",
+      "url": "https://drive.google.com/file/d/1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb/view?usp=drivesdk"
+    },
+    {
+      "id": "1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp",
+      "title": "Barbara",
+      "url": "https://drive.google.com/file/d/1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp/view?usp=drivesdk"
+    },
+    {
+      "id": "1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON",
+      "title": "Saiu",
+      "url": "https://drive.google.com/file/d/1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON/view?usp=drivesdk"
+    },
+    {
+      "id": "17NuQ5fuealOtwOjBq6Pgse6VOCapH4yz",
+      "title": "Testimonianza sportiva",
+      "url": "https://drive.google.com/file/d/17NuQ5fuealOtwOjBq6Pgse6VOCapH4yz/view?usp=drivesdk"
+    }
+  ]
+}},
     {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video Sport · Prodotto",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che utilizzano i nostri prodotti nella loro quotidianità e attività sportiva.",shareUrl:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link",description:"Sportivi che raccontano come utilizzano i prodotti e i risultati fisici ottenuti.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video Sport · Prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"},
     {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video · Benessere",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri alcune testimonianze di persone che raccontano la loro esperienza con il nostro percorso benessere.",shareUrl:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link",description:"Testimonianze di clienti che raccontano la loro esperienza con il percorso benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video · Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"},
     {
@@ -536,10 +609,49 @@ $("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$
 document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.a;document.querySelectorAll("[data-a]").forEach(x=>{const selected=x.dataset.a===S.filter;x.classList.toggle("on",selected);x.setAttribute("aria-pressed",String(selected))});cards()});steps();cards()}
 function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(!e.dataset.resource)return;e.onclick=()=>{const row=rows.find(x=>x.resource===e.dataset.resource);const material=D.resources.find(x=>x.id===e.dataset.resource);if(material){detail(material);return}if(row)detail({id:row.resource,title:row.title,type:"Percorso",area:"Percorso guidato",description:row.text,learn:row.text,action:"Segui questo punto del percorso.",next:"Continua con il punto successivo.",shareSection:true})}})}
 function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.id)))}
-function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox").forEach(x=>x.remove());
+function renderVideoGallery(r,sheet){
+  const config=r.gallery,items=config.items;
+  const section=document.createElement("section");section.className="video-gallery";
+  section.innerHTML='<div class="video-gallery-heading"><p>'+esc(config.hint)+'</p><span class="video-gallery-count">'+items.length+' video</span></div><div class="video-gallery-player" hidden></div><div class="video-gallery-grid">'+items.map(item=>'<article class="video-gallery-card"><button type="button" class="video-gallery-preview" data-gallery-watch="'+esc(item.id)+'" aria-label="'+esc(config.watchLabel+' '+item.title)+'"><img src="https://drive.google.com/thumbnail?id='+encodeURIComponent(item.id)+'&amp;sz=w640" alt="" loading="lazy" decoding="async" width="640" height="360"><span class="video-gallery-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span></button><div class="video-gallery-card-body"><h3>'+esc(item.title)+'</h3><div class="video-gallery-actions"><button type="button" class="btn primary" data-gallery-watch="'+esc(item.id)+'">'+esc(config.watchLabel)+'</button><button type="button" class="btn secondary" data-gallery-share="'+esc(item.id)+'">'+esc(config.shareLabel)+'</button></div></div></article>').join("")+'</div>';
+  const grid=section.querySelector(".video-gallery-grid"),panel=section.querySelector(".video-gallery-player"),heading=section.querySelector(".video-gallery-heading");
+  let galleryScroll=0,returnButton=null;
+  async function shareItem(item,button){
+    const payload={title:r.title+" · "+item.title,text:config.shareText,url:item.url};
+    const copyText=payload.text+"\n\n"+payload.url;
+    try{
+      if(navigator.share){await navigator.share(payload)}
+      else if(navigator.clipboard){
+        await navigator.clipboard.writeText(copyText);button.textContent=config.copiedLabel;
+        setTimeout(()=>{if(button.isConnected)button.textContent=config.shareLabel},1600);
+      }else{window.prompt("Copia questo messaggio",copyText)}
+    }catch(e){if(e&&e.name!=="AbortError")window.prompt("Copia questo messaggio",copyText)}
+  }
+  function back(){
+    panel.replaceChildren();panel.hidden=true;grid.hidden=false;heading.hidden=false;
+    sheet.classList.remove("gallery-playing");sheet.scrollTop=galleryScroll;
+    if(returnButton&&returnButton.isConnected)returnButton.focus({preventScroll:true});
+  }
+  function watch(item,button){
+    galleryScroll=sheet.scrollTop;returnButton=button;
+    grid.hidden=true;heading.hidden=true;panel.hidden=false;sheet.classList.add("gallery-playing");
+    panel.innerHTML='<button type="button" class="btn secondary video-gallery-back">'+esc(config.backLabel)+'</button><h3 tabindex="-1">'+esc(item.title)+'</h3><div class="video-gallery-player-frame"></div><div class="video-gallery-player-actions"><button type="button" class="btn primary" data-gallery-player-share>'+esc(config.shareLabel)+'</button><a class="btn secondary" href="'+esc(item.url)+'" target="_blank" rel="noopener noreferrer">'+esc(config.openLabel)+'</a></div>';
+    const frame=document.createElement("iframe");
+    frame.src="https://drive.google.com/file/d/"+encodeURIComponent(item.id)+"/preview";
+    frame.title=item.title+" · "+r.title;frame.loading="lazy";frame.allow="autoplay; fullscreen; picture-in-picture";frame.allowFullscreen=true;frame.referrerPolicy="strict-origin-when-cross-origin";
+    panel.querySelector(".video-gallery-player-frame").appendChild(frame);
+    panel.querySelector(".video-gallery-back").onclick=back;
+    const share=panel.querySelector("[data-gallery-player-share]");share.onclick=()=>shareItem(item,share);
+    sheet.scrollTop=0;panel.querySelector("h3").focus({preventScroll:true});
+  }
+  section.querySelectorAll("[data-gallery-watch]").forEach(button=>button.onclick=()=>watch(items.find(item=>item.id===button.dataset.galleryWatch),button));
+  section.querySelectorAll("[data-gallery-share]").forEach(button=>button.onclick=()=>shareItem(items.find(item=>item.id===button.dataset.galleryShare),button));
+  section.querySelectorAll(".video-gallery-preview img").forEach(img=>img.addEventListener("error",()=>img.remove(),{once:true}));
+  return section;
+}
+function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery").forEach(x=>x.remove());
 const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
 const embedSource=r.embedResource?D.resources.find(x=>x.id===r.embedResource):r;
-const embeds=hasVideos?r.videos:(embedSource&&embedSource.embed?[{title:embedSource.title,embed:embedSource.embed}]:[]);
+const embeds=hasGallery?[]:(hasVideos?r.videos:(embedSource&&embedSource.embed?[{title:embedSource.title,embed:embedSource.embed}]:[]));
 if(r.pendingVideo&&!embeds.length){
   const box=document.createElement("div");box.className="embedbox placeholder";
   const title=document.createElement("b");title.textContent="Video formativo";
@@ -567,7 +679,7 @@ embeds.forEach(v=>{
     const title=document.createElement("h3");title.textContent=v.title||r.title;
     group.appendChild(title);group.appendChild(box);a.parentNode.insertBefore(group,a);
   }else{a.parentNode.insertBefore(box,a)}
-});const o=$("dOpen");
+});if(hasGallery){a.parentNode.insertBefore(renderVideoGallery(r,sheet),a);sheet.scrollTop=0}const o=$("dOpen");
 if(Array.isArray(r.links)&&r.links.length){
   o.style.display="none";
   r.links.forEach((x,i)=>{
@@ -608,7 +720,7 @@ share.onclick=async()=>{
   }catch(e){if(e&&e.name!=="AbortError")window.prompt(promptLabel,copyText)}
 };
 const onShare=share.onclick;drawer.classList.add("on")}
-function close(){drawer.classList.remove("on")}document.getElementById("tgTop").onclick=()=>ext(D.telegram);$("close").onclick=close;$("close2").onclick=close;drawer.onclick=e=>{if(e.target===drawer)close()};
+function close(){drawer.classList.remove("on");drawer.querySelectorAll(".video-gallery iframe").forEach(frame=>frame.remove());drawer.querySelector(".sheet").classList.remove("gallery-playing")}document.getElementById("tgTop").onclick=()=>ext(D.telegram);$("close").onclick=close;$("close2").onclick=close;drawer.onclick=e=>{if(e.target===drawer)close()};
 document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");go(b.dataset.go)});render();const openShared=()=>{const q=new URLSearchParams(location.search).get("sezione");const m=location.hash.match(/^#materiale=(.+)$/);const id=q||(m?decodeURIComponent(m[1]):null);if(!id)return;const card=[...document.querySelectorAll(".card[data-id]")].find(x=>x.dataset.id===id);if(card){card.scrollIntoView({block:"center"});card.click();return}const step=[...document.querySelectorAll(".step[data-resource]")].find(x=>x.dataset.resource===id);if(step){step.scrollIntoView({block:"center"});step.click();return}const r=D.resources.find(x=>x.id===id);if(r)detail(r)};setTimeout(openShared,250);window.addEventListener("hashchange",()=>setTimeout(openShared,50));
 })();
 </script>

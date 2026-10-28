@@ -265,7 +265,52 @@ window.SUPPORTO_DATA = {
       "link": "https://drive.google.com/file/d/1_qQiJKj7ujJ_5AQTCo2nwsv2vRwl5GlX/view?usp=drivesdk"
     },
     {id:"testimonianze-attivita",order:120,area:"Video testimonianze",title:"Video · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di persone con esperienze e professioni diverse, dallo studente all’imprenditore, che hanno scelto il nostro progetto.",shareUrl:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link",description:"Testimonianze di persone comuni, dallo studente all’imprenditore, che raccontano la loro esperienza con l’attività.",learn:"Conoscere esperienze diverse e trovare la testimonianza più adatta alla persona con cui stai parlando.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video · Attività",link:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link"},
-    {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video Sport · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che lavorano con il nostro progetto.",shareUrl:"https://drive.google.com/drive/mobile/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",description:"Testimonianze di sportivi che raccontano la loro esperienza con l’attività.",learn:"Guarda direttamente le anteprime e scegli la testimonianza più adatta alla persona con cui stai parlando.",action:"Seleziona il video dalla griglia qui sotto oppure apri la cartella completa.",next:"Presentare l’opportunità",cta:"Apri cartella completa",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",embed:"https://drive.google.com/embeddedfolderview?id=1wUv2e5ydNasveudjonUnt-xzP2bfMwGy#grid"},
+    {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video Sport · Attività",type:"Video",status:"disponibile",shareSection:true,shareLabel:"Condividi raccolta",shareText:"Scopri le testimonianze di alcuni sportivi che lavorano con il nostro progetto.",shareUrl:"https://drive.google.com/drive/mobile/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",description:"Testimonianze di sportivi che raccontano la loro esperienza con l’attività.",learn:"Guarda direttamente le anteprime e scegli la testimonianza più adatta alla persona con cui stai parlando.",action:"Scegli «Guarda» per vedere il video oppure «Condividi video» per inviarlo.",next:"Presentare l’opportunità",cta:"Apri cartella completa",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",embed:"https://drive.google.com/embeddedfolderview?id=1wUv2e5ydNasveudjonUnt-xzP2bfMwGy#grid",gallery:{
+  "hint": "Scegli una testimonianza da guardare o condividere.",
+  "watchLabel": "Guarda",
+  "shareLabel": "Condividi video",
+  "copiedLabel": "Messaggio copiato",
+  "backLabel": "← Torna alla galleria",
+  "openLabel": "Apri video su Drive",
+  "shareText": "Ti condivido la testimonianza di uno sportivo che racconta la sua esperienza con il nostro progetto. Guardala con calma e, se vuoi saperne di più, scrivimi!",
+  "items": [
+    {
+      "id": "18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg",
+      "title": "Ciccio",
+      "url": "https://drive.google.com/file/d/18488rZgBsAf7SG5ORcZZ8J19j8cBZvlg/view?usp=drivesdk"
+    },
+    {
+      "id": "1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k",
+      "title": "Carol",
+      "url": "https://drive.google.com/file/d/1msbftMnm6v7Ygi6Qu7SUqgqeuxJ_cp1k/view?usp=drivesdk"
+    },
+    {
+      "id": "1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc",
+      "title": "Lorenzo",
+      "url": "https://drive.google.com/file/d/1GR0Nj9ZI1Arsmh7x8urrhUQKqYHD_Wjc/view?usp=drivesdk"
+    },
+    {
+      "id": "1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb",
+      "title": "Emanuel Di Paolo",
+      "url": "https://drive.google.com/file/d/1s_v2s_CbZOGRnBMgTR08rGGBP1uZrDkb/view?usp=drivesdk"
+    },
+    {
+      "id": "1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp",
+      "title": "Barbara",
+      "url": "https://drive.google.com/file/d/1Q9vDVgAIGZhPw7JWkZXJhKLejPqG9gDp/view?usp=drivesdk"
+    },
+    {
+      "id": "1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON",
+      "title": "Saiu",
+      "url": "https://drive.google.com/file/d/1QFeDptWzJ5p3k59m7cAjKyVTK8_ECiON/view?usp=drivesdk"
+    },
+    {
+      "id": "17NuQ5fuealOtwOjBq6Pgse6VOCapH4yz",
+      "title": "Testimonianza sportiva",
+      "url": "https://drive.google.com/file/d/17NuQ5fuealOtwOjBq6Pgse6VOCapH4yz/view?usp=drivesdk"
+    }
+  ]
+}},
     {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video Sport · Prodotto",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che utilizzano i nostri prodotti nella loro quotidianità e attività sportiva.",shareUrl:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link",description:"Sportivi che raccontano come utilizzano i prodotti e i risultati fisici ottenuti.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video Sport · Prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"},
     {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video · Benessere",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri alcune testimonianze di persone che raccontano la loro esperienza con il nostro percorso benessere.",shareUrl:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link",description:"Testimonianze di clienti che raccontano la loro esperienza con il percorso benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video · Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"},
     {
