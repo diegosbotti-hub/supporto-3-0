@@ -6,6 +6,7 @@ window.SUPPORTO_DATA = {
     updated: "28/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
+  telegramButtonLabel: "Collegati alla chat",
   telegramDescription: "La chat del team per ricevere aggiornamenti sull’Accademia e sulla formazione online, fare domande e confrontarti con gli altri membri.",
   materialsMenu: {
     title: "Menu dei materiali",
