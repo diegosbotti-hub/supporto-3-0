@@ -118,7 +118,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "26/10/2026"
+    updated: "28/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   materialsMenu: {
@@ -139,7 +139,7 @@ window.SUPPORTO_DATA = {
       {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
-      {n:7,title:"DMO Trattamento viso",text:"Usare il trattamento viso come metodo operativo.",status:"preparazione",resource:"skin"},
+      {n:7,title:"DMO Trattamento viso",text:"Skin Experience: invito, preparazione, esecuzione e prossimi passi. Materiali in preparazione.",status:"disponibile",resource:"skin"},
       {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
@@ -148,6 +148,34 @@ window.SUPPORTO_DATA = {
     ]
   },
   resources: [
+    {
+      id:"skin", order:0.7, area:"Percorso guidato", title:"DMO Trattamento viso", type:"Video e materiali", status:"disponibile", library:false, shareSection:false,
+      description:"Skin Experience in quattro fasi, con i materiali operativi collegati.",
+      learn:"Organizzare e svolgere la Skin Experience: invito, preparazione, esecuzione e prossimi passi.",
+      action:"Guarda i quattro video nell’ordine indicato e applica le fasi della Skin Experience. Scheda di valutazione e presentazione in preparazione.",
+      next:"DMO Valutazione corporea",
+      videos:[
+        {title:"Fase 1 · Invito",embed:"https://www.youtube-nocookie.com/embed/4chExoXJWAc"},
+        {title:"Fase 2 · Preparazione",embed:"https://www.youtube-nocookie.com/embed/UmWqCWqEupw"},
+        {title:"Fase 3 · Esecuzione",embed:"https://www.youtube-nocookie.com/embed/D_tmg2Gh4ls"},
+        {title:"Fase 4 · Prossimi passi",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"}
+      ],
+      links:[
+        {label:"5 · Materiali Skin Experience",resource:"skin-materiali"}
+      ]
+    },
+    {
+      id:"skin-materiali", order:0.71, area:"Percorso guidato", title:"Materiali Skin Experience", type:"Materiali", status:"preparazione", library:false, shareSection:false,
+      description:"Scheda di valutazione e presentazione a supporto della Skin Experience.",
+      learn:"Qui troverai la scheda di valutazione e la presentazione della Skin Experience.",
+      action:"I documenti sono in preparazione.",
+      next:"Torna ai video e segui le quattro fasi nell’ordine indicato.",
+      links:[
+        {label:"Scheda di valutazione",pending:true},
+        {label:"Presentazione",pending:true},
+        {label:"Torna ai video Skin Experience",resource:"skin"}
+      ]
+    },
     {
       id:"obiezioni", order:0.9, area:"Percorso guidato", title:"Obiezioni", type:"Formazione", status:"preparazione", library:false, shareSection:false,
       description:"Come gestire le obiezioni più comuni.",
