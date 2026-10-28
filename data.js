@@ -37,9 +37,10 @@ window.SUPPORTO_DATA = {
       id:"skin", order:0.7, area:"Percorso guidato", title:"DMO Trattamento viso", type:"Video e materiali", status:"disponibile", library:false, shareSection:false,
       description:"Skin Experience in quattro fasi, con i materiali operativi collegati.",
       learn:"Organizzare e svolgere la Skin Experience: invito, preparazione, esecuzione e prossimi passi.",
-      action:"Guarda i quattro video nell’ordine indicato e applica le fasi della Skin Experience. Scheda di valutazione e presentazione in preparazione.",
+      action:"Segui le quattro fasi nell’ordine indicato. Il video introduttivo del team, la scheda di valutazione e la presentazione sono in preparazione.",
       next:"DMO Valutazione corporea",
       videos:[
+        {title:"Introduzione · Indicazioni del team",description:"Spunti pratici per rendere più efficace la Skin Experience.",pending:true},
         {title:"Fase 1 · Invito",embed:"https://www.youtube-nocookie.com/embed/4chExoXJWAc"},
         {title:"Fase 2 · Preparazione",embed:"https://www.youtube-nocookie.com/embed/UmWqCWqEupw"},
         {title:"Fase 3 · Esecuzione",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"},
