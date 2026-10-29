@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "28/10/2026"
+    updated: "29/10/2026"
   },
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   telegramButtonLabel: "Collegati alla chat",
@@ -256,13 +256,13 @@ window.SUPPORTO_DATA = {
       "shareLabel": "Condividi documento",
       "copyShareText": true,
       "shareText": "Ti giro questo documento per conoscere meglio Herbalife e cosa c’è dietro ai prodotti: ricerca, controlli e certificazioni, con i link alle fonti. Guardalo con calma; se qualcosa ti incuriosisce o ti lascia dei dubbi, scrivimi e ne parliamo volentieri!",
-      "shareUrl": "https://drive.google.com/file/d/1_qQiJKj7ujJ_5AQTCo2nwsv2vRwl5GlX/view?usp=drivesdk",
+      "shareUrl": "https://drive.google.com/file/d/1YOQ_ska9vfgYAll-N_InOVtKjg5Bpf76/view?usp=drivesdk",
       "description": "Ricerca, laboratori, qualità, certificazioni e collaborazioni sportive di Herbalife, con sintesi chiare e fonti cliccabili.",
       "learn": "Conoscere Herbalife, la ricerca, i controlli di qualità, le certificazioni e le collaborazioni sportive attraverso sintesi e fonti cliccabili.",
       "action": "Apri il PDF e consulta le fonti. Usa «Condividi documento» per inviarlo con il messaggio già pronto.",
       "next": "Consulta le fonti cliccabili nel PDF per approfondire.",
       "cta": "Apri PDF",
-      "link": "https://drive.google.com/file/d/1_qQiJKj7ujJ_5AQTCo2nwsv2vRwl5GlX/view?usp=drivesdk"
+      "link": "https://drive.google.com/file/d/1YOQ_ska9vfgYAll-N_InOVtKjg5Bpf76/view?usp=drivesdk"
     },
     {id:"testimonianze-attivita",order:120,area:"Video testimonianze",title:"Video · Attività",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di persone con esperienze e professioni diverse, dallo studente all’imprenditore, che hanno scelto il nostro progetto.",shareUrl:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link",description:"Testimonianze di persone comuni, dallo studente all’imprenditore, che raccontano la loro esperienza con l’attività.",learn:"Conoscere esperienze diverse e trovare la testimonianza più adatta alla persona con cui stai parlando.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Presentare l’opportunità",cta:"Apri Video · Attività",link:"https://drive.google.com/drive/folders/1T1LFn7YpDUDEmQXgJebM_UrY7aU8AjZQ?usp=drive_link"},
     {id:"testimonianze-sport",order:130,area:"Video testimonianze",title:"Video Sport · Attività",type:"Video",status:"disponibile",shareSection:true,shareLabel:"Condividi raccolta",shareText:"Scopri le testimonianze di alcuni sportivi che lavorano con il nostro progetto.",shareUrl:"https://drive.google.com/drive/mobile/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",description:"Testimonianze di sportivi che raccontano la loro esperienza con l’attività.",learn:"Guarda direttamente le anteprime e scegli la testimonianza più adatta alla persona con cui stai parlando.",action:"Scegli «Guarda» per vedere il video oppure «Condividi video» per inviarlo.",next:"Presentare l’opportunità",cta:"Apri cartella completa",link:"https://drive.google.com/drive/folders/1wUv2e5ydNasveudjonUnt-xzP2bfMwGy?usp=drive_link",embed:"https://drive.google.com/embeddedfolderview?id=1wUv2e5ydNasveudjonUnt-xzP2bfMwGy#grid",gallery:{
