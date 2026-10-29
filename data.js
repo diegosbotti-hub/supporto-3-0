@@ -5,6 +5,7 @@ window.SUPPORTO_DATA = {
     subtitle: "Il materiale giusto. Nel momento giusto.",
     updated: "29/10/2026"
   },
+  appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   telegramButtonLabel: "Collegati alla chat",
   telegramDescription: "La chat del team per ricevere aggiornamenti sull’Accademia e sulla formazione online, fare domande e confrontarti con gli altri membri.",
@@ -35,6 +36,14 @@ window.SUPPORTO_DATA = {
     ]
   },
   resources: [
+    {
+      id:"tutorial-app", order:-2, area:"Guida all’app", title:"Come usare l’app", type:"Video", status:"disponibile", library:false, shareSection:false,
+      description:"Un breve tutorial per orientarti tra percorso, materiali e condivisione.",
+      embed:"https://www.youtube-nocookie.com/embed/fFhmQ-Xo_Fg",
+      vertical:true,
+      cta:"Apri su YouTube",
+      link:"https://youtube.com/shorts/fFhmQ-Xo_Fg?feature=share"
+    },
     {
       id:"skin", order:0.7, area:"Percorso guidato", title:"DMO Trattamento viso", type:"Video e materiali", status:"disponibile", library:false, shareSection:false,
       description:"Skin Experience in quattro fasi, con i materiali operativi collegati.",
