@@ -166,7 +166,7 @@ window.SUPPORTO_DATA = {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"disponibile",resource:"obiettivo"},
       {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
-      {n:3,title:"Lista nomi",text:"Costruisci, gestisci e amplia la lista nomi partendo dalle persone che conosci, dalla quotidianità, dalle relazioni e dai social.",status:"disponibile",resource:"lista"},
+      {n:3,title:"Lista nomi",text:"Video e scheda da stampare per costruire e aggiornare la tua lista nomi.",status:"disponibile",resource:"lista"},
       {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
@@ -232,12 +232,13 @@ window.SUPPORTO_DATA = {
       embed:"https://www.youtube-nocookie.com/embed/OByvvIVJc-E"
     },
     {
-      id:"lista", order:-0.7, area:"Percorso guidato", title:"Lista nomi", type:"Video", status:"disponibile", library:false, shareSection:false,
-      description:"Come costruire, gestire e aggiornare la lista contatti.",
+      id:"lista", order:-0.7, area:"Percorso guidato", title:"Lista nomi", type:"Video e materiale", status:"disponibile", library:false, shareSection:false,
+      description:"Video e scheda da stampare per costruire e aggiornare la tua lista nomi.",
       learn:"Organizzare la lista nomi e gestire i contatti seguendo il metodo del team.",
-      action:"Guarda il video e prepara la tua lista contatti seguendo il metodo spiegato.",
+      action:"Guarda il video, stampa la scheda e compila la tua lista nomi seguendo il metodo spiegato.",
       next:"Come invitare",
-      embed:"https://www.youtube-nocookie.com/embed/yWJRBHaDspk"
+      embed:"https://www.youtube-nocookie.com/embed/yWJRBHaDspk",
+      links:[{label:"Stampa il materiale",resource:"lista-nomi-pdf",direct:true}]
     },
     {
       id:"obiettivo", order:-1, area:"Percorso guidato", title:"Obiettivo personale", type:"Video", status:"disponibile", library:false, shareSection:false,
@@ -293,7 +294,16 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"book-pdf", order:1, area:"Presentazioni", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",shareUrl:"https://drive.google.com/drive/folders/1P37QA_0GqQEDRye74TSwxWe1-Gst7OTS?usp=drive_link",
+      id:"lista-nomi-pdf", order:2, area:"Presentazioni e schede", title:"Lista nomi", type:"PDF", status:"disponibile", library:true, shareSection:false,
+      description:"Stampa la scheda e compila la tua lista nomi.",
+      learn:"Costruire e aggiornare la tua lista nomi seguendo il metodo del team.",
+      action:"Apri il PDF, stampalo e compila la tua lista nomi.",
+      next:"Segui le indicazioni del video nel punto 3 del percorso.",
+      cta:"Stampa il materiale",
+      link:"https://drive.google.com/file/d/1GgSrFY82Ok9i2VrfXh2ng2uIfMuAXdnp/view?usp=drivesdk"
+    },
+    {
+      id:"book-pdf", order:1, area:"Presentazioni e schede", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",shareUrl:"https://drive.google.com/drive/folders/1P37QA_0GqQEDRye74TSwxWe1-Gst7OTS?usp=drive_link",
       description:"Versione aggiornata del Book Colazione.",
       learn:"Come usare il Book Colazione per spiegare in modo semplice il percorso al cliente.",
       action:"Apri il PDF, familiarizza con il flusso e individua i passaggi principali.",
@@ -693,7 +703,7 @@ if(Array.isArray(r.links)&&r.links.length){
       el.target="_blank";el.rel="noopener";
       el.href=x.url||(target&&(target.link||target.shareUrl))||"#";
       el.textContent=x.label;
-      if(target){el.onclick=e=>{e.preventDefault();detail(target)}}
+      if(target&&!x.direct){el.onclick=e=>{e.preventDefault();detail(target)}}
     }
     a.insertBefore(el,$("dShare"));
   });
