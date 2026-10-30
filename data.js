@@ -32,7 +32,7 @@ window.SUPPORTO_DATA = {
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
       {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"},
-      {n:12,title:"Obiezioni",text:"Come gestire le obiezioni più comuni.",status:"disponibile",resource:"obiezioni"}
+      {n:12,title:"Obiezioni",text:"Guida operativa disponibile. Video tutorial in preparazione.",status:"disponibile",resource:"obiezioni"}
     ]
   },
   resources: [
@@ -74,11 +74,12 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"obiezioni", order:0.9, area:"Percorso guidato", title:"Obiezioni", type:"Materiale", status:"disponibile", library:false, shareSection:false, materialsAtTop:true,
-      description:"Guida operativa per rispondere alle obiezioni più comuni.",
+      id:"obiezioni", order:0.9, area:"Percorso guidato", title:"Obiezioni", type:"Video e materiale", status:"disponibile", library:false, shareSection:false, materialsAtTop:true,
+      description:"Guida operativa per rispondere alle obiezioni più comuni. Video tutorial in preparazione.",
       learn:"Gestire le obiezioni seguendo il metodo del team.",
       action:"Apri la guida, stampala e segui la sequenza operativa per gestire le obiezioni.",
       next:"Ripassa il percorso e applica le indicazioni del team.",
+      videos:[{title:"Video tutorial",description:"Come rispondere alle obiezioni",pending:true}],
       links:[{label:"Scarica materiale da stampare",resource:"obiezioni-pdf",direct:true}]
     },
     {
