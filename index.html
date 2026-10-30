@@ -48,8 +48,18 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.tutorial-mode .x{flex:none;width:44px;height:44px}
 .sheet.tutorial-mode .sheetactions>*{min-height:44px}
 .embedbox.youtube.vertical{aspect-ratio:9/16;width:min(100%,34vh,320px);margin:4px auto}
-.material-actions{display:flex;flex-direction:column;gap:8px;margin:14px 0}
-.material-actions .btn{display:block;width:100%;min-width:0;min-height:44px;text-align:center;white-space:normal;overflow-wrap:anywhere}
+.material-actions{display:flex;flex-direction:column;gap:10px;margin:20px 0;padding:16px;background:#f3f7f4;border:1px solid var(--line);border-radius:18px}
+.material-actions h3,.training-video-heading{display:flex;align-items:center;gap:8px;font-size:13px;line-height:1.35;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--g);margin:0}
+.material-actions .btn.material-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:100%;min-width:0;min-height:44px;padding:14px;background:#fff;border:1px solid #d6e1d9;border-radius:13px;color:var(--ink);text-align:left;text-decoration:none;white-space:normal;overflow-wrap:anywhere}
+.material-card:focus-visible{outline:3px solid #9fceb0;outline-offset:3px}
+.material-card .material-format{font-size:10px;font-weight:850;line-height:1.3;color:var(--g);text-transform:uppercase;letter-spacing:.06em}
+.material-card .material-name{font-size:15px;font-weight:850;line-height:1.35}
+.material-card .material-note{font-size:12px;font-weight:450;line-height:1.45;color:var(--mut)}
+.material-card .material-cta{font-size:12px;font-weight:850;line-height:1.35;color:var(--g);margin-top:3px}
+.material-actions .btn.material-card:disabled{background:#f8faf8;color:#68726b;border-color:var(--line)}
+.training-video-heading{border-top:2px solid var(--line);padding-top:18px;margin:22px 0 14px}
+.material-actions h3 svg,.training-video-heading svg{flex:none;width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
+@media(max-width:760px){.material-actions{padding:12px}.material-actions .btn.material-card{padding:13px}}
 .sheet.gallery-mode{overscroll-behavior:contain;overflow-x:hidden}
 .sheet.gallery-mode .block{display:none}
 .sheet.gallery-mode .sheethead{position:sticky;top:0;z-index:3;background:#fff;padding-bottom:14px;border-bottom:1px solid var(--line)}
@@ -242,6 +252,7 @@ window.SUPPORTO_DATA = {
     },
     {
       id:"assistenza-cliente-pdf", order:2.3, area:"Presentazioni e schede", title:"Assistenza cliente · Guida interna", type:"PDF", status:"disponibile", library:true, shareSection:false,
+      materialNote:"Solo per il membro — non inviare al cliente.",
       description:"Solo per i membri: guida operativa per l’assistenza, i controlli e il passaparola. Non condividere con il cliente.",
       learn:"Organizzare l’assistenza al cliente seguendo la guida del team.",
       action:"Scarica e consulta la guida per svolgere l’assistenza. È un documento interno: non inviarlo al cliente.",
@@ -251,6 +262,7 @@ window.SUPPORTO_DATA = {
     },
     {
       id:"cliente-privilegiato-pdf", order:2.4, area:"Presentazioni e schede", title:"Cliente privilegiato · Vantaggi", type:"Infografica", status:"disponibile", library:true, shareSection:true,
+      format:"PDF", materialNote:"Da consultare e condividere con il cliente.",
       description:"Infografica da inviare al cliente per presentare il programma Cliente privilegiato e i suoi vantaggi.",
       learn:"Conoscere i vantaggi del programma Cliente privilegiato.",
       action:"Apri l’infografica e usa «Condividi con il cliente» per inviarla con il messaggio pronto.",
@@ -736,11 +748,16 @@ function renderVideoGallery(r,sheet){
   section.querySelectorAll(".video-gallery-preview img").forEach(img=>img.addEventListener("error",()=>img.remove(),{once:true}));
   return section;
 }
-function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery,.material-actions").forEach(x=>x.remove());
+function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery,.material-actions,.training-video-heading").forEach(x=>x.remove());
 const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
 const hasTopMaterials=r.area==="Percorso guidato"&&Array.isArray(r.links)&&r.links.length>0&&(hasVideos||r.embed||r.embedResource||r.pendingVideo||r.materialsAtTop);
 const embedSource=r.embedResource?D.resources.find(x=>x.id===r.embedResource):r;
 const embeds=hasGallery?[]:(hasVideos?r.videos:(embedSource&&embedSource.embed?[{title:embedSource.title,embed:embedSource.embed,vertical:embedSource.vertical}]:[]));
+if(hasTopMaterials&&(embeds.length||r.pendingVideo)){
+  const heading=document.createElement("h3");heading.className="training-video-heading";
+  heading.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"></rect><path d="m10 8 6 4-6 4Z"></path></svg><span>Video tutorial</span>';
+  a.parentNode.insertBefore(heading,a);
+}
 if(r.pendingVideo&&!embeds.length){
   const box=document.createElement("div");box.className="embedbox placeholder";
   const title=document.createElement("b");title.textContent="Video formativo";
@@ -766,7 +783,7 @@ embeds.forEach(v=>{
   if(hasVideos||r.embedResource){
     const group=document.createElement("section");group.className="embedvideo";
     const title=document.createElement("h3");title.textContent=v.title||r.title;
-    group.appendChild(title);
+    if(!(hasTopMaterials&&embeds.length===1&&v.title==="Video tutorial"))group.appendChild(title);
     if(v.description&&v.embed&&!v.pending){
       const description=document.createElement("p");description.className="embed-description";description.textContent=v.description;group.appendChild(description);
     }
@@ -788,13 +805,25 @@ if(Array.isArray(r.links)&&r.links.length){
       el.textContent=x.label;
       if(target&&!x.direct){el.onclick=e=>{e.preventDefault();detail(target)}}
     }
+    if(hasTopMaterials){
+      el.className="btn material-card extra";
+      const format=target?(target.format||target.type||"Documento"):(/PDF/i.test(x.label)?"PDF":"Documento");
+      const name=target?target.title:x.label;
+      const note=target?.materialNote||(pending||target?.status==="preparazione"?"Materiale in preparazione.":target?.shareSection?"Da consultare e condividere.":"Materiale per la formazione del membro.");
+      const action=pending?"In preparazione":x.direct?"Apri "+(format==="PDF"?"PDF":"materiale")+" ↗":"Apri materiale →";
+      el.innerHTML='<span class="material-format">'+esc(format)+'</span><span class="material-name">'+esc(name)+'</span><span class="material-note">'+esc(note)+'</span><span class="material-cta">'+esc(action)+'</span>';
+    }
     a.insertBefore(el,$("dShare"));
   });
 }else{
   o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none";
 }
 if(hasTopMaterials){
-  const materials=document.createElement("div");materials.className="material-actions";
+  const materials=document.createElement("section");materials.className="material-actions";
+  materials.setAttribute("aria-label","Materiali");
+  const heading=document.createElement("h3");
+  heading.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"></path><path d="M14 3v6h6M8 13h8M8 17h6"></path></svg><span>Materiali</span>';
+  materials.appendChild(heading);
   a.querySelectorAll(".extra").forEach(el=>materials.appendChild(el));
   sheet.querySelector(".sheethead").after(materials);
 }

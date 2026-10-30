@@ -87,6 +87,7 @@ window.SUPPORTO_DATA = {
     },
     {
       id:"assistenza-cliente-pdf", order:2.3, area:"Presentazioni e schede", title:"Assistenza cliente · Guida interna", type:"PDF", status:"disponibile", library:true, shareSection:false,
+      materialNote:"Solo per il membro — non inviare al cliente.",
       description:"Solo per i membri: guida operativa per l’assistenza, i controlli e il passaparola. Non condividere con il cliente.",
       learn:"Organizzare l’assistenza al cliente seguendo la guida del team.",
       action:"Scarica e consulta la guida per svolgere l’assistenza. È un documento interno: non inviarlo al cliente.",
@@ -96,6 +97,7 @@ window.SUPPORTO_DATA = {
     },
     {
       id:"cliente-privilegiato-pdf", order:2.4, area:"Presentazioni e schede", title:"Cliente privilegiato · Vantaggi", type:"Infografica", status:"disponibile", library:true, shareSection:true,
+      format:"PDF", materialNote:"Da consultare e condividere con il cliente.",
       description:"Infografica da inviare al cliente per presentare il programma Cliente privilegiato e i suoi vantaggi.",
       learn:"Conoscere i vantaggi del programma Cliente privilegiato.",
       action:"Apri l’infografica e usa «Condividi con il cliente» per inviarla con il messaggio pronto.",
