@@ -31,7 +31,7 @@ window.SUPPORTO_DATA = {
       {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Guida interna e infografica Cliente privilegiato disponibili. Video tutorial in preparazione.",status:"disponibile",resource:"clienti"},
-      {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale 3.0 disponibile in PDF e PowerPoint.",status:"disponibile",resource:"opportunita"},
+      {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale in PDF e PowerPoint disponibile. Video tutorial in preparazione.",status:"disponibile",resource:"opportunita"},
       {n:12,title:"Obiezioni",text:"Guida operativa disponibile. Video tutorial in preparazione.",status:"disponibile",resource:"obiezioni"}
     ]
   },
@@ -110,11 +110,12 @@ window.SUPPORTO_DATA = {
       shareText:"Ti giro questa infografica con i vantaggi del programma Cliente privilegiato: puoi acquistare i prodotti per il tuo consumo personale con gli sconti previsti dal programma. Guardala con calma; se ti interessa, scrivimi e ti spiego come funziona!"
     },
     {
-      id:"opportunita", order:0.88, area:"Percorso guidato", title:"Presentare l’opportunità", type:"Materiali", status:"disponibile", library:false, shareSection:false, materialsAtTop:true,
-      description:"Colloquio individuale 3.0 per presentare l’opportunità, disponibile in PDF e PowerPoint.",
+      id:"opportunita", order:0.88, area:"Percorso guidato", title:"Presentare l’opportunità", type:"Video e materiali", status:"disponibile", library:false, shareSection:false, materialsAtTop:true,
+      description:"Colloquio individuale 3.0 in PDF e PowerPoint. Video tutorial per presentare l’opportunità in preparazione.",
       learn:"Utilizzare la presentazione del colloquio individuale.",
       action:"Apri il materiale e scegli il formato PDF oppure PowerPoint per svolgere la presentazione.",
       next:"Obiezioni",
+      videos:[{title:"Video tutorial",description:"Presentare l’opportunità",pending:true}],
       links:[{label:"Colloquio individuale 3.0 · PDF e PowerPoint",resource:"colloquio-individuale"}]
     },
     {
