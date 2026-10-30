@@ -58,7 +58,7 @@ window.SUPPORTO_DATA = {
         {title:"Fase 4 · Prossimi passi",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"}
       ],
       links:[
-        {label:"5 · Materiali Skin Experience",resource:"skin-materiali"}
+        {label:"Materiali per questo DMO",resource:"skin-materiali"}
       ]
     },
     {

@@ -48,6 +48,8 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.tutorial-mode .x{flex:none;width:44px;height:44px}
 .sheet.tutorial-mode .sheetactions>*{min-height:44px}
 .embedbox.youtube.vertical{aspect-ratio:9/16;width:min(100%,34vh,320px);margin:4px auto}
+.material-actions{display:flex;flex-direction:column;gap:8px;margin:14px 0}
+.material-actions .btn{display:block;width:100%;min-width:0;min-height:44px;text-align:center;white-space:normal;overflow-wrap:anywhere}
 .sheet.gallery-mode{overscroll-behavior:contain;overflow-x:hidden}
 .sheet.gallery-mode .block{display:none}
 .sheet.gallery-mode .sheethead{position:sticky;top:0;z-index:3;background:#fff;padding-bottom:14px;border-bottom:1px solid var(--line)}
@@ -95,7 +97,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.prodotti-mode .sheetactions a.extra:first-of-type{background:#fff;color:var(--ink);border:1px solid var(--line)}
 .sheet.prodotti-mode #dShare,.sheet.prodotti-mode #close2{width:100%;flex:none}
 .sheet.hom-mode .sheetactions{flex-direction:column}.sheet.hom-mode .sheetactions>*{flex:none;width:100%;min-height:44px}
-.sheet.stacked-actions .sheetactions{flex-direction:column}.sheet.stacked-actions .sheetactions>*{flex:none;width:100%;min-height:44px}.sheetactions .btn:disabled{cursor:default;background:#f3f5f3;color:#68726b;border:1px solid var(--line)}.embedbox.placeholder{padding:20px;display:grid;gap:6px}.embedbox.placeholder b{font-size:15px}.embedbox.placeholder span{font-size:13px;color:var(--mut)}
+.sheet.stacked-actions .sheetactions{flex-direction:column}.sheet.stacked-actions .sheetactions>*{flex:none;width:100%;min-height:44px}.sheetactions .btn:disabled,.material-actions .btn:disabled{cursor:default;background:#f3f5f3;color:#68726b;border:1px solid var(--line)}.embedbox.placeholder{padding:20px;display:grid;gap:6px}.embedbox.placeholder b{font-size:15px}.embedbox.placeholder span{font-size:13px;color:var(--mut)}
 .empty{background:#fff;border:1px dashed #cbd5cd;border-radius:17px;padding:22px;text-align:center;color:var(--mut)}.embedbox{margin:14px 0 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f7faf8}.embedbox iframe{display:block;width:100%;height:460px;border:0;background:#fff}.embedbox.youtube{aspect-ratio:16/9;background:#000}.embedbox.youtube iframe{width:100%;height:100%}.embedvideo{min-width:0;margin:18px 0}.embedvideo h3{font-size:15px;line-height:1.35;margin:0 0 8px}.embedvideo .embed-description{font-size:13px;line-height:1.45;color:var(--mut);margin:0 0 10px}.embedvideo .embedbox{margin:0}@media(max-width:760px){.embedbox iframe{height:420px}.embedbox.youtube iframe{height:100%}}
 @media(max-width:760px){
 .nav{display:grid}
@@ -211,7 +213,7 @@ window.SUPPORTO_DATA = {
         {title:"Fase 4 · Prossimi passi",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"}
       ],
       links:[
-        {label:"5 · Materiali Skin Experience",resource:"skin-materiali"}
+        {label:"Materiali per questo DMO",resource:"skin-materiali"}
       ]
     },
     {
@@ -676,8 +678,9 @@ function renderVideoGallery(r,sheet){
   section.querySelectorAll(".video-gallery-preview img").forEach(img=>img.addEventListener("error",()=>img.remove(),{once:true}));
   return section;
 }
-function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery").forEach(x=>x.remove());
+function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery,.material-actions").forEach(x=>x.remove());
 const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
+const hasTopMaterials=r.area==="Percorso guidato"&&Array.isArray(r.links)&&r.links.length>0&&(hasVideos||r.embed||r.embedResource||r.pendingVideo);
 const embedSource=r.embedResource?D.resources.find(x=>x.id===r.embedResource):r;
 const embeds=hasGallery?[]:(hasVideos?r.videos:(embedSource&&embedSource.embed?[{title:embedSource.title,embed:embedSource.embed,vertical:embedSource.vertical}]:[]));
 if(r.pendingVideo&&!embeds.length){
@@ -732,6 +735,11 @@ if(Array.isArray(r.links)&&r.links.length){
 }else{
   o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none";
 }
+if(hasTopMaterials){
+  const materials=document.createElement("div");materials.className="material-actions";
+  a.querySelectorAll(".extra").forEach(el=>materials.appendChild(el));
+  sheet.querySelector(".sheethead").after(materials);
+}
 const share=$("dShare");
 share.style.display=r.shareSection?"block":"none";
 share.textContent=r.shareLabel||"Condividi questa sezione";
@@ -751,7 +759,7 @@ share.onclick=async()=>{
     }else{window.prompt(promptLabel,copyText)}
   }catch(e){if(e&&e.name!=="AbortError")window.prompt(promptLabel,copyText)}
 };
-const onShare=share.onclick;drawer.classList.add("on")}
+const onShare=share.onclick;drawer.classList.add("on");if(hasTopMaterials)sheet.scrollTop=0}
 const tutorialResource=D.resources.find(r=>r.id===D.appTutorial.resource);
 $("appTutorial").textContent=tutorialResource.title;
 $("appTutorial").onclick=()=>{detail(tutorialResource);drawer.querySelector(".sheet").scrollTop=0};
