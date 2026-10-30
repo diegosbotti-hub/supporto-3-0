@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "29/10/2026"
+    updated: "30/10/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -48,10 +48,10 @@ window.SUPPORTO_DATA = {
       id:"skin", order:0.7, area:"Percorso guidato", title:"DMO Trattamento viso", type:"Video e materiali", status:"disponibile", library:false, shareSection:false,
       description:"Skin Experience in quattro fasi, con i materiali operativi collegati.",
       learn:"Organizzare e svolgere la Skin Experience: invito, preparazione, esecuzione e prossimi passi.",
-      action:"Segui le quattro fasi nell’ordine indicato. Il video introduttivo del team, la scheda di valutazione e la presentazione sono in preparazione.",
+      action:"Guarda prima i consigli operativi del team, poi segui le quattro fasi nell’ordine indicato. La scheda di valutazione e la presentazione sono in preparazione.",
       next:"DMO Valutazione corporea",
       videos:[
-        {title:"Introduzione · Indicazioni del team",description:"Spunti pratici per rendere più efficace la Skin Experience.",pending:true},
+        {title:"Introduzione · Consigli operativi",description:"Spunti pratici per rendere più efficace la Skin Experience.",embed:"https://www.youtube-nocookie.com/embed/piH8uwMilhI"},
         {title:"Fase 1 · Invito",embed:"https://www.youtube-nocookie.com/embed/4chExoXJWAc"},
         {title:"Fase 2 · Preparazione",embed:"https://www.youtube-nocookie.com/embed/UmWqCWqEupw"},
         {title:"Fase 3 · Esecuzione",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"},

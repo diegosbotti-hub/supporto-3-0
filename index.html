@@ -96,7 +96,7 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.prodotti-mode #dShare,.sheet.prodotti-mode #close2{width:100%;flex:none}
 .sheet.hom-mode .sheetactions{flex-direction:column}.sheet.hom-mode .sheetactions>*{flex:none;width:100%;min-height:44px}
 .sheet.stacked-actions .sheetactions{flex-direction:column}.sheet.stacked-actions .sheetactions>*{flex:none;width:100%;min-height:44px}.sheetactions .btn:disabled{cursor:default;background:#f3f5f3;color:#68726b;border:1px solid var(--line)}.embedbox.placeholder{padding:20px;display:grid;gap:6px}.embedbox.placeholder b{font-size:15px}.embedbox.placeholder span{font-size:13px;color:var(--mut)}
-.empty{background:#fff;border:1px dashed #cbd5cd;border-radius:17px;padding:22px;text-align:center;color:var(--mut)}.embedbox{margin:14px 0 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f7faf8}.embedbox iframe{display:block;width:100%;height:460px;border:0;background:#fff}.embedbox.youtube{aspect-ratio:16/9;background:#000}.embedbox.youtube iframe{width:100%;height:100%}.embedvideo{min-width:0;margin:18px 0}.embedvideo h3{font-size:15px;line-height:1.35;margin:0 0 8px}.embedvideo .embedbox{margin:0}@media(max-width:760px){.embedbox iframe{height:420px}.embedbox.youtube iframe{height:100%}}
+.empty{background:#fff;border:1px dashed #cbd5cd;border-radius:17px;padding:22px;text-align:center;color:var(--mut)}.embedbox{margin:14px 0 4px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#f7faf8}.embedbox iframe{display:block;width:100%;height:460px;border:0;background:#fff}.embedbox.youtube{aspect-ratio:16/9;background:#000}.embedbox.youtube iframe{width:100%;height:100%}.embedvideo{min-width:0;margin:18px 0}.embedvideo h3{font-size:15px;line-height:1.35;margin:0 0 8px}.embedvideo .embed-description{font-size:13px;line-height:1.45;color:var(--mut);margin:0 0 10px}.embedvideo .embedbox{margin:0}@media(max-width:760px){.embedbox iframe{height:420px}.embedbox.youtube iframe{height:100%}}
 @media(max-width:760px){
 .nav{display:grid}
 .wrap{padding:0 14px calc(92px + env(safe-area-inset-bottom,0px))}
@@ -156,7 +156,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "29/10/2026"
+    updated: "30/10/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -201,10 +201,10 @@ window.SUPPORTO_DATA = {
       id:"skin", order:0.7, area:"Percorso guidato", title:"DMO Trattamento viso", type:"Video e materiali", status:"disponibile", library:false, shareSection:false,
       description:"Skin Experience in quattro fasi, con i materiali operativi collegati.",
       learn:"Organizzare e svolgere la Skin Experience: invito, preparazione, esecuzione e prossimi passi.",
-      action:"Segui le quattro fasi nell’ordine indicato. Il video introduttivo del team, la scheda di valutazione e la presentazione sono in preparazione.",
+      action:"Guarda prima i consigli operativi del team, poi segui le quattro fasi nell’ordine indicato. La scheda di valutazione e la presentazione sono in preparazione.",
       next:"DMO Valutazione corporea",
       videos:[
-        {title:"Introduzione · Indicazioni del team",description:"Spunti pratici per rendere più efficace la Skin Experience.",pending:true},
+        {title:"Introduzione · Consigli operativi",description:"Spunti pratici per rendere più efficace la Skin Experience.",embed:"https://www.youtube-nocookie.com/embed/piH8uwMilhI"},
         {title:"Fase 1 · Invito",embed:"https://www.youtube-nocookie.com/embed/4chExoXJWAc"},
         {title:"Fase 2 · Preparazione",embed:"https://www.youtube-nocookie.com/embed/UmWqCWqEupw"},
         {title:"Fase 3 · Esecuzione",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"},
@@ -705,7 +705,11 @@ embeds.forEach(v=>{
   if(hasVideos||r.embedResource){
     const group=document.createElement("section");group.className="embedvideo";
     const title=document.createElement("h3");title.textContent=v.title||r.title;
-    group.appendChild(title);group.appendChild(box);a.parentNode.insertBefore(group,a);
+    group.appendChild(title);
+    if(v.description&&v.embed&&!v.pending){
+      const description=document.createElement("p");description.className="embed-description";description.textContent=v.description;group.appendChild(description);
+    }
+    group.appendChild(box);a.parentNode.insertBefore(group,a);
   }else{a.parentNode.insertBefore(box,a)}
 });if(hasGallery){a.parentNode.insertBefore(renderVideoGallery(r,sheet),a);sheet.scrollTop=0}const o=$("dOpen");
 if(Array.isArray(r.links)&&r.links.length){
