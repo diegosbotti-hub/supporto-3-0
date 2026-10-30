@@ -57,6 +57,19 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .sheet.tutorial-mode .x{flex:none;width:44px;height:44px}
 .sheet.tutorial-mode .sheetactions>*{min-height:44px}
 .embedbox.youtube.vertical{aspect-ratio:9/16;width:min(100%,34vh,320px);margin:4px auto}
+.sheet.document-viewing{overscroll-behavior:contain}
+.sheet.document-viewing>:not(.sheethead):not(.document-panel){display:none!important}
+.sheet.document-viewing .sheethead{position:sticky;top:0;z-index:3;background:#fff;padding-bottom:12px}
+.document-panel{min-width:0;margin-top:12px}
+.document-back{min-height:44px;margin-bottom:12px}
+.document-panel h3{font-size:17px;line-height:1.35;margin:0 0 12px;overflow-wrap:anywhere}
+.document-formats,.document-actions{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+.document-formats .btn,.document-actions .btn{flex:1;min-width:0;min-height:44px;text-align:center;text-decoration:none;overflow-wrap:anywhere}
+.document-formats.stacked{flex-direction:column}
+.document-formats .btn[aria-pressed="true"]{background:var(--dark);color:#fff;border-color:var(--dark)}
+.document-frame{height:62vh;min-height:300px;max-height:650px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#f5f7f5}
+.document-frame iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+.document-note{font-size:12px;line-height:1.4;color:var(--mut);margin:0 0 10px}
 .material-actions{display:flex;flex-direction:column;gap:10px;margin:20px 0;padding:16px;background:#f3f7f4;border:1px solid var(--line);border-radius:18px}
 .material-actions h3,.training-video-heading{display:flex;align-items:center;gap:8px;font-size:13px;line-height:1.35;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--g);margin:0}
 .material-actions .btn.material-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:100%;min-width:0;min-height:44px;padding:14px;background:#fff;border:1px solid #d6e1d9;border-radius:13px;color:var(--ink);text-align:left;text-decoration:none;white-space:normal;overflow-wrap:anywhere}
@@ -739,7 +752,7 @@ $("start").onclick=()=>go("percorso");$("library").onclick=()=>go("materiali");$
 
 document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{S.filter=b.dataset.a;document.querySelectorAll("[data-a]").forEach(x=>{const selected=x.dataset.a===S.filter;x.classList.toggle("on",selected);x.setAttribute("aria-pressed",String(selected))});cards()});steps();cards()}
 function steps(){const rows=D.paths[S.journey]||[];$("steps").innerHTML=rows.map(r=>`<div class="step" data-resource="${esc(r.resource||"")}"><div class="num">${r.n}</div><div><b>${esc(r.title)}</b><p>${esc(r.text)}</p></div><span class="badge ${r.status==="disponibile"?"ready":""}">${r.status==="disponibile"?"DISPONIBILE":"IN PREPARAZIONE"}</span></div>`).join("");document.querySelectorAll(".step[data-resource]").forEach(e=>{if(!e.dataset.resource)return;e.onclick=()=>{const row=rows.find(x=>x.resource===e.dataset.resource);const material=D.resources.find(x=>x.id===e.dataset.resource);if(material){detail(material);return}if(row)detail({id:row.resource,title:row.title,type:"Percorso",area:"Percorso guidato",description:row.text,learn:row.text,action:"Segui questo punto del percorso.",next:"Continua con il punto successivo.",shareSection:true})}})}
-function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>detail(D.resources.find(r=>r.id===e.dataset.id)))}
+function cards(){const q=S.q.trim().toLowerCase(),rows=D.resources.filter(r=>r.library!==false&&(S.filter==="Tutti"||r.area===S.filter)&&(!q||[r.title,r.area,r.type,r.description,r.learn].join(" ").toLowerCase().includes(q))).sort((a,b)=>a.order-b.order);$("grid").innerHTML=rows.length?rows.map(r=>`<article class="card ${r.status!=="disponibile"?"muted":""}" data-id="${esc(r.id)}"><div class="topline"><span class="type">${esc(r.type)}</span><span class="area">${esc(r.area)}</span></div><h3>${esc(r.title)}</h3><p>${esc(r.description)}</p>${r.status==="disponibile"?`<div class="open">${esc(r.cta||"Apri materiale")} →</div>`:'<div class="prep">In preparazione</div>'}</article>`).join(""):'<div class="empty">Nessun materiale trovato.</div>';document.querySelectorAll(".card:not(.muted)").forEach(e=>e.onclick=()=>{const resource=D.resources.find(r=>r.id===e.dataset.id);detail(resource);const files=documentFiles(resource);if(files.length)openDocumentViewer(resource,files,drawer.querySelector(".sheet"),null,true)})}
 function renderVideoGallery(r,sheet){
   const config=r.gallery,items=config.items;
   const section=document.createElement("section");section.className="video-gallery";
@@ -779,7 +792,76 @@ function renderVideoGallery(r,sheet){
   section.querySelectorAll(".video-gallery-preview img").forEach(img=>img.addEventListener("error",()=>img.remove(),{once:true}));
   return section;
 }
-function detail(r){if(!r)return;const sheet=drawer.querySelector(".sheet");$("dInfo").open=false;const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery,.material-actions,.training-video-heading").forEach(x=>x.remove());
+let documentSession=null;
+function documentFile(url,label){
+  if(!url)return null;
+  try{
+    const parsed=new URL(url);
+    if(!["drive.google.com","docs.google.com"].includes(parsed.hostname)||parsed.pathname.includes("/folders/"))return null;
+    const match=parsed.pathname.match(/\/(?:file|presentation)\/d\/([A-Za-z0-9_-]+)/);
+    const id=match?match[1]:(parsed.pathname==="/uc"?parsed.searchParams.get("id"):null);
+    if(!id||!/^[A-Za-z0-9_-]+$/.test(id))return null;
+    return {url,id,label:(label||"Documento").replace(/^(Apri|Scarica)\s+/i,"").replace(/\s*→$/,""),preview:"https://drive.google.com/file/d/"+encodeURIComponent(id)+"/preview",download:"https://drive.google.com/uc?export=download&id="+encodeURIComponent(id)};
+  }catch(e){return null}
+}
+function documentFiles(r){
+  if(!r||r.type==="Video"||r.gallery)return [];
+  if(r.link){const file=documentFile(r.link,r.format||r.type);if(file)return [file]}
+  return (r.links||[]).filter(x=>!x.pending&&x.url).map(x=>documentFile(x.url,x.label)).filter(Boolean);
+}
+function clearDocumentViewer(restore){
+  if(!documentSession)return;
+  const session=documentSession;documentSession=null;
+  session.panel.remove();session.sheet.classList.remove("document-viewing");
+  if(restore){
+    session.paused.forEach(x=>{if(x.frame.isConnected)x.frame.src=x.src});
+    session.sheet.scrollTop=session.scroll;
+    if(session.trigger&&session.trigger.isConnected)session.trigger.focus({preventScroll:true});
+  }
+}
+async function shareDocumentFile(resource,file,button){
+  if(!resource.shareSection)return;
+  const url=resource.shareUrl||file.url,text=resource.shareText||("Guarda "+resource.title);
+  const copy=resource.copyShareText?text+"\n\n"+url:url;
+  try{
+    if(navigator.share)await navigator.share({title:resource.title,text,url});
+    else if(navigator.clipboard){await navigator.clipboard.writeText(copy);button.textContent=resource.copyShareText?"Messaggio copiato":"Link copiato"}
+    else window.prompt(resource.copyShareText?"Copia questo messaggio":"Copia questo link",copy);
+  }catch(e){if(e&&e.name!=="AbortError")window.prompt("Copia questo link",copy)}
+}
+function openDocumentViewer(resource,files,sheet,trigger,returnToLibrary){
+  if(!files.length)return;
+  clearDocumentViewer(false);
+  const panel=document.createElement("section");panel.className="document-panel";panel.setAttribute("aria-label",resource.title);
+  const back=document.createElement("button");back.type="button";back.className="btn secondary document-back";back.textContent="← Torna ai materiali";
+  const title=document.createElement("h3");title.textContent=resource.title;
+  panel.append(back,title);
+  if(resource.materialNote){const note=document.createElement("p");note.className="document-note";note.textContent=resource.materialNote;panel.appendChild(note)}
+  const formats=document.createElement("div");formats.className="document-formats"+(files.length>3?" stacked":"");
+  if(files.length>1)panel.appendChild(formats);
+  const actions=document.createElement("div");actions.className="document-actions";
+  const download=document.createElement("a");download.className="btn secondary";download.textContent="Scarica";download.target="_blank";download.rel="noopener noreferrer";actions.appendChild(download);
+  let selected=files[0],share=null;
+  if(resource.shareSection){
+    share=document.createElement("button");share.type="button";share.className="btn primary";share.textContent=resource.shareLabel||"Condividi materiale";
+    share.onclick=()=>shareDocumentFile(resource,selected,share);actions.appendChild(share);
+  }
+  panel.appendChild(actions);
+  const box=document.createElement("div");box.className="document-frame";panel.appendChild(box);
+  function select(file,index){
+    selected=file;box.replaceChildren();download.href=file.download;
+    formats.querySelectorAll("button").forEach((button,i)=>button.setAttribute("aria-pressed",String(i===index)));
+    if(share)share.textContent=resource.shareLabel||"Condividi materiale";
+    const frame=document.createElement("iframe");frame.src=file.preview;frame.title=resource.title+" · "+file.label;frame.allowFullscreen=true;frame.referrerPolicy="strict-origin-when-cross-origin";box.appendChild(frame);
+  }
+  files.forEach((file,index)=>{const button=document.createElement("button");button.type="button";button.className="btn secondary";button.textContent=file.label;button.onclick=()=>select(file,index);formats.appendChild(button)});
+  const paused=Array.from(sheet.querySelectorAll("iframe")).map(frame=>({frame,src:frame.src}));
+  paused.forEach(x=>x.frame.src="about:blank");
+  documentSession={panel,sheet,trigger,scroll:sheet.scrollTop,paused};
+  back.onclick=()=>{clearDocumentViewer(true);if(returnToLibrary)close()};
+  sheet.appendChild(panel);sheet.classList.add("document-viewing");sheet.scrollTop=0;select(files[0],0);back.focus({preventScroll:true});
+}
+function detail(r){if(!r)return;clearDocumentViewer(false);const sheet=drawer.querySelector(".sheet");$("dInfo").open=false;const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery,.material-actions,.training-video-heading").forEach(x=>x.remove());
 const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
 const hasTopMaterials=r.area==="Percorso guidato"&&Array.isArray(r.links)&&r.links.length>0&&(hasVideos||r.embed||r.embedResource||r.pendingVideo||r.materialsAtTop);
 const embedSource=r.embedResource?D.resources.find(x=>x.id===r.embedResource):r;
@@ -820,7 +902,7 @@ embeds.forEach(v=>{
     }
     group.appendChild(box);a.parentNode.insertBefore(group,a);
   }else{a.parentNode.insertBefore(box,a)}
-});if(hasGallery){a.parentNode.insertBefore(renderVideoGallery(r,sheet),a);sheet.scrollTop=0}const o=$("dOpen");
+});if(hasGallery){a.parentNode.insertBefore(renderVideoGallery(r,sheet),a);sheet.scrollTop=0}const o=$("dOpen");o.onclick=null;
 if(Array.isArray(r.links)&&r.links.length){
   o.style.display="none";
   r.links.forEach((x,i)=>{
@@ -834,20 +916,24 @@ if(Array.isArray(r.links)&&r.links.length){
       el.target="_blank";el.rel="noopener";
       el.href=x.url||(target&&(target.link||target.shareUrl))||"#";
       el.textContent=x.label;
-      if(target&&!x.direct){el.onclick=e=>{e.preventDefault();detail(target)}}
+      const files=target?documentFiles(target):[documentFile(x.url,x.label)].filter(Boolean);
+      if(files.length){el.removeAttribute("target");el.onclick=e=>{e.preventDefault();openDocumentViewer(target||r,files,sheet,el,false)}}
+      else if(target&&!x.direct){el.onclick=e=>{e.preventDefault();detail(target)}}
     }
     if(hasTopMaterials){
       el.className="btn material-card extra";
       const format=target?(target.format||target.type||"Documento"):(/PDF/i.test(x.label)?"PDF":"Documento");
       const name=target?target.title:x.label;
       const note=target?.materialNote||(pending||target?.status==="preparazione"?"Materiale in preparazione.":target?.shareSection?"Da consultare e condividere.":"Materiale per la formazione del membro.");
-      const action=pending?"In preparazione":x.direct?"Apri "+(format==="PDF"?"PDF":"materiale")+" ↗":"Apri materiale →";
+      const action=pending?"In preparazione":"Apri materiale →";
       el.innerHTML='<span class="material-format">'+esc(format)+'</span><span class="material-name">'+esc(name)+'</span><span class="material-note">'+esc(note)+'</span><span class="material-cta">'+esc(action)+'</span>';
     }
     a.insertBefore(el,$("dShare"));
   });
 }else{
   o.textContent=r.cta||"Apri materiale";o.href=r.link||"#";o.style.display=r.link?"block":"none";
+  const files=documentFiles(r);
+  if(files.length)o.onclick=e=>{e.preventDefault();openDocumentViewer(r,files,sheet,o,false)};
 }
 if(hasTopMaterials){
   const materials=document.createElement("section");materials.className="material-actions";
@@ -881,7 +967,7 @@ const onShare=share.onclick;drawer.classList.add("on");if(hasTopMaterials)sheet.
 const tutorialResource=D.resources.find(r=>r.id===D.appTutorial.resource);
 $("appTutorial").textContent=tutorialResource.title;
 $("appTutorial").onclick=()=>{detail(tutorialResource);drawer.querySelector(".sheet").scrollTop=0};
-function close(){drawer.classList.remove("on");drawer.querySelectorAll(".video-gallery iframe,.tutorial-mode .embedbox iframe").forEach(frame=>frame.remove());drawer.querySelector(".sheet").classList.remove("gallery-playing")}$("close").onclick=close;$("close2").onclick=close;drawer.onclick=e=>{if(e.target===drawer)close()};
+function close(){clearDocumentViewer(false);drawer.classList.remove("on");drawer.querySelectorAll(".video-gallery iframe,.tutorial-mode .embedbox iframe").forEach(frame=>frame.remove());drawer.querySelector(".sheet").classList.remove("gallery-playing")}$("close").onclick=close;$("close2").onclick=close;drawer.onclick=e=>{if(e.target===drawer)close()};
 document.querySelectorAll(".nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("on"));b.classList.add("on");go(b.dataset.go)});render();const openShared=()=>{const q=new URLSearchParams(location.search).get("sezione");const m=location.hash.match(/^#materiale=(.+)$/);const id=q||(m?decodeURIComponent(m[1]):null);if(!id)return;const card=[...document.querySelectorAll(".card[data-id]")].find(x=>x.dataset.id===id);if(card){card.scrollIntoView({block:"center"});card.click();return}const step=[...document.querySelectorAll(".step[data-resource]")].find(x=>x.dataset.resource===id);if(step){step.scrollIntoView({block:"center"});step.click();return}const r=D.resources.find(x=>x.id===id);if(r)detail(r)};setTimeout(openShared,250);window.addEventListener("hashchange",()=>setTimeout(openShared,50));
 })();
 </script>
