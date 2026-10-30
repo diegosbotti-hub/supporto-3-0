@@ -30,7 +30,7 @@ window.SUPPORTO_DATA = {
       {n:7,title:"DMO Trattamento viso",text:"Skin Experience: invito, preparazione, esecuzione e prossimi passi. Materiali in preparazione.",status:"disponibile",resource:"skin"},
       {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
-      {n:10,title:"Assistenza clienti",text:"Assistenza, follow-up, riordino e sviluppo referenze.",status:"preparazione",resource:"clienti"},
+      {n:10,title:"Assistenza clienti",text:"Guida interna e infografica Cliente privilegiato disponibili. Video tutorial in preparazione.",status:"disponibile",resource:"clienti"},
       {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e saper presentare un HOM.",status:"preparazione",resource:"opportunita"},
       {n:12,title:"Obiezioni",text:"Guida operativa disponibile. Video tutorial in preparazione.",status:"disponibile",resource:"obiezioni"}
     ]
@@ -72,6 +72,40 @@ window.SUPPORTO_DATA = {
         {label:"Presentazione",pending:true},
         {label:"Torna ai video Skin Experience",resource:"skin"}
       ]
+    },
+    {
+      id:"clienti", order:0.85, area:"Percorso guidato", title:"Assistenza clienti", type:"Video e materiali", status:"disponibile", library:false, shareSection:false,
+      description:"Guida interna per il membro e infografica Cliente privilegiato da condividere con il cliente. Video tutorial in preparazione.",
+      learn:"Seguire il cliente e utilizzare correttamente i materiali dedicati.",
+      action:"Consulta la guida interna per organizzare l’assistenza. Condividi con il cliente solo l’infografica sui vantaggi del Cliente privilegiato.",
+      next:"Presentare l’opportunità",
+      videos:[{title:"Video tutorial",description:"Assistenza al cliente",pending:true}],
+      links:[
+        {label:"Guida interna · solo membri",resource:"assistenza-cliente-pdf"},
+        {label:"Cliente privilegiato · da condividere",resource:"cliente-privilegiato-pdf"}
+      ]
+    },
+    {
+      id:"assistenza-cliente-pdf", order:2.3, area:"Presentazioni e schede", title:"Assistenza cliente · Guida interna", type:"PDF", status:"disponibile", library:true, shareSection:false,
+      description:"Solo per i membri: guida operativa per l’assistenza, i controlli e il passaparola. Non condividere con il cliente.",
+      learn:"Organizzare l’assistenza al cliente seguendo la guida del team.",
+      action:"Scarica e consulta la guida per svolgere l’assistenza. È un documento interno: non inviarlo al cliente.",
+      next:"Per presentare i vantaggi del Cliente privilegiato usa l’infografica dedicata.",
+      cta:"Scarica guida interna",
+      link:"https://drive.google.com/file/d/1ArHROohTJ6kRtdVanOWNyJ4JGZlk7HSq/view?usp=drivesdk"
+    },
+    {
+      id:"cliente-privilegiato-pdf", order:2.4, area:"Presentazioni e schede", title:"Cliente privilegiato · Vantaggi", type:"Infografica", status:"disponibile", library:true, shareSection:true,
+      description:"Infografica da inviare al cliente per presentare il programma Cliente privilegiato e i suoi vantaggi.",
+      learn:"Conoscere i vantaggi del programma Cliente privilegiato.",
+      action:"Apri l’infografica e usa «Condividi con il cliente» per inviarla con il messaggio pronto.",
+      next:"Rispondi alle domande del cliente e spiegagli come funziona il programma.",
+      cta:"Apri infografica",
+      link:"https://drive.google.com/file/d/1PkK5cEPRY2cNiddkuIpaiiPegRCr5Ryp/view?usp=drivesdk",
+      shareLabel:"Condividi con il cliente",
+      copyShareText:true,
+      shareUrl:"https://drive.google.com/file/d/1PkK5cEPRY2cNiddkuIpaiiPegRCr5Ryp/view?usp=drivesdk",
+      shareText:"Ti giro questa infografica con i vantaggi del programma Cliente privilegiato: puoi acquistare i prodotti per il tuo consumo personale con gli sconti previsti dal programma. Guardala con calma; se ti interessa, scrivimi e ti spiego come funziona!"
     },
     {
       id:"obiezioni", order:0.9, area:"Percorso guidato", title:"Obiezioni", type:"Video e materiale", status:"disponibile", library:false, shareSection:false, materialsAtTop:true,
