@@ -176,7 +176,7 @@ window.SUPPORTO_DATA = {
   },
   paths: {
     "Percorso completo": [
-      {n:1,title:"Obiettivo personale",text:"Definisci l'obiettivo per avere un piano di attività coerente.",status:"disponibile",resource:"obiettivo"},
+      {n:1,title:"Obiettivo personale & piano marketing",text:"Definisci il tuo obiettivo e conosci il piano marketing.",status:"disponibile",resource:"obiettivo"},
       {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
       {n:3,title:"Lista nomi",text:"Video e scheda da stampare per costruire e aggiornare la tua lista nomi.",status:"disponibile",resource:"lista"},
       {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
@@ -262,12 +262,15 @@ window.SUPPORTO_DATA = {
       links:[{label:"Scarica materiale da stampare",resource:"lista-nomi-pdf",direct:true}]
     },
     {
-      id:"obiettivo", order:-1, area:"Percorso guidato", title:"Obiettivo personale", type:"Video", status:"disponibile", library:false, shareSection:false,
-      description:"Definisci il tuo obiettivo personale per costruire un piano di attività coerente.",
-      learn:"Chiarire cosa vuoi ottenere e trasformare l'obiettivo in una direzione concreta.",
-      action:"Guarda il video e definisci il tuo obiettivo personale.",
+      id:"obiettivo", order:-1, area:"Percorso guidato", title:"Obiettivo personale & piano marketing", type:"Video", status:"disponibile", library:false, shareSection:false,
+      description:"Definisci il tuo obiettivo personale e approfondisci il piano marketing.",
+      learn:"Chiarire cosa vuoi ottenere e conoscere il piano marketing.",
+      action:"Guarda i due video nell’ordine indicato e definisci il tuo obiettivo personale.",
       next:"Conoscere i prodotti",
-      embed:"https://www.youtube-nocookie.com/embed/kmqtj1HBpoM"
+      videos:[
+        {title:"1 · Obiettivo personale",embed:"https://www.youtube-nocookie.com/embed/kmqtj1HBpoM"},
+        {title:"2 · Piano marketing",embed:"https://www.youtube-nocookie.com/embed/fln41ekZIOc"}
+      ]
     },
     {
       id:"inaugurazione", order:-0.4, area:"Percorso guidato", title:"Inaugurazione attività", type:"Video e materiale", status:"disponibile", library:false, shareSection:false,
@@ -368,7 +371,7 @@ window.SUPPORTO_DATA = {
       description:"Confronto visivo tra uso personale e vendita nel modello operativo.",
       learn:"Capire con un colpo d'occhio la differenza tra uso personale e vendita.",
       action:"Apri l'infografica e usala come supporto visivo quando serve.",
-      next:"Obiettivo personale",
+      next:"Obiettivo personale & piano marketing",
       cta:"Apri infografica",
       link:"https://drive.google.com/file/d/1JhcuVgNTVJdGfnOCzijdBG19SykVL_5K/view?usp=drivesdk"
     },
