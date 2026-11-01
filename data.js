@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "30/10/2026"
+    updated: "01/11/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -31,7 +31,7 @@ window.SUPPORTO_DATA = {
       {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Guida interna e infografica Cliente privilegiato disponibili. Video tutorial in preparazione.",status:"disponibile",resource:"clienti"},
-      {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale in PDF e PowerPoint disponibile. Video tutorial in preparazione.",status:"disponibile",resource:"opportunita"},
+      {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale: accompagna la persona a un HOM o B Day. Secondo video in preparazione.",status:"disponibile",resource:"opportunita"},
       {n:12,title:"Obiezioni",text:"Guida operativa disponibile. Video tutorial in preparazione.",status:"disponibile",resource:"obiezioni"}
     ]
   },
@@ -111,11 +111,14 @@ window.SUPPORTO_DATA = {
     },
     {
       id:"opportunita", order:0.88, area:"Percorso guidato", title:"Presentare l’opportunità", type:"Video e materiali", status:"disponibile", library:false, shareSection:false, materialsAtTop:true,
-      description:"Colloquio individuale 3.0 in PDF e PowerPoint. Video tutorial per presentare l’opportunità in preparazione.",
-      learn:"Utilizzare la presentazione del colloquio individuale.",
-      action:"Apri il materiale e scegli il formato PDF oppure PowerPoint per svolgere la presentazione.",
+      description:"Video sul colloquio individuale e presentazione in PDF e PowerPoint. Secondo video in preparazione.",
+      learn:"Condurre il colloquio individuale con l’obiettivo di accompagnare la persona a un HOM o B Day, dove ascoltare esperienze e testimonianze.",
+      action:"Guarda il primo video e usa la presentazione come supporto. Mantieni il colloquio essenziale e concorda con la persona la partecipazione a un HOM o B Day: il passaggio centrale è ascoltare esperienze e testimonianze, senza dilungarti nelle informazioni tecniche.",
       next:"Obiezioni",
-      videos:[{title:"Video tutorial",description:"Presentare l’opportunità",pending:true}],
+      videos:[
+        {title:"1 · Colloquio individuale",description:"Come presentare il progetto con l’obiettivo di accompagnare la persona a un HOM o B Day. Il focus è farle ascoltare esperienze e testimonianze, senza dilungarsi nella spiegazione tecnica.",embed:"https://www.youtube-nocookie.com/embed/goEPN1kd8XM"},
+        {title:"2 · Video tutorial",description:"Secondo video",pending:true}
+      ],
       links:[{label:"Colloquio individuale 3.0 · PDF e PowerPoint",resource:"colloquio-individuale"}]
     },
     {
