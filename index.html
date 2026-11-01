@@ -156,7 +156,8 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .step .badge{grid-column:2;width:max-content}
 .brand span{display:none}
 .community{align-items:flex-start;flex-wrap:wrap}
-.community button,.community .chat-link{margin-left:0}
+.community>div:not(.plane){flex-basis:calc(100% - 55px)}
+.community button,.community .chat-link{margin-left:0;width:100%}
 }
 </style>
 </head>
