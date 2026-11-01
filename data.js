@@ -9,6 +9,12 @@ window.SUPPORTO_DATA = {
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
   telegramButtonLabel: "Collegati alla chat",
   telegramDescription: "La chat del team per ricevere aggiornamenti sull’Accademia e sulla formazione online, fare domande e confrontarti con gli altri membri.",
+  liveEvents: {
+    title: "Eventi dal vivo · Per regione",
+    description: "Trova gli eventi nella tua regione e le locandine da condividere con i tuoi contatti.",
+    label: "Vedi gli eventi",
+    url: "https://t.me/+pel9LIym3R9hY2Zk"
+  },
   materialsMenu: {
     title: "Menu dei materiali",
     description: "Scegli una categoria per vedere i materiali."
