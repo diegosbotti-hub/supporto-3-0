@@ -222,7 +222,7 @@ window.SUPPORTO_DATA = {
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Skin Experience: invito, preparazione, esecuzione e prossimi passi. Materiali in preparazione.",status:"disponibile",resource:"skin"},
-      {n:8,title:"DMO Valutazione corporea",text:"Book Colazione 3.0 disponibile. Video e scheda PDF in preparazione.",status:"preparazione",resource:"hgo"},
+      {n:8,title:"DMO Valutazione corporea",text:"Book Colazione e scheda benessere + Tanita disponibili. Video in preparazione.",status:"disponibile",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Guida interna e infografica Cliente privilegiato disponibili. Video tutorial in preparazione.",status:"disponibile",resource:"clienti"},
       {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e piano compensi su un foglio. Obiettivo: accompagnare la persona a un HOM o B Day.",status:"disponibile",resource:"opportunita"},
@@ -388,12 +388,12 @@ window.SUPPORTO_DATA = {
       "area": "Percorso guidato",
       "title": "DMO Valutazione corporea",
       "type": "Video e materiali",
-      "status": "preparazione",
+      "status": "disponibile",
       "library": false,
       "shareSection": false,
-      "description": "Video e materiali operativi per svolgere la valutazione corporea.",
+      "description": "Book Colazione e scheda valutazione benessere + scheda Tanita disponibili. Video tutorial in preparazione.",
       "learn": "Svolgere la valutazione corporea e usare il Book Colazione e la scheda di valutazione.",
-      "action": "Apri il Book Colazione 3.0. Il video formativo e la scheda di valutazione in PDF sono in preparazione.",
+      "action": "Apri il Book Colazione 3.0. Stampa la scheda valutazione benessere + scheda Tanita e compilala durante la valutazione. Il video formativo è in preparazione.",
       "next": "DMO Usa Indossa Parla",
       "pendingVideo": true,
       "links": [
@@ -402,8 +402,8 @@ window.SUPPORTO_DATA = {
           "resource": "book-pdf"
         },
         {
-          "label": "Scheda valutazione corporea · PDF",
-          "pending": true
+          "label": "Scheda valutazione benessere + scheda Tanita",
+          "resource": "valutazione-benessere-tanita-pdf"
         }
       ]
     },
@@ -445,6 +445,16 @@ window.SUPPORTO_DATA = {
       next:"Applica la sequenza indicata nella guida.",
       cta:"Scarica materiale da stampare",
       link:"https://drive.google.com/file/d/1ZOFEPB1p6G0_LXUfDnTAcyZngUL-rzZY/view?usp=drivesdk"
+    },
+    {
+      id:"valutazione-benessere-tanita-pdf", order:2.6, area:"Presentazioni e schede", title:"Scheda valutazione benessere + scheda Tanita", type:"PDF", status:"disponibile", library:true, shareSection:false,
+      materialNote:"Da stampare e compilare durante la valutazione del benessere e corporea.",
+      description:"Scheda da stampare per raccogliere le informazioni sul benessere e annotare la valutazione corporea Tanita.",
+      learn:"Utilizzare la scheda durante la valutazione del benessere e corporea.",
+      action:"Apri il PDF, stampalo e compilalo durante la valutazione.",
+      next:"Segui le indicazioni del punto 8 del percorso.",
+      cta:"Scarica materiale da stampare",
+      link:"https://drive.google.com/file/d/1HqPaxEgjUGemk1_CDhtQsuPrkdVPZrcZ/view?usp=drivesdk"
     },
     {
       id:"book-pdf", order:1, area:"Presentazioni e schede", title:"Book Colazione 3.0", type:"PDF", format:"PDF e PowerPoint", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",shareUrl:"https://drive.google.com/file/d/16PdoMpt4PQos5TFvH8LCnod-lY-0oOZ7/view?usp=drivesdk",
