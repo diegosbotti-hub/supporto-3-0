@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "01/11/2026"
+    updated: "02/11/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -259,15 +259,15 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/file/d/1ZOFEPB1p6G0_LXUfDnTAcyZngUL-rzZY/view?usp=drivesdk"
     },
     {
-      id:"book-pdf", order:1, area:"Presentazioni e schede", title:"Book Colazione 3.0", type:"PDF", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",shareUrl:"https://drive.google.com/drive/folders/1P37QA_0GqQEDRye74TSwxWe1-Gst7OTS?usp=drive_link",
+      id:"book-pdf", order:1, area:"Presentazioni e schede", title:"Book Colazione 3.0", type:"PDF", format:"PDF e PowerPoint", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",shareUrl:"https://drive.google.com/file/d/16PdoMpt4PQos5TFvH8LCnod-lY-0oOZ7/view?usp=drivesdk",
       description:"Versione aggiornata del Book Colazione.",
       learn:"Come usare il Book Colazione per spiegare in modo semplice il percorso al cliente.",
       action:"Apri il PDF, familiarizza con il flusso e individua i passaggi principali.",
       next:"Lista nomi",
       cta:"Apri Book Colazione",
       links:[
-        {label:"Scarica PDF",url:"https://drive.google.com/uc?export=download&id=1wEREjGOcLptQTsDY2GSQhUfy95S3OiZi"},
-        {label:"Scarica PowerPoint",url:"https://drive.google.com/uc?export=download&id=1BHasmRINPsKFtF3kdsodesURQlXVeIy9"}
+        {label:"Scarica PDF",url:"https://drive.google.com/file/d/16PdoMpt4PQos5TFvH8LCnod-lY-0oOZ7/view?usp=drivesdk"},
+        {label:"Scarica PowerPoint",url:"https://docs.google.com/presentation/d/18cYNDIZrEOfG1TYH30qXzPZ1Dx7aStsH/edit?usp=drivesdk&ouid=104280063044141079148&rtpof=true&sd=true"}
       ]
     },
     {
