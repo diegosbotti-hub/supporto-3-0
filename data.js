@@ -15,6 +15,12 @@ window.SUPPORTO_DATA = {
     label: "Vedi gli eventi",
     url: "https://t.me/+pel9LIym3R9hY2Zk"
   },
+  herbalifeItalia: {
+    title: "Herbalife Italia",
+    description: "Materiali ufficiali, informazioni scientifiche, aggiornamenti ed eventi di Herbalife Italia.",
+    label: "Apri Herbalife Italia",
+    url: "https://telegram.me/+BAT1Wqwtj2o4ODk0"
+  },
   materialsMenu: {
     title: "Menu dei materiali",
     description: "Scegli una categoria per vedere i materiali."
