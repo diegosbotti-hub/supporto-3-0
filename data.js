@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "02/11/2026"
+    updated: "03/11/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -52,6 +52,7 @@ window.SUPPORTO_DATA = {
     },
     {
       id:"skin", order:0.7, area:"Percorso guidato", title:"DMO Trattamento viso", type:"Video e materiali", status:"disponibile", library:false, shareSection:false,
+      workflowImage:{src:"assets/flusso-dmo-skin-party.webp?v=0129a2cd",alt:"Flusso DMO Skin Party: invito e accoglienza, anamnesi e consulenza, analisi della pelle, lettura dei risultati, esperienza e soluzione, chiusura e prossimi passi.",width:1536,height:864},
       description:"Skin Experience in quattro fasi, con i materiali operativi collegati.",
       learn:"Organizzare e svolgere la Skin Experience: invito, preparazione, esecuzione e prossimi passi.",
       action:"Guarda prima i consigli operativi del team, poi segui le quattro fasi nell’ordine indicato. La scheda di valutazione e la presentazione sono in preparazione.",
