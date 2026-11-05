@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "03/11/2026"
+    updated: "05/11/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -36,7 +36,7 @@ window.SUPPORTO_DATA = {
       {n:1,title:"Obiettivo personale & piano marketing",text:"Definisci il tuo obiettivo e conosci il piano marketing.",status:"disponibile",resource:"obiettivo"},
       {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
       {n:3,title:"Lista nomi",text:"Video e scheda da stampare per costruire e aggiornare la tua lista nomi.",status:"disponibile",resource:"lista"},
-      {n:4,title:"Come invitare",text:"Inviti per attività e prodotto, con gestione delle obiezioni.",status:"preparazione",resource:"invitare"},
+      {n:4,title:"Come invitare",text:"Video tutorial per preparare i primi inviti con il tuo sponsor.",status:"disponibile",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Skin Experience: invito, preparazione, esecuzione e prossimi passi. Materiali in preparazione.",status:"disponibile",resource:"skin"},
@@ -173,10 +173,19 @@ window.SUPPORTO_DATA = {
       embed:"https://www.youtube-nocookie.com/embed/OByvvIVJc-E"
     },
     {
+      id:"invitare", order:-0.6, area:"Percorso guidato", title:"Come invitare", type:"Video", status:"disponibile", library:false, shareSection:false,
+      description:"Video tutorial dedicato agli inviti.",
+      learn:"Preparare e gestire gli inviti seguendo le indicazioni del video.",
+      action:"Guarda il video e prepara i primi inviti insieme al tuo sponsor.",
+      next:"Organizzare la settimana",
+      embed:"https://www.youtube-nocookie.com/embed/WZ8XyFLoi9I"
+    },
+    {
       id:"lista", order:-0.7, area:"Percorso guidato", title:"Lista nomi", type:"Video e materiale", status:"disponibile", library:false, shareSection:false,
+      workflowImage:{src:"assets/lista-nomi-affiancamento.webp?v=ec140d51",title:"Prima di contattare le persone della lista",expandLabel:"Ingrandisci infografica",collapseLabel:"Riduci infografica",alt:"Stop: non bruciare la tua lista nomi. Non parlare da solo con i tuoi contatti. Compila la lista, prepara il contatto con lo sponsor, parlate insieme e ripassate il metodo.",width:1672,height:941},
       description:"Video e scheda da stampare per costruire e aggiornare la tua lista nomi.",
       learn:"Organizzare la lista nomi e gestire i contatti seguendo il metodo del team.",
-      action:"Guarda il video, stampa la scheda e compila la tua lista nomi seguendo il metodo spiegato.",
+      action:"Leggi prima l’infografica, guarda il video e compila la lista. Prima di contattare qualcuno, scegli le persone e prepara l’invito con il tuo sponsor. Le prime conversazioni si svolgono insieme allo sponsor.",
       next:"Come invitare",
       embed:"https://www.youtube-nocookie.com/embed/yWJRBHaDspk",
       links:[{label:"Scarica materiale da stampare",resource:"lista-nomi-pdf",direct:true}]
