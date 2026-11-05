@@ -36,7 +36,7 @@ window.SUPPORTO_DATA = {
       {n:1,title:"Obiettivo personale & piano marketing",text:"Definisci il tuo obiettivo e conosci il piano marketing.",status:"disponibile",resource:"obiettivo"},
       {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
       {n:3,title:"Lista nomi",text:"Video e scheda da stampare per costruire e aggiornare la tua lista nomi.",status:"disponibile",resource:"lista"},
-      {n:4,title:"Come invitare",text:"Video tutorial per preparare i primi inviti con il tuo sponsor.",status:"disponibile",resource:"invitare"},
+      {n:4,title:"Come invitare",text:"Video, infografica e guida pratica per preparare i primi inviti con il tuo sponsor.",status:"disponibile",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Skin Experience: invito, preparazione, esecuzione e prossimi passi. Materiali in preparazione.",status:"disponibile",resource:"skin"},
@@ -173,13 +173,14 @@ window.SUPPORTO_DATA = {
       embed:"https://www.youtube-nocookie.com/embed/OByvvIVJc-E"
     },
     {
-      id:"invitare", order:-0.6, area:"Percorso guidato", title:"Come invitare", type:"Video", status:"disponibile", library:false, shareSection:false,
+      id:"invitare", order:-0.6, area:"Percorso guidato", title:"Come invitare", type:"Video e materiale", status:"disponibile", library:false, shareSection:false,
       workflowImage:{src:"assets/come-invitare.webp?v=e01f6f77",title:"Come invitare: dal nome al prossimo passo",expandLabel:"Ingrandisci infografica",collapseLabel:"Riduci infografica",alt:"Come invitare: parti dalla lista nomi, conversa, ascolta e individua il bisogno, formula un invito breve e personalizzato, usa lo strumento giusto e fissa il follow-up.",width:1672,height:941},
-      description:"Video tutorial dedicato agli inviti.",
+      description:"Video, infografica e guida pratica per preparare gli inviti.",
       learn:"Preparare e gestire gli inviti seguendo le indicazioni del video.",
-      action:"Guarda il video e prepara i primi inviti insieme al tuo sponsor.",
+      action:"Guarda il video, leggi la guida e prepara i primi inviti insieme al tuo sponsor.",
       next:"Organizzare la settimana",
-      embed:"https://www.youtube-nocookie.com/embed/WZ8XyFLoi9I"
+      embed:"https://www.youtube-nocookie.com/embed/WZ8XyFLoi9I",
+      links:[{label:"Leggi la guida · PDF",resource:"come-invitare-pdf",direct:true}]
     },
     {
       id:"lista", order:-0.7, area:"Percorso guidato", title:"Lista nomi", type:"Video e materiale", status:"disponibile", library:false, shareSection:false,
@@ -257,6 +258,16 @@ window.SUPPORTO_DATA = {
       next:"Segui le indicazioni del video nel punto 3 del percorso.",
       cta:"Scarica materiale da stampare",
       link:"https://drive.google.com/file/d/1GgSrFY82Ok9i2VrfXh2ng2uIfMuAXdnp/view?usp=drivesdk"
+    },
+    {
+      id:"come-invitare-pdf", order:2.05, area:"Presentazioni e schede", title:"Come invitare · Guida pratica", type:"PDF", status:"disponibile", library:true, shareSection:false,
+      description:"Guida pratica con domande, esempi di invito e spunti per fissare il prossimo passo.",
+      materialNote:"Da leggere: domande, esempi e spunti pratici per preparare gli inviti con il tuo sponsor.",
+      learn:"Ascoltare i bisogni, formulare un invito semplice e fissare una prossima azione concreta.",
+      action:"Leggi la guida e prepara i primi inviti insieme al tuo sponsor.",
+      next:"Rivedi il video e l’infografica nel punto 4 del percorso.",
+      cta:"Leggi la guida · PDF",
+      link:"https://drive.google.com/file/d/12XdNnhQ852ZZ6-8JVGDRZjHBV_RloRas/view?usp=drivesdk"
     },
     {
       id:"inaugurazione-pdf", order:2.1, area:"Presentazioni e schede", title:"Inaugurazione attività · Guida operativa", type:"PDF", status:"disponibile", library:true, shareSection:false,
