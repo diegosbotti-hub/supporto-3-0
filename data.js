@@ -174,6 +174,7 @@ window.SUPPORTO_DATA = {
     },
     {
       id:"invitare", order:-0.6, area:"Percorso guidato", title:"Come invitare", type:"Video", status:"disponibile", library:false, shareSection:false,
+      workflowImage:{src:"assets/come-invitare.webp?v=e01f6f77",title:"Come invitare: dal nome al prossimo passo",expandLabel:"Ingrandisci infografica",collapseLabel:"Riduci infografica",alt:"Come invitare: parti dalla lista nomi, conversa, ascolta e individua il bisogno, formula un invito breve e personalizzato, usa lo strumento giusto e fissa il follow-up.",width:1672,height:941},
       description:"Video tutorial dedicato agli inviti.",
       learn:"Preparare e gestire gli inviti seguendo le indicazioni del video.",
       action:"Guarda il video e prepara i primi inviti insieme al tuo sponsor.",
