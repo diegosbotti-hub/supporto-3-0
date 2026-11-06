@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "05/11/2026"
+    updated: "06/11/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -34,12 +34,12 @@ window.SUPPORTO_DATA = {
   paths: {
     "Percorso completo": [
       {n:1,title:"Obiettivo personale & piano marketing",text:"Definisci il tuo obiettivo e conosci il piano marketing.",status:"disponibile",resource:"obiettivo"},
-      {n:2,title:"Conoscere i prodotti",text:"Conoscere i prodotti in modo semplice e operativo.",status:"disponibile",resource:"prodotti"},
+      {n:2,title:"Conoscere i prodotti",text:"Video formativi, catalogo e guide per conoscere i prodotti.",status:"disponibile",resource:"prodotti"},
       {n:3,title:"Lista nomi",text:"Video e scheda da stampare per costruire e aggiornare la tua lista nomi.",status:"disponibile",resource:"lista"},
       {n:4,title:"Come invitare",text:"Video, infografica e guida pratica per preparare i primi inviti con il tuo sponsor.",status:"disponibile",resource:"invitare"},
       {n:5,title:"Organizzare la settimana",text:"Agenda, priorità, gestione contatti.",status:"disponibile",resource:"settimana"},
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
-      {n:7,title:"DMO Trattamento viso",text:"Skin Experience: invito, preparazione, esecuzione e prossimi passi. Materiali in preparazione.",status:"disponibile",resource:"skin"},
+      {n:7,title:"DMO Trattamento viso",text:"Skin Experience e guida Pelle e capelli. Scheda di valutazione e presentazione in preparazione.",status:"disponibile",resource:"skin"},
       {n:8,title:"DMO Valutazione corporea",text:"Book Colazione e scheda benessere + Tanita disponibili. Video in preparazione.",status:"disponibile",resource:"hgo"},
       {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"preparazione",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Guida interna e infografica Cliente privilegiato disponibili. Video tutorial in preparazione.",status:"disponibile",resource:"clienti"},
@@ -71,6 +71,7 @@ window.SUPPORTO_DATA = {
         {title:"Fase 4 · Prossimi passi",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"}
       ],
       links:[
+        {label:"Guida prodotti · Pelle e capelli",resource:"guida-prodotti-pelle-capelli-pdf"},
         {label:"Materiali per questo DMO",resource:"skin-materiali"}
       ]
     },
@@ -239,16 +240,17 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video", status:"disponibile", library:false, shareSection:true,shareText:"Scopri le basi della nutrizione e il training medico sul Collagen Skin.",
-      description:"Due video sulle basi della nutrizione e un training medico sul Collagen Skin.",
+      id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video e materiali", status:"disponibile", library:false, shareSection:true,shareText:"Scopri le basi della nutrizione e il training medico sul Collagen Skin.",
+      description:"Due video sulle basi della nutrizione, un training medico sul Collagen Skin e quattro guide prodotto.",
       learn:"Acquisire le basi della nutrizione e approfondire il Collagen Skin.",
-      action:"Guarda prima le due parti sulle basi della nutrizione, poi il training sul Collagen Skin.",
+      action:"Guarda prima le due parti sulle basi della nutrizione, poi il training sul Collagen Skin. Consulta il catalogo e le guide prodotto nella sezione Materiali.",
       next:"Prosegui con il punto successivo del percorso.",
       videos:[
         {title:"1 · Basi della nutrizione — prima parte",embed:"https://www.youtube-nocookie.com/embed/FYj9-lr-jeY"},
         {title:"2 · Basi della nutrizione — seconda parte",embed:"https://www.youtube-nocookie.com/embed/TcrYqJm84NI"},
         {title:"3 · Training medico sul Collagen Skin",embed:"https://www.youtube-nocookie.com/embed/oJrzqwQAsN0"}
-      ]
+      ],
+      links:[{"label":"Catalogo prodotti · PDF","resource":"catalogo-prodotti-pdf"},{"label":"Guida prodotti · Nutrizione · PDF","resource":"guida-prodotti-nutrizione-pdf"},{"label":"Guida Herbalife24 · Sport · PDF","resource":"guida-prodotti-h24-pdf"},{"label":"Guida prodotti · Pelle e capelli · PDF","resource":"guida-prodotti-pelle-capelli-pdf"}]
     },
     {
       id:"lista-nomi-pdf", order:2, area:"Presentazioni e schede", title:"Lista nomi", type:"PDF", status:"disponibile", library:true, shareSection:false,
@@ -462,6 +464,78 @@ window.SUPPORTO_DATA = {
 }},
     {id:"testimonianze-prodotto",order:140,area:"Video testimonianze",title:"Video Sport · Prodotto",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri le testimonianze di alcuni sportivi che utilizzano i nostri prodotti nella loro quotidianità e attività sportiva.",shareUrl:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link",description:"Sportivi che raccontano come utilizzano i prodotti e i risultati fisici ottenuti.",learn:"Accedere rapidamente alle testimonianze prodotto disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video Sport · Prodotto",link:"https://drive.google.com/drive/folders/1tONXxAWgtYTmNXCIP6WeI-WTjxNj9nlk?usp=drive_link"},
     {id:"testimonianze-benessere",order:150,area:"Video testimonianze",title:"Video · Benessere",type:"Video",status:"disponibile",shareSection:true,shareText:"Scopri alcune testimonianze di persone che raccontano la loro esperienza con il nostro percorso benessere.",shareUrl:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link",description:"Testimonianze di clienti che raccontano la loro esperienza con il percorso benessere.",learn:"Accedere rapidamente alle testimonianze Benessere disponibili.",action:"Apri la raccolta e scegli la testimonianza più adatta.",next:"Assistenza clienti",cta:"Apri Video · Benessere",link:"https://drive.google.com/drive/folders/1Y5arCaC3qibTyR2x3m0a9DOhypvYtnc7?usp=drive_link"},
+    {
+      "id": "catalogo-prodotti-pdf",
+      "title": "Catalogo prodotti",
+      "order": 150,
+      "description": "Panoramica della gamma Herbalife: nutrizione, sport e cura della persona.",
+      "materialNote": "Da consultare o inviare per una panoramica dei prodotti.",
+      "shareText": "Ciao! Ti giro il catalogo Herbalife per dare un’occhiata alla gamma di prodotti per nutrizione, sport e cura della persona. Guardalo con calma: se qualcosa ti incuriosisce, scrivimi e ne parliamo volentieri!",
+      "area": "Catalogo e guide prodotti",
+      "type": "PDF",
+      "status": "disponibile",
+      "library": true,
+      "shareSection": true,
+      "shareLabel": "Condividi catalogo",
+      "copyShareText": true,
+      "shareUrl": "https://drive.google.com/file/d/1mGsTZpz04JKne6itXK_CK1SgsWscSsMZ/view?usp=drivesdk",
+      "cta": "Apri catalogo · PDF",
+      "link": "https://drive.google.com/file/d/1mGsTZpz04JKne6itXK_CK1SgsWscSsMZ/view?usp=drivesdk"
+    },
+    {
+      "id": "guida-prodotti-nutrizione-pdf",
+      "title": "Guida prodotti · Nutrizione",
+      "order": 151,
+      "description": "Schede prodotto con caratteristiche, modalità d’uso e informazioni nutrizionali.",
+      "materialNote": "Approfondimenti sui prodotti. PDF di circa 48 MB: il caricamento può richiedere qualche istante.",
+      "shareText": "Ciao! Ti mando questa guida per approfondire i prodotti Herbalife: trovi caratteristiche, modalità d’uso e informazioni nutrizionali. Puoi partire da quelli che ti interessano; se hai domande, scrivimi e li guardiamo insieme!",
+      "area": "Catalogo e guide prodotti",
+      "type": "PDF",
+      "status": "disponibile",
+      "library": true,
+      "shareSection": true,
+      "shareLabel": "Condividi guida",
+      "copyShareText": true,
+      "shareUrl": "https://drive.google.com/file/d/12LLGgqIZOPqVm1Mryx2NhIdnHt5khd_B/view?usp=drivesdk",
+      "cta": "Leggi la guida · PDF",
+      "link": "https://drive.google.com/file/d/12LLGgqIZOPqVm1Mryx2NhIdnHt5khd_B/view?usp=drivesdk"
+    },
+    {
+      "id": "guida-prodotti-h24-pdf",
+      "title": "Guida Herbalife24 · Sport",
+      "order": 152,
+      "description": "La linea Herbalife24: caratteristiche, modalità d’uso e informazioni nutrizionali dei prodotti per lo sport.",
+      "materialNote": "Da consultare o condividere per approfondire la linea dedicata allo sport.",
+      "shareText": "Ciao! Ti giro la guida Herbalife24, dedicata ai prodotti per chi fa sport. Trovi caratteristiche e modalità d’uso, dalla preparazione all’allenamento fino al recupero. Dagli un’occhiata e dimmi cosa ti interessa approfondire in base allo sport che pratichi!",
+      "area": "Catalogo e guide prodotti",
+      "type": "PDF",
+      "status": "disponibile",
+      "library": true,
+      "shareSection": true,
+      "shareLabel": "Condividi guida",
+      "copyShareText": true,
+      "shareUrl": "https://drive.google.com/file/d/1_J3r_BzrbGvKjm8t_-kG05pCNgJE-Kbm/view?usp=drivesdk",
+      "cta": "Leggi la guida · PDF",
+      "link": "https://drive.google.com/file/d/1_J3r_BzrbGvKjm8t_-kG05pCNgJE-Kbm/view?usp=drivesdk"
+    },
+    {
+      "id": "guida-prodotti-pelle-capelli-pdf",
+      "title": "Guida prodotti · Pelle e capelli",
+      "order": 153,
+      "description": "HL/Skin, Herbalife SKIN, Collagene Skin e Herbal Aloe: caratteristiche e modalità d’uso.",
+      "materialNote": "Da consultare per la Skin Experience o condividere per approfondire i prodotti.",
+      "shareText": "Ciao! Ti mando questa guida ai prodotti Herbalife per pelle e capelli, con caratteristiche e modalità d’uso delle diverse linee e del Collagene Skin. Guardala con calma: se vuoi capire meglio un prodotto o la routine più adatta alle tue esigenze, scrivimi!",
+      "area": "Catalogo e guide prodotti",
+      "type": "PDF",
+      "status": "disponibile",
+      "library": true,
+      "shareSection": true,
+      "shareLabel": "Condividi guida",
+      "copyShareText": true,
+      "shareUrl": "https://drive.google.com/file/d/1duGSOcq0jGV8nlWAvhCHI0jNXlG7TbCj/view?usp=drivesdk",
+      "cta": "Leggi la guida · PDF",
+      "link": "https://drive.google.com/file/d/1duGSOcq0jGV8nlWAvhCHI0jNXlG7TbCj/view?usp=drivesdk"
+    },
     {
       "id": "coni-impegno-alternato",
       "order": 160,
