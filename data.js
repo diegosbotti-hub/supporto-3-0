@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "06/11/2026"
+    updated: "07/11/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -48,6 +48,20 @@ window.SUPPORTO_DATA = {
     ]
   },
   resources: [
+    {
+      "id": "scienza-alla-base",
+      "order": 149,
+      "area": "Scienza & Evidenze",
+      "title": "La scienza alla base",
+      "type": "Sito ufficiale",
+      "status": "disponibile",
+      "library": false,
+      "shareSection": false,
+      "description": "Dalla ricerca degli ingredienti alla ricerca, allo sviluppo e ai test dei prodotti, la qualità è al centro di tutto ciò che facciamo. Sfoglia i nostri articoli per imparare tutto ciò che c’è da sapere su ciò che sta dietro la scienza.",
+      "materialNote": "Dalla ricerca degli ingredienti alla ricerca, allo sviluppo e ai test dei prodotti, la qualità è al centro di tutto ciò che facciamo. Sfoglia i nostri articoli per imparare tutto ciò che c’è da sapere su ciò che sta dietro la scienza.",
+      "cta": "Leggi gli articoli",
+      "link": "https://www.herbalife.com/it-it/risorse-per-il-benessere/la-scienza-alla-base"
+    },
     {
       id:"tutorial-app", order:-2, area:"Guida all’app", title:"Come usare l’app", type:"Video", status:"disponibile", library:false, shareSection:false,
       description:"Un breve tutorial per orientarti tra percorso, materiali e condivisione.",
@@ -250,7 +264,7 @@ window.SUPPORTO_DATA = {
         {title:"2 · Basi della nutrizione — seconda parte",embed:"https://www.youtube-nocookie.com/embed/TcrYqJm84NI"},
         {title:"3 · Training medico sul Collagen Skin",embed:"https://www.youtube-nocookie.com/embed/oJrzqwQAsN0"}
       ],
-      links:[{"label":"Catalogo prodotti · PDF","resource":"catalogo-prodotti-pdf"},{"label":"Guida prodotti · Nutrizione · PDF","resource":"guida-prodotti-nutrizione-pdf"},{"label":"Guida Herbalife24 · Sport · PDF","resource":"guida-prodotti-h24-pdf"},{"label":"Guida prodotti · Pelle e capelli · PDF","resource":"guida-prodotti-pelle-capelli-pdf"}]
+      links:[{"label":"La scienza alla base","resource":"scienza-alla-base", "direct":true},{"label":"Catalogo prodotti · PDF","resource":"catalogo-prodotti-pdf"},{"label":"Guida prodotti · Nutrizione · PDF","resource":"guida-prodotti-nutrizione-pdf"},{"label":"Guida Herbalife24 · Sport · PDF","resource":"guida-prodotti-h24-pdf"},{"label":"Guida prodotti · Pelle e capelli · PDF","resource":"guida-prodotti-pelle-capelli-pdf"}]
     },
     {
       id:"lista-nomi-pdf", order:2, area:"Presentazioni e schede", title:"Lista nomi", type:"PDF", status:"disponibile", library:true, shareSection:false,
