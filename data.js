@@ -254,15 +254,14 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video e materiali", status:"disponibile", library:false, shareSection:true,shareText:"Scopri le basi della nutrizione e il training medico sul Collagen Skin.",
-      description:"Due video sulle basi della nutrizione, un training medico sul Collagen Skin e quattro guide prodotto.",
-      learn:"Acquisire le basi della nutrizione e approfondire il Collagen Skin.",
-      action:"Guarda prima le due parti sulle basi della nutrizione, poi il training sul Collagen Skin. Consulta il catalogo e le guide prodotto nella sezione Materiali.",
+      id:"prodotti", order:0, area:"Percorso guidato", title:"Conoscere i prodotti", type:"Video e materiali", status:"disponibile", library:false, shareSection:true,shareText:"Scopri il video per conoscere i prodotti e il training medico sul Collagen Skin.",
+      description:"Video per conoscere i prodotti, training medico sul Collagen Skin, catalogo e guide prodotto.",
+      learn:"Conoscere i prodotti e approfondire il Collagen Skin.",
+      action:"Guarda prima il video per conoscere i prodotti, poi il training sul Collagen Skin. Consulta il catalogo e le guide prodotto nella sezione Materiali.",
       next:"Prosegui con il punto successivo del percorso.",
       videos:[
-        {title:"1 · Basi della nutrizione — prima parte",embed:"https://www.youtube-nocookie.com/embed/FYj9-lr-jeY"},
-        {title:"2 · Basi della nutrizione — seconda parte",embed:"https://www.youtube-nocookie.com/embed/TcrYqJm84NI"},
-        {title:"3 · Training medico sul Collagen Skin",embed:"https://www.youtube-nocookie.com/embed/oJrzqwQAsN0"}
+        {title:"1 · Conoscere i prodotti",embed:"https://www.youtube-nocookie.com/embed/sDWub3TeiQ4"},
+        {title:"2 · Training medico sul Collagen Skin",embed:"https://www.youtube-nocookie.com/embed/oJrzqwQAsN0"}
       ],
       links:[{"label":"La scienza alla base","resource":"scienza-alla-base", "direct":true},{"label":"Catalogo prodotti · PDF","resource":"catalogo-prodotti-pdf"},{"label":"Guida prodotti · Nutrizione · PDF","resource":"guida-prodotti-nutrizione-pdf"},{"label":"Guida Herbalife24 · Sport · PDF","resource":"guida-prodotti-h24-pdf"},{"label":"Guida prodotti · Pelle e capelli · PDF","resource":"guida-prodotti-pelle-capelli-pdf"}]
     },
