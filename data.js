@@ -65,7 +65,7 @@ window.SUPPORTO_DATA = {
     {
       id:"tutorial-app", order:-2, area:"Guida all’app", title:"Come usare l’app", type:"Video", status:"disponibile", library:false, shareSection:false,
       description:"Un breve tutorial per orientarti tra percorso, materiali e condivisione.",
-      embed:"https://www.youtube-nocookie.com/embed/fFhmQ-Xo_Fg",
+      embed:"https://www.youtube-nocookie.com/embed/fFhmQ-Xo_Fg",durationSeconds:57,
       vertical:true,
       cta:"Apri su YouTube",
       link:"https://youtube.com/shorts/fFhmQ-Xo_Fg?feature=share"
@@ -78,10 +78,11 @@ window.SUPPORTO_DATA = {
       action:"Guarda prima i consigli operativi del team, poi segui le quattro fasi nell’ordine indicato. La scheda di valutazione e la presentazione sono in preparazione.",
       next:"DMO Valutazione corporea",
       videos:[
-        {title:"Introduzione · Consigli operativi",description:"Spunti pratici per rendere più efficace la Skin Experience.",embed:"https://www.youtube-nocookie.com/embed/piH8uwMilhI"},
-        {title:"Fase 1 · Invito",embed:"https://www.youtube-nocookie.com/embed/4chExoXJWAc"},
-        {title:"Fase 2 · Preparazione",embed:"https://www.youtube-nocookie.com/embed/UmWqCWqEupw"},
-        {title:"Fase 3 · Esecuzione",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"}
+        {title:"Introduzione · Consigli operativi",description:"Spunti pratici per rendere più efficace la Skin Experience.",embed:"https://www.youtube-nocookie.com/embed/piH8uwMilhI",durationSeconds:1968},
+        {title:"Fase 1 · Invito",embed:"https://www.youtube-nocookie.com/embed/4chExoXJWAc",durationSeconds:115},
+        {title:"Fase 2 · Preparazione",embed:"https://www.youtube-nocookie.com/embed/UmWqCWqEupw",durationSeconds:85},
+        {title:"Fase 3 · Esperienza: come si svolge",embed:"https://www.youtube-nocookie.com/embed/DsTrecfXAtE",durationSeconds:528},
+        {title:"Fase 4 · Prossimi passi",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg",durationSeconds:154}
       ],
       links:[
         {label:"Guida prodotti · Pelle e capelli",resource:"guida-prodotti-pelle-capelli-pdf"},
@@ -143,8 +144,8 @@ window.SUPPORTO_DATA = {
       action:"Guarda i due video nell’ordine indicato. Esercitati a presentare il piano compensi in modo semplice su un foglio e usa la presentazione come supporto. Mantieni il colloquio essenziale e concorda la partecipazione a un HOM o B Day: il passaggio centrale è ascoltare esperienze e testimonianze, senza dilungarti nelle informazioni tecniche.",
       next:"Obiezioni",
       videos:[
-        {title:"1 · Colloquio individuale",description:"Come presentare il progetto con l’obiettivo di accompagnare la persona a un HOM o B Day. Il focus è farle ascoltare esperienze e testimonianze, senza dilungarsi nella spiegazione tecnica.",embed:"https://www.youtube-nocookie.com/embed/goEPN1kd8XM"},
-        {title:"2 · Presentare il piano compensi su un foglio",description:"Come presentare il piano compensi in maniera semplificata, usando un foglio.",embed:"https://www.youtube-nocookie.com/embed/E_u5sx2FzOs"}
+        {title:"1 · Colloquio individuale",description:"Come presentare il progetto con l’obiettivo di accompagnare la persona a un HOM o B Day. Il focus è farle ascoltare esperienze e testimonianze, senza dilungarsi nella spiegazione tecnica.",embed:"https://www.youtube-nocookie.com/embed/goEPN1kd8XM",durationSeconds:1308},
+        {title:"2 · Presentare il piano compensi su un foglio",description:"Come presentare il piano compensi in maniera semplificata, usando un foglio.",embed:"https://www.youtube-nocookie.com/embed/E_u5sx2FzOs",durationSeconds:470}
       ],
       links:[{label:"Colloquio individuale 3.0 · PDF e PowerPoint",resource:"colloquio-individuale"}]
     },
@@ -176,7 +177,7 @@ window.SUPPORTO_DATA = {
       learn:"Approfondire il concetto di attivo applicato al Network Marketing.",
       action:"Guarda il video e confronta i concetti con il tuo sponsor.",
       next:"Continua la formazione nella Biblioteca.",
-      embed:"https://www.youtube-nocookie.com/embed/yJCH7OVRptM"
+      embed:"https://www.youtube-nocookie.com/embed/yJCH7OVRptM",durationSeconds:381
     },
     {
       id:"settimana", order:-0.5, area:"Percorso guidato", title:"Organizzare la settimana", type:"Video", status:"disponibile", library:false, shareSection:false,
@@ -184,7 +185,7 @@ window.SUPPORTO_DATA = {
       learn:"Organizzare agenda, priorità e gestione dei contatti seguendo il metodo del team.",
       action:"Guarda il video e organizza la tua settimana seguendo il metodo spiegato.",
       next:"Inaugurazione attività",
-      embed:"https://www.youtube-nocookie.com/embed/OByvvIVJc-E"
+      embed:"https://www.youtube-nocookie.com/embed/OByvvIVJc-E",durationSeconds:988
     },
     {
       id:"invitare", order:-0.6, area:"Percorso guidato", title:"Come invitare", type:"Video e materiale", status:"disponibile", library:false, shareSection:false,
@@ -193,7 +194,7 @@ window.SUPPORTO_DATA = {
       learn:"Preparare e gestire gli inviti seguendo le indicazioni del video.",
       action:"Guarda il video, leggi la guida e prepara i primi inviti insieme al tuo sponsor.",
       next:"Organizzare la settimana",
-      embed:"https://www.youtube-nocookie.com/embed/WZ8XyFLoi9I",
+      embed:"https://www.youtube-nocookie.com/embed/WZ8XyFLoi9I",durationSeconds:1227,
       links:[{label:"Leggi la guida · PDF",resource:"come-invitare-pdf",direct:true}]
     },
     {
@@ -203,7 +204,7 @@ window.SUPPORTO_DATA = {
       learn:"Organizzare la lista nomi e gestire i contatti seguendo il metodo del team.",
       action:"Leggi prima l’infografica, guarda il video e compila la lista. Prima di contattare qualcuno, scegli le persone e prepara l’invito con il tuo sponsor. Le prime conversazioni si svolgono insieme allo sponsor.",
       next:"Come invitare",
-      embed:"https://www.youtube-nocookie.com/embed/yWJRBHaDspk",
+      embed:"https://www.youtube-nocookie.com/embed/yWJRBHaDspk",durationSeconds:1265,
       links:[{label:"Scarica materiale da stampare",resource:"lista-nomi-pdf",direct:true}]
     },
     {
@@ -213,8 +214,8 @@ window.SUPPORTO_DATA = {
       action:"Guarda i due video nell’ordine indicato e definisci il tuo obiettivo personale.",
       next:"Conoscere i prodotti",
       videos:[
-        {title:"1 · Obiettivo personale",embed:"https://www.youtube-nocookie.com/embed/kmqtj1HBpoM"},
-        {title:"2 · Piano marketing",embed:"https://www.youtube-nocookie.com/embed/fln41ekZIOc"}
+        {title:"1 · Obiettivo personale",embed:"https://www.youtube-nocookie.com/embed/kmqtj1HBpoM",durationSeconds:1107},
+        {title:"2 · Piano marketing",embed:"https://www.youtube-nocookie.com/embed/fln41ekZIOc",durationSeconds:108}
       ]
     },
     {
@@ -223,7 +224,7 @@ window.SUPPORTO_DATA = {
       learn:"Capire i passaggi fondamentali per impostare correttamente l’inaugurazione e il follow-up.",
       action:"Guarda il video, stampa la guida operativa e prepara la tua inaugurazione seguendo i passaggi indicati.",
       next:"DMO Trattamento viso",
-      embed:"https://www.youtube-nocookie.com/embed/kmkivMyksYQ",
+      embed:"https://www.youtube-nocookie.com/embed/kmkivMyksYQ",durationSeconds:728,
       links:[{label:"Scarica materiale da stampare",resource:"inaugurazione-pdf",direct:true}]
     },
     {
@@ -259,8 +260,8 @@ window.SUPPORTO_DATA = {
       action:"Guarda prima il video per conoscere i prodotti, poi il training sul Collagen Skin. Consulta il catalogo e le guide prodotto nella sezione Materiali.",
       next:"Prosegui con il punto successivo del percorso.",
       videos:[
-        {title:"1 · Conoscere i prodotti",embed:"https://www.youtube-nocookie.com/embed/sDWub3TeiQ4"},
-        {title:"2 · Training medico sul Collagen Skin",embed:"https://www.youtube-nocookie.com/embed/oJrzqwQAsN0"}
+        {title:"1 · Conoscere i prodotti",embed:"https://www.youtube-nocookie.com/embed/sDWub3TeiQ4",durationSeconds:3886},
+        {title:"2 · Training medico sul Collagen Skin",embed:"https://www.youtube-nocookie.com/embed/oJrzqwQAsN0",durationSeconds:3754}
       ],
       links:[{"label":"La scienza alla base","resource":"scienza-alla-base", "direct":true},{"label":"Catalogo prodotti · PDF","resource":"catalogo-prodotti-pdf"},{"label":"Guida prodotti · Nutrizione · PDF","resource":"guida-prodotti-nutrizione-pdf"},{"label":"Guida Herbalife24 · Sport · PDF","resource":"guida-prodotti-h24-pdf"},{"label":"Guida prodotti · Pelle e capelli · PDF","resource":"guida-prodotti-pelle-capelli-pdf"}]
     },
