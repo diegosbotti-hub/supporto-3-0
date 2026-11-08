@@ -65,7 +65,7 @@ window.SUPPORTO_DATA = {
     {
       id:"tutorial-app", order:-2, area:"Guida all’app", title:"Come usare l’app", type:"Video", status:"disponibile", library:false, shareSection:false,
       description:"Un breve tutorial per orientarti tra percorso, materiali e condivisione.",
-      embed:"https://www.youtube-nocookie.com/embed/fFhmQ-Xo_Fg",durationSeconds:57,
+      embed:"https://www.youtube-nocookie.com/embed/fFhmQ-Xo_Fg",
       vertical:true,
       cta:"Apri su YouTube",
       link:"https://youtube.com/shorts/fFhmQ-Xo_Fg?feature=share"
@@ -177,7 +177,7 @@ window.SUPPORTO_DATA = {
       learn:"Approfondire il concetto di attivo applicato al Network Marketing.",
       action:"Guarda il video e confronta i concetti con il tuo sponsor.",
       next:"Continua la formazione nella Biblioteca.",
-      embed:"https://www.youtube-nocookie.com/embed/yJCH7OVRptM",durationSeconds:381
+      embed:"https://www.youtube-nocookie.com/embed/yJCH7OVRptM"
     },
     {
       id:"settimana", order:-0.5, area:"Percorso guidato", title:"Organizzare la settimana", type:"Video", status:"disponibile", library:false, shareSection:false,
