@@ -3,7 +3,7 @@ window.SUPPORTO_DATA = {
     title: "SUPPORTO 3.0",
     team: "BE ONE TEAM",
     subtitle: "Il materiale giusto. Nel momento giusto.",
-    updated: "07/11/2026"
+    updated: "08/11/2026"
   },
   appTutorial: {resource:"tutorial-app"},
   telegram: "https://t.me/+Dzt2cDIxiLFlMDE0",
@@ -81,8 +81,7 @@ window.SUPPORTO_DATA = {
         {title:"Introduzione · Consigli operativi",description:"Spunti pratici per rendere più efficace la Skin Experience.",embed:"https://www.youtube-nocookie.com/embed/piH8uwMilhI"},
         {title:"Fase 1 · Invito",embed:"https://www.youtube-nocookie.com/embed/4chExoXJWAc"},
         {title:"Fase 2 · Preparazione",embed:"https://www.youtube-nocookie.com/embed/UmWqCWqEupw"},
-        {title:"Fase 3 · Esecuzione",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"},
-        {title:"Fase 4 · Prossimi passi",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"}
+        {title:"Fase 3 · Esecuzione",embed:"https://www.youtube-nocookie.com/embed/xevQcS_8ksg"}
       ],
       links:[
         {label:"Guida prodotti · Pelle e capelli",resource:"guida-prodotti-pelle-capelli-pdf"},
