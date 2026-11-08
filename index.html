@@ -161,6 +161,31 @@ button,input{font:inherit}.top{position:sticky;top:0;z-index:30;background:rgba(
 .community>div:not(.plane){flex-basis:calc(100% - 55px)}
 .community button,.community .chat-link{margin-left:0;width:100%}
 }
+.photo-gallery{margin-top:16px;min-width:0}
+.photo-gallery [hidden]{display:none!important}
+.photo-gallery-intro{margin:0 0 14px;font-size:14px;line-height:1.45;color:var(--mut)}
+.photo-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.photo-gallery-card{min-width:0;border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#fff}
+.photo-gallery-preview{display:block;width:100%;padding:8px;border:0;background:#f3f6f3;cursor:pointer}
+.photo-gallery-preview img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain}
+.photo-gallery-card-body{padding:10px;min-width:0}
+.photo-gallery-card h3{margin:0 0 9px;font-size:14px;line-height:1.3}
+.photo-gallery-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.photo-gallery .btn{display:flex;align-items:center;justify-content:center;min-width:0;min-height:44px;padding:10px 7px;white-space:normal;overflow-wrap:anywhere;text-align:center;text-decoration:none;line-height:1.3;font-size:12px}
+.photo-gallery-back{width:100%;margin-bottom:14px}
+.photo-gallery-nav{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;gap:10px;align-items:center;margin-bottom:12px}
+.photo-gallery-nav h3{margin:0;text-align:center;font-size:16px;line-height:1.35;outline:none}
+.photo-gallery-nav .btn{font-size:23px;padding:7px}
+.photo-gallery .btn:disabled{opacity:.45;cursor:default}
+.photo-gallery-stage{max-height:65vh;max-height:65dvh;overflow:auto;border:1px solid var(--line);border-radius:12px;background:#f3f6f3;text-align:center;overscroll-behavior:contain}
+.photo-gallery-stage img{display:block;margin:auto;width:auto;max-width:100%;height:auto;max-height:65vh;max-height:65dvh;object-fit:contain}
+.photo-gallery-stage.is-zoomed img{max-width:none;max-height:none}
+.photo-gallery-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.photo-gallery-tools .photo-gallery-zoom{grid-column:1/-1}
+.photo-gallery-message{margin:10px 0 0;font-size:13px;color:var(--mut);line-height:1.4}
+.photo-gallery-preview:focus-visible,.photo-gallery .btn:focus-visible{outline:3px solid #9fceb0;outline-offset:-3px}
+@media(max-width:420px){.photo-gallery-grid{gap:8px}.photo-gallery-card-body{padding:8px}.photo-gallery-actions{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -515,12 +540,12 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",shareSection:true,shareText:"Scopri il prima e il dopo di alcuni nostri clienti.",shareUrl:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link",
-      description:"Raccolta di foto prima e dopo del team.",
+      id:"foto-prima-dopo", order:3, area:"Foto prima e dopo", title:"Foto prima e dopo", type:"Galleria", status:"disponibile",shareSection:true,shareLabel:"Condividi raccolta completa",photoGallery:{"hint":"10 foto in evidenza. Tocca un’immagine per ingrandirla e sfogliare la galleria.","shareText":"Ti giro questa foto prima/dopo del team. Guardala con calma; se vuoi saperne di più, scrivimi e ne parliamo!","items":[{"id":"1L4fiLNeYQXoZBdP67RtWiFjB1-FRY6WH","title":"Foto 1","src":"assets/foto-prima-dopo/p01-d238ac4e.jpg","thumbnail":"assets/foto-prima-dopo/p01-thumb-ee705b75.webp","width":1338,"height":510,"url":"https://drive.google.com/file/d/1L4fiLNeYQXoZBdP67RtWiFjB1-FRY6WH/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-1.jpg"},{"id":"1sPjoXP1gE67CXqPDQ7lbkYdcxg0zB7KP","title":"Foto 2","src":"assets/foto-prima-dopo/p02-47a506ec.jpg","thumbnail":"assets/foto-prima-dopo/p02-thumb-50caef81.webp","width":1038,"height":1214,"url":"https://drive.google.com/file/d/1sPjoXP1gE67CXqPDQ7lbkYdcxg0zB7KP/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-2.jpg"},{"id":"1-vTqaNliyfr-MnQREcFt-ZR0KlmE5hyB","title":"Foto 3","src":"assets/foto-prima-dopo/p03-fe21e5a1.jpg","thumbnail":"assets/foto-prima-dopo/p03-thumb-c217eb30.webp","width":719,"height":1280,"url":"https://drive.google.com/file/d/1-vTqaNliyfr-MnQREcFt-ZR0KlmE5hyB/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-3.jpg"},{"id":"1e0cITE3dFdVDz3z1xKI8lp1QR5o5mJ6c","title":"Foto 4","src":"assets/foto-prima-dopo/p04-43dd43e3.jpg","thumbnail":"assets/foto-prima-dopo/p04-thumb-9b9cd94e.webp","width":719,"height":1280,"url":"https://drive.google.com/file/d/1e0cITE3dFdVDz3z1xKI8lp1QR5o5mJ6c/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-4.jpg"},{"id":"1QPxipLppCYs2II778wLY0TNFw6Amwaqi","title":"Foto 5","src":"assets/foto-prima-dopo/p05-83580f2e.jpg","thumbnail":"assets/foto-prima-dopo/p05-thumb-17394bae.webp","width":960,"height":1280,"url":"https://drive.google.com/file/d/1QPxipLppCYs2II778wLY0TNFw6Amwaqi/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-5.jpg"},{"id":"1IHJVon7WZQvBvG2aeDykynUmY9rdcLHZ","title":"Foto 6","src":"assets/foto-prima-dopo/p06-323f7d5a.jpg","thumbnail":"assets/foto-prima-dopo/p06-thumb-56bff760.webp","width":965,"height":1280,"url":"https://drive.google.com/file/d/1IHJVon7WZQvBvG2aeDykynUmY9rdcLHZ/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-6.jpg"},{"id":"15XR9EpVmJaY6WmWlzWomeO5s3vfJ4k_Q","title":"Foto 7","src":"assets/foto-prima-dopo/p07-4aa4b7d8.jpg","thumbnail":"assets/foto-prima-dopo/p07-thumb-cafff71b.webp","width":719,"height":1280,"url":"https://drive.google.com/file/d/15XR9EpVmJaY6WmWlzWomeO5s3vfJ4k_Q/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-7.jpg"},{"id":"1iw_vwrzzqnwQIzxvRO7Yow_w33jlAj_a","title":"Foto 8","src":"assets/foto-prima-dopo/p08-b02dcd59.jpg","thumbnail":"assets/foto-prima-dopo/p08-thumb-e1f9f862.webp","width":960,"height":1280,"url":"https://drive.google.com/file/d/1iw_vwrzzqnwQIzxvRO7Yow_w33jlAj_a/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-8.jpg"},{"id":"1eJNhfTlw7AgTeoUMfYergdlB2zgBvvvU","title":"Foto 9","src":"assets/foto-prima-dopo/p09-96018127.jpg","thumbnail":"assets/foto-prima-dopo/p09-thumb-bea24775.webp","width":1280,"height":1280,"url":"https://drive.google.com/file/d/1eJNhfTlw7AgTeoUMfYergdlB2zgBvvvU/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-9.jpg"},{"id":"1ggrqQ-0Z-MKXKJbEpGrr6y42pRIyM38Q","title":"Foto 10","src":"assets/foto-prima-dopo/p10-26fa1baf.jpg","thumbnail":"assets/foto-prima-dopo/p10-thumb-d262d191.webp","width":1280,"height":1280,"url":"https://drive.google.com/file/d/1ggrqQ-0Z-MKXKJbEpGrr6y42pRIyM38Q/view?usp=drivesdk","downloadName":"BE-ONE-prima-dopo-10.jpg"}]},shareText:"Scopri il prima e il dopo di alcuni nostri clienti.",shareUrl:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link",
+      description:"Sfoglia le foto prima e dopo, ingrandisci e condividi ogni immagine. Raccolta completa disponibile su Drive.",
       learn:"Accedere rapidamente alla raccolta di foto prima e dopo.",
       action:"Apri la cartella e consulta le immagini disponibili.",
       next:"Assistenza clienti",
-      cta:"Apri foto prima e dopo",
+      cta:"Apri raccolta completa su Drive",
       link:"https://drive.google.com/drive/folders/1EaYqgYEfbRStv9SPR-RYCDS06HDgCK2A?usp=drive_link"
     },
     {
@@ -930,6 +955,58 @@ function renderVideoGallery(r,sheet){
   section.querySelectorAll(".video-gallery-preview img").forEach(img=>img.addEventListener("error",()=>img.remove(),{once:true}));
   return section;
 }
+function renderPhotoGallery(r,sheet){
+  const config=r.photoGallery,items=config.items,section=document.createElement("section");
+  section.className="photo-gallery";
+  section.innerHTML='<p class="photo-gallery-intro">'+esc(config.hint)+'</p><div class="photo-gallery-grid">'+items.map((item,index)=>'<article class="photo-gallery-card"><button type="button" class="photo-gallery-preview" data-photo-open="'+index+'" aria-label="Ingrandisci '+esc(item.title)+'"><img src="'+esc(item.thumbnail)+'" alt="'+esc(item.title)+' · confronto prima e dopo" loading="lazy" decoding="async" width="'+item.width+'" height="'+item.height+'"></button><div class="photo-gallery-card-body"><h3>'+esc(item.title)+'</h3><div class="photo-gallery-actions"><a class="btn secondary" href="'+esc(item.src)+'" download="'+esc(item.downloadName)+'">Scarica foto</a><button type="button" class="btn primary" data-photo-share="'+index+'">Condividi foto</button></div></div></article>').join("")+'</div><div class="photo-gallery-viewer" hidden></div>';
+  const grid=section.querySelector(".photo-gallery-grid"),intro=section.querySelector(".photo-gallery-intro"),viewer=section.querySelector(".photo-gallery-viewer"),files=new Map();
+  let selected=0,savedScroll=0,returnButton=null;
+  function photoFile(item){
+    if(!files.has(item.id))files.set(item.id,fetch(item.src).then(response=>{if(!response.ok)throw Error("Foto non disponibile");return response.blob()}).then(blob=>new File([blob],item.downloadName,{type:"image/jpeg"})).catch(()=>null));
+    return files.get(item.id);
+  }
+  async function sharePhoto(item,button){
+    const text=config.shareText,url=item.url;
+    if(navigator.share){
+      const file=await photoFile(item);
+      if(file&&navigator.canShare&&navigator.canShare({files:[file]})){
+        try{await navigator.share({title:r.title+" · "+item.title,text,files:[file]});return}catch(error){if(error?.name==="AbortError")return}
+      }
+      try{await navigator.share({title:r.title+" · "+item.title,text,url});return}catch(error){if(error?.name==="AbortError")return}
+    }
+    try{
+      if(navigator.clipboard){await navigator.clipboard.writeText(text+"\n\n"+url);button.textContent="Link copiato";setTimeout(()=>{if(button.isConnected)button.textContent="Condividi foto"},1800)}
+      else window.prompt("Copia il messaggio e il link della foto",text+"\n\n"+url);
+    }catch(error){window.prompt("Copia il messaggio e il link della foto",text+"\n\n"+url)}
+  }
+  function back(){
+    viewer.replaceChildren();viewer.hidden=true;grid.hidden=false;intro.hidden=false;sheet.classList.remove("gallery-playing");sheet.scrollTop=savedScroll;
+    if(returnButton?.isConnected)returnButton.focus({preventScroll:true});
+  }
+  function show(index){
+    selected=index;const item=items[index];grid.hidden=true;intro.hidden=true;viewer.hidden=false;sheet.classList.add("gallery-playing");
+    viewer.innerHTML='<button type="button" class="btn secondary photo-gallery-back">← Torna alle foto</button><div class="photo-gallery-nav"><button type="button" class="btn secondary photo-gallery-prev" aria-label="Foto precedente"'+(index===0?' disabled':'')+'>‹</button><h3 tabindex="-1" aria-live="polite">'+esc(item.title)+' · '+(index+1)+' di '+items.length+'</h3><button type="button" class="btn secondary photo-gallery-next" aria-label="Foto successiva"'+(index===items.length-1?' disabled':'')+'>›</button></div><div class="photo-gallery-stage" tabindex="0" aria-label="Foto ingrandita"><img src="'+esc(item.src)+'" alt="'+esc(item.title)+' · confronto prima e dopo" width="'+item.width+'" height="'+item.height+'" decoding="async"></div><div class="photo-gallery-tools"><button type="button" class="btn secondary photo-gallery-zoom" aria-pressed="false">Ingrandisci ancora</button><a class="btn secondary" href="'+esc(item.src)+'" download="'+esc(item.downloadName)+'">Scarica foto</a><button type="button" class="btn primary photo-gallery-share">Condividi foto</button></div><p class="photo-gallery-message" role="status" hidden></p>';
+    viewer.querySelector(".photo-gallery-back").onclick=back;
+    viewer.querySelector(".photo-gallery-prev").onclick=()=>show(selected-1);
+    viewer.querySelector(".photo-gallery-next").onclick=()=>show(selected+1);
+    const stage=viewer.querySelector(".photo-gallery-stage"),zoom=viewer.querySelector(".photo-gallery-zoom"),share=viewer.querySelector(".photo-gallery-share");
+    zoom.onclick=()=>{const expanded=stage.classList.toggle("is-zoomed");zoom.setAttribute("aria-pressed",String(expanded));zoom.textContent=expanded?"Adatta allo schermo":"Ingrandisci ancora";stage.scrollTop=0;stage.scrollLeft=0};
+    share.onclick=()=>sharePhoto(item,share);
+    viewer.querySelector("img").onerror=()=>{const message=viewer.querySelector(".photo-gallery-message");message.textContent="La foto non si carica. Puoi consultare la raccolta completa su Drive.";message.hidden=false};
+    if(navigator.share&&navigator.canShare)photoFile(item);
+    sheet.scrollTop=0;viewer.querySelector("h3").focus({preventScroll:true});
+  }
+  section.querySelectorAll("[data-photo-open]").forEach(button=>button.onclick=()=>{savedScroll=sheet.scrollTop;returnButton=button;show(Number(button.dataset.photoOpen))});
+  section.querySelectorAll("[data-photo-share]").forEach(button=>button.onclick=()=>sharePhoto(items[Number(button.dataset.photoShare)],button));
+  section.addEventListener("keydown",event=>{
+    if(viewer.hidden)return;
+    if(event.key==="ArrowLeft"&&selected>0){event.preventDefault();show(selected-1)}
+    else if(event.key==="ArrowRight"&&selected<items.length-1){event.preventDefault();show(selected+1)}
+    else if(event.key==="Escape"){event.preventDefault();back()}
+  });
+  return section;
+}
+
 let documentSession=null;
 function documentFile(url,label){
   if(!url)return null;
@@ -1006,7 +1083,7 @@ function videoTitleWithDuration(video,fallback){
   const duration=hours?hours+":"+String(minutes).padStart(2,"0")+":"+remainder:minutes+":"+remainder;
   return title+" · "+duration;
 }
-function detail(r){if(!r)return;clearDocumentViewer(false);const sheet=drawer.querySelector(".sheet");$("dInfo").open=false;$("dInfo").style.display=r.area==="Percorso guidato"?"none":"";const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;sheet.classList.toggle("obiettivo-mode",r.id==="obiettivo");sheet.classList.toggle("lista-mode",r.id==="lista");sheet.classList.toggle("invitare-mode",r.id==="invitare");sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery,.material-actions,.training-video-heading,.workflow-figure").forEach(x=>x.remove());
+function detail(r){if(!r)return;clearDocumentViewer(false);const sheet=drawer.querySelector(".sheet");$("dInfo").open=false;$("dInfo").style.display=r.area==="Percorso guidato"?"none":"";const hasGallery=Array.isArray(r.gallery?.items)&&r.gallery.items.length>0;const hasPhotoGallery=Array.isArray(r.photoGallery?.items)&&r.photoGallery.items.length>0;sheet.classList.toggle("obiettivo-mode",r.id==="obiettivo");sheet.classList.toggle("lista-mode",r.id==="lista");sheet.classList.toggle("invitare-mode",r.id==="invitare");sheet.classList.toggle("tutorial-mode",r.id===D.appTutorial.resource);sheet.classList.toggle("gallery-mode",hasGallery||hasPhotoGallery);sheet.classList.remove("gallery-playing");sheet.classList.toggle("biblioteca-mode",r.id==="biblioteca");sheet.classList.toggle("listini-mode",r.id==="listini-pubblico");sheet.classList.toggle("prodotti-mode",r.id==="prodotti");sheet.classList.toggle("hom-mode",r.area==="HOM registrati");sheet.classList.toggle("stacked-actions",r.id==="hgo"||(Array.isArray(r.links)&&r.links.length+(r.shareSection?1:0)+1>=4));$("dType").textContent=[r.type,r.area].filter(Boolean).join(" · ");$("dTitle").textContent=r.title;$("dLearn").textContent=r.learn||r.description;$("dAction").textContent=r.action||"Apri il materiale e applica il contenuto.";$("dNext").textContent=r.next||"Continua con il modulo successivo.";const a=$("dActions");a.querySelectorAll(".extra").forEach(x=>x.remove());sheet.querySelectorAll(".embedvideo,.embedbox,.video-gallery,.photo-gallery,.material-actions,.training-video-heading,.workflow-figure").forEach(x=>x.remove());
 const hasVideos=Array.isArray(r.videos)&&r.videos.length>0;
 const hasTopMaterials=r.area==="Percorso guidato"&&Array.isArray(r.links)&&r.links.length>0&&(hasVideos||r.embed||r.embedResource||r.pendingVideo||r.materialsAtTop);
 const embedSource=r.embedResource?D.resources.find(x=>x.id===r.embedResource):r;
@@ -1048,7 +1125,7 @@ embeds.forEach(v=>{
     }
     group.appendChild(box);a.parentNode.insertBefore(group,a);
   }else{a.parentNode.insertBefore(box,a)}
-});if(hasGallery){a.parentNode.insertBefore(renderVideoGallery(r,sheet),a);sheet.scrollTop=0}const o=$("dOpen");o.onclick=null;
+});if(hasGallery){a.parentNode.insertBefore(renderVideoGallery(r,sheet),a);sheet.scrollTop=0}if(hasPhotoGallery){a.parentNode.insertBefore(renderPhotoGallery(r,sheet),a);sheet.scrollTop=0}const o=$("dOpen");o.onclick=null;
 if(Array.isArray(r.links)&&r.links.length){
   o.style.display="none";
   r.links.forEach((x,i)=>{
