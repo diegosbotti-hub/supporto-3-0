@@ -236,9 +236,9 @@ window.SUPPORTO_DATA = {
       "status": "disponibile",
       "library": false,
       "shareSection": false,
-      "description": "Book Colazione e scheda valutazione benessere + scheda Tanita disponibili. Video tutorial in preparazione.",
+      "description": "Book Colazione e scheda valutazione benessere 3.1 disponibili. Video tutorial in preparazione.",
       "learn": "Svolgere la valutazione corporea e usare il Book Colazione e la scheda di valutazione.",
-      "action": "Apri il Book Colazione 3.0. Stampa la scheda valutazione benessere + scheda Tanita e compilala durante la valutazione. Il video formativo è in preparazione.",
+      "action": "Apri il Book Colazione 3.0. Stampa la scheda valutazione benessere 3.1 e compilala durante la valutazione. Il video formativo è in preparazione.",
       "next": "DMO Usa Indossa Parla",
       "pendingVideo": true,
       "workflowImage": { "src": "assets/flusso-valutazione-corporea.webp?v=9801c032", "alt": "Flusso operativo della DMO: offerta della valutazione, raccolta delle informazioni, valutazione corporea, domanda chiave, proposta e passaparola.", "width": 1672, "height": 941 },
@@ -248,7 +248,7 @@ window.SUPPORTO_DATA = {
           "resource": "book-pdf"
         },
         {
-          "label": "Scheda valutazione benessere + scheda Tanita",
+          "label": "Scheda valutazione benessere 3.1",
           "resource": "valutazione-benessere-tanita-pdf"
         }
       ]
@@ -303,14 +303,14 @@ window.SUPPORTO_DATA = {
       link:"https://drive.google.com/file/d/1ZOFEPB1p6G0_LXUfDnTAcyZngUL-rzZY/view?usp=drivesdk"
     },
     {
-      id:"valutazione-benessere-tanita-pdf", order:2.6, area:"Presentazioni e schede", title:"Scheda valutazione benessere + scheda Tanita", type:"PDF", status:"disponibile", library:true, shareSection:false,
+      id:"valutazione-benessere-tanita-pdf", order:2.6, area:"Presentazioni e schede", title:"Scheda valutazione benessere 3.1", type:"PDF", status:"disponibile", library:true, shareSection:false,
       materialNote:"Da stampare e compilare durante la valutazione del benessere e corporea.",
-      description:"Scheda da stampare per raccogliere le informazioni sul benessere e annotare la valutazione corporea Tanita.",
+      description:"Scheda da stampare per raccogliere informazioni sugli obiettivi e sul benessere.",
       learn:"Utilizzare la scheda durante la valutazione del benessere e corporea.",
       action:"Apri il PDF, stampalo e compilalo durante la valutazione.",
       next:"Segui le indicazioni del punto 8 del percorso.",
       cta:"Scarica materiale da stampare",
-      link:"https://drive.google.com/file/d/1HqPaxEgjUGemk1_CDhtQsuPrkdVPZrcZ/view?usp=drivesdk"
+      link:"https://drive.google.com/file/d/1eoRjs_tM-P49zIAvh69hWj5sYQb59RWH/view?usp=drive_link"
     },
     {
       id:"book-pdf", order:1, area:"Presentazioni e schede", title:"Book Colazione 3.0", type:"PDF", format:"PDF e PowerPoint", status:"disponibile",shareSection:true,shareText:"Scopri il Book Colazione 3.0, uno strumento semplice per presentare il percorso al cliente.",shareUrl:"https://drive.google.com/file/d/16PdoMpt4PQos5TFvH8LCnod-lY-0oOZ7/view?usp=drivesdk",
