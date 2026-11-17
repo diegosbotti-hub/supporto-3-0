@@ -236,11 +236,11 @@ window.SUPPORTO_DATA = {
       "status": "disponibile",
       "library": false,
       "shareSection": false,
-      "description": "Book Colazione e scheda valutazione benessere 3.2 disponibili. Video tutorial in preparazione.",
+      "description": "Video tutorial, Book Colazione e scheda valutazione benessere 3.2 disponibili.",
       "learn": "Svolgere la valutazione corporea e usare il Book Colazione e la scheda di valutazione.",
-      "action": "Apri il Book Colazione 3.0. Stampa la scheda valutazione benessere 3.2 e compilala durante la valutazione. Il video formativo è in preparazione.",
+      "action": "Guarda il video tutorial. Apri il Book Colazione 3.0 e stampa la scheda valutazione benessere 3.2 per compilarla durante la valutazione.",
       "next": "DMO Usa Indossa Parla",
-      "pendingVideo": true,
+      "videos": [{ "title": "Video tutorial · Valutazione corporea", "embed": "https://www.youtube-nocookie.com/embed/cH1mGYe7qNA" }],
       "workflowImage": { "src": "assets/flusso-valutazione-corporea.webp?v=9801c032", "alt": "Flusso operativo della DMO: offerta della valutazione, raccolta delle informazioni, valutazione corporea, domanda chiave, proposta e passaparola.", "width": 1672, "height": 941 },
       "links": [
         {
