@@ -41,7 +41,7 @@ window.SUPPORTO_DATA = {
       {n:6,title:"Inaugurazione attività",text:"Preparazione, inviti, svolgimento e follow-up.",status:"disponibile",resource:"inaugurazione"},
       {n:7,title:"DMO Trattamento viso",text:"Skin Experience e guida Pelle e capelli. Scheda di valutazione e presentazione in preparazione.",status:"disponibile",resource:"skin"},
       {n:8,title:"DMO Valutazione corporea",text:"Book Colazione e scheda benessere + Tanita disponibili. Video in preparazione.",status:"disponibile",resource:"hgo"},
-      {n:9,title:"DMO Usa Indossa Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"disponibile",resource:"usa-parla"},
+      {n:9,title:"Usa & Indossa e Parla",text:"Trasformare l'esperienza personale in conversazioni naturali.",status:"disponibile",resource:"usa-parla"},
       {n:10,title:"Assistenza clienti",text:"Guida interna e infografica Cliente privilegiato disponibili. Video tutorial in preparazione.",status:"disponibile",resource:"clienti"},
       {n:11,title:"Presentare l’opportunità",text:"Colloquio individuale e piano compensi su un foglio. Obiettivo: accompagnare la persona a un HOM o B Day.",status:"disponibile",resource:"opportunita"},
       {n:12,title:"Obiezioni",text:"Guida operativa disponibile. Video tutorial in preparazione.",status:"disponibile",resource:"obiezioni"}
@@ -239,7 +239,7 @@ window.SUPPORTO_DATA = {
       "description": "Video tutorial, Book Colazione e scheda valutazione benessere 3.2 disponibili.",
       "learn": "Svolgere la valutazione corporea e usare il Book Colazione e la scheda di valutazione.",
       "action": "Guarda il video tutorial. Apri il Book Colazione 3.0 e stampa la scheda valutazione benessere 3.2 per compilarla durante la valutazione.",
-      "next": "DMO Usa Indossa Parla",
+      "next": "Usa & Indossa e Parla",
       "videos": [{ "title": "Video tutorial · Valutazione corporea", "embed": "https://www.youtube-nocookie.com/embed/cH1mGYe7qNA" }],
       "workflowImage": { "src": "assets/flusso-valutazione-corporea.webp?v=9801c032", "alt": "Flusso operativo della DMO: offerta della valutazione, raccolta delle informazioni, valutazione corporea, domanda chiave, proposta e passaparola.", "width": 1672, "height": 941 },
       "links": [
@@ -254,7 +254,7 @@ window.SUPPORTO_DATA = {
       ]
     },
     {
-      id:"usa-parla", order:0.82, area:"Percorso guidato", title:"DMO Usa Indossa Parla", type:"Video", status:"disponibile", library:false, shareSection:false,
+      id:"usa-parla", order:0.82, area:"Percorso guidato", title:"Usa & Indossa e Parla", type:"Video", status:"disponibile", library:false, shareSection:false,
       description:"Video tutorial del punto 9 del percorso.",
       learn:"Approfondire la DMO Usa Indossa Parla.",
       action:"Guarda il video tutorial.",
